@@ -2,7 +2,7 @@
 
 with lib;
 
-in stdenv.mkDerivation rec {
+stdenv.mkDerivation rec {
   pname = "kabmat";
   version = "v2.7.0";
   src = fetchFromGitHub {

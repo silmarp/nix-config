@@ -6,10 +6,6 @@
   home.username = "silmar";
   home.homeDirectory = "/home/silmar";
 
-  nixpkgs.overlays = [
-    (import (builtins.fetchTarball "https://github.com/PolyMC/PolyMC/archive/develop.tar.gz")).overlay
-  ];
-
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
       htop

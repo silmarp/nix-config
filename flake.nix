@@ -10,6 +10,9 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    polymc.url = "github:polymc/polymc";
+    polymc.inputs.nixpkgs.follows = "nixpkgs";
+
     # TODO: Add any other flake you might need
 
     # Shameless plug: looking for a way to nixify your themes and make
@@ -30,6 +33,7 @@
       # Your custom packages and modifications
       overlays = {
         default = import ./overlay { inherit inputs; };
+        polymc = inputs.polymc.overlay;
       };
 
       # Reusable nixos modules you might want to export
@@ -58,12 +62,11 @@
           # Instead, you should set nixpkgs configs here
           # (https://nixos.org/manual/nixpkgs/stable/#idm140737322551056)
 
-          # config.allowUnfree = true;
+          config.allowUnfree = true;
         }
       );
 
       nixosConfigurations = {
-        # FIXME replace with your hostname
         behemoth = nixpkgs.lib.nixosSystem {
           pkgs = legacyPackages.x86_64-linux;
           specialArgs = { inherit inputs; }; # Pass flake inputs to our config
@@ -75,7 +78,6 @@
       };
 
       homeConfigurations = {
-        # FIXME replace with your username@hostname
         "silmar@behemoth" =
           home-manager.lib.homeManagerConfiguration {
             pkgs = legacyPackages.x86_64-linux;
