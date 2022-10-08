@@ -40,6 +40,11 @@
       BW_SESSION = "zHhTz2HsbSh2QpTkkDJuqtc1WQte68fuq0WyScijLIkD5y5kjnBGiWeFL77LOn6v8fI7jRL9nsq+ohKkRM9i1Q==";
   };
 
+  programs.git = {
+    enable = true;
+    diff-so-fancy.enable = true;
+    };
+
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards

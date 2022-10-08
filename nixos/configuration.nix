@@ -118,7 +118,6 @@
     neovim
     wget
     luakit
-    git
     alsa-tools
     alsa-utils
     alsa-lib
