@@ -14,6 +14,7 @@
       discord
       wl-clipboard
       bitwarden-cli
+      rnix-lsp
       polymc
       gimp
       helix
