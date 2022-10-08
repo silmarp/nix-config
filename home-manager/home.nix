@@ -6,6 +6,8 @@
   home.username = "silmar";
   home.homeDirectory = "/home/silmar";
 
+  imports = [ ./taskwarrior.nix ];
+
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
       htop
@@ -31,7 +33,6 @@
       spotifyd
       spotify-tui
       taskell
-      taskwarrior
       unityhub
       (callPackage ./kabmat{})
   ];
@@ -43,8 +44,9 @@
   programs.git = {
     enable = true;
     diff-so-fancy.enable = true;
-    };
+  };
 
+  
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
