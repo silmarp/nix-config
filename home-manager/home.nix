@@ -12,6 +12,7 @@
   home.packages = with pkgs; [
       htop
       firefox
+      librewolf-wayland
       qutebrowser
       discord
       wl-clipboard
@@ -35,6 +36,12 @@
       taskell
       unityhub
       (callPackage ./kabmat{})
+      taskwarrior-tui
+      steam
+      lutris
+      wine
+      osu-lazer
+      ripes
   ];
 
   home.sessionVariables = {

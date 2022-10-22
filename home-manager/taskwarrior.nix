@@ -20,10 +20,9 @@
       urgency.uda.effort.H.coefficient=1.0
 
       # project priority
-      urgency.project.college.coefficient=8.0
-      urgency.project.work.vido.coefficient=5.0
-      urgency.project.work.freela.coefficient=3.0
-      urgency.project.personal.coefficient=1.0
+      urgency.user.tag.college.coefficient=8.0
+      urgency.user.tag.work.coefficient=5.0
+      urgency.user.tag.personal.coefficient=1.0
     ";
   };
 }

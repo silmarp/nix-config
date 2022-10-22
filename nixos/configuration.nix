@@ -45,7 +45,14 @@
   # Enable Wayland windowing system
   programs.sway.enable = true;
   programs.xwayland.enable = true;
-  hardware.opengl.enable = true;
+  hardware = {
+    opengl = {
+      enable = true;
+      extraPackages = with pkgs; [ amdvlk ];
+      driSupport = true;
+      driSupport32Bit = true;
+    };
+  };
   programs.sway.extraPackages = with pkgs;    [
       swaylock
       swayidle
