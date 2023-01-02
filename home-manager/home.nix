@@ -18,7 +18,7 @@
       wl-clipboard
       bitwarden-cli
       rnix-lsp
-      polymc
+      polymc # change to another (prism)
       gimp
       helix
       calcurse
@@ -28,20 +28,20 @@
       grim
       slurp
       haskellPackages.Monadoro
-      tmate
       zellij
       zathura
       spotifyd
       spotify-tui
       taskell
-      unityhub
       (callPackage ./kabmat{})
       taskwarrior-tui
       steam
       lutris
       wine
       osu-lazer
-      ripes
+      bitwarden
+      emacs
+      ferdium
   ];
 
   home.sessionVariables = {
