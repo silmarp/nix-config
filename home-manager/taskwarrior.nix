@@ -15,10 +15,12 @@
       uda.effort.label=Effort
       uda.effort.default=L
       uda.effort.values=H,M,L
-      urgency.uda.effort.L.coefficient=5.0
-      urgency.uda.effort.M.coefficient=3.0
-      urgency.uda.effort.H.coefficient=1.0
 
+      #priority coefficient
+      urgency.uda.priority.H.coefficient=8.0
+      urgency.uda.priority.M.coefficient=5.0
+      urgency.uda.priority.L.coefficient=1.0
+ 
       # project priority
       urgency.user.tag.college.coefficient=8.0
       urgency.user.tag.work.coefficient=5.0
