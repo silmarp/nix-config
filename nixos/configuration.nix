@@ -180,7 +180,6 @@ in
     dbus-sway-environment
     configure-gtk
     glib
-    neovim
     wget
     luakit
     alsa-tools
@@ -189,7 +188,6 @@ in
     virt-manager
   ];
   environment.variables.EDITOR = "nvim";
-  programs.neovim.defaultEditor = true;
 
   fonts.fonts = with pkgs; [
     nerdfonts

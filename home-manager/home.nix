@@ -6,7 +6,10 @@
   home.username = "silmar";
   home.homeDirectory = "/home/silmar";
 
-  imports = [ ./taskwarrior.nix ];
+  imports = [ 
+    ./taskwarrior.nix
+    ./neovim.nix
+  ];
 
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
