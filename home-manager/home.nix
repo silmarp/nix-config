@@ -8,7 +8,7 @@
 
   imports = [ 
     ./taskwarrior.nix
-    ./neovim.nix
+    ./neovim
   ];
 
   nixpkgs.config.allowUnfree = true;

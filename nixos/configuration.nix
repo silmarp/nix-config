@@ -187,7 +187,6 @@ in
     alsa-lib
     virt-manager
   ];
-  environment.variables.EDITOR = "nvim";
 
   fonts.fonts = with pkgs; [
     nerdfonts
