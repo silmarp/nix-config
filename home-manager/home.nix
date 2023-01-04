@@ -35,7 +35,6 @@
       zathura
       spotifyd
       spotify-tui
-      taskell
       (callPackage ./kabmat{})
       taskwarrior-tui
       steam
