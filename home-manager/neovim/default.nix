@@ -1,5 +1,19 @@
 { config, pkgs, lib, ... }:
 
+
+let
+
+nvim-spell-pt-utf8-dictionary = builtins.fetchurl {
+  url = "http://ftp.vim.org/vim/runtime/spell/pt.utf-8.spl";
+  sha256 = "sha256:0fxnd9fvvxawmwas9yh47rakk65k7jjav1ikzcy7h6wmnq0c2pry";
+};
+
+nvim-spell-pt-latin1-dictionary = builtins.fetchurl {
+  url = "http://ftp.vim.org/vim/runtime/spell/pt.latin1.spl";
+  sha256 = "sha256:1046a4v595g30p1gnrhkddqdqscbvxs9dj9yd078jk226likc71w";
+};
+
+in
 {
   home.sessionVariables.EDITOR = "nvim";
 
@@ -100,6 +114,30 @@ vim.api.nvim_set_keymap('n', '<leader>w', ':wall<CR>', options)
 -- Close all windows and exit from Neovim with <leader> and q
 vim.api.nvim_set_keymap('n', '<leader>qa', ':qa!<CR>', options)
 vim.api.nvim_set_keymap('n', '<leader>q', ':q<CR>', options)
+
+-----------------------------------------------------------
+-- Neovim autocommands
+-----------------------------------------------------------
+local augroup = vim.api.nvim_create_augroup   -- Create/get autocommand group
+local autocmd = vim.api.nvim_create_autocmd   -- Create autocommand
+
+-- Set indentation to 2 spaces
+augroup('setIndent', { clear = true })
+autocmd('Filetype', {
+  group = 'setIndent',
+  pattern = { 'xml', 'html', 'xhtml', 'css', 'scss', 'javascript', 'typescript',
+    'yaml', 'lua', 'nix',
+  },
+  command = 'setlocal shiftwidth=2 tabstop=2'
+})
+
+-- Set spellcheck
+augroup('spell', { clear = true })
+autocmd('Filetype', {
+  group = 'spell',
+  pattern = { 'markdown', 'tex'},
+  command = 'set spell spelllang=pt,en'
+})
 EOF
       '';
 
@@ -287,7 +325,7 @@ vim-table-mode
           '';
         }
       ];
-
-
-  };
+    };
+  home.file."${config.xdg.configHome}/nvim/spell/pt.utf-8.spl".source = nvim-spell-pt-utf8-dictionary;
+  home.file."${config.xdg.configHome}/nvim/spell/pt.latin1.spl".source = nvim-spell-pt-latin1-dictionary;
 }
