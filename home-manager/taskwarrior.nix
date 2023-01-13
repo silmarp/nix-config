@@ -22,6 +22,7 @@
       urgency.uda.priority.L.coefficient=1.0
  
       # project priority
+      urgency.user.tag.expand.coefficient=12.0 #tasks wich leads to more tasks 
       urgency.user.tag.college.coefficient=8.0
       urgency.user.tag.work.coefficient=5.0
       urgency.user.tag.personal.coefficient=1.0
