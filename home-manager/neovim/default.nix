@@ -148,6 +148,12 @@ vim-table-mode
           type = "lua";
           config = ''
             vim.g.vimwiki_list = {{path = '~/Documents/personal-management', syntax = 'markdown', ext = '.md'}}
+            local autocmd = vim.api.nvim_create_autocmd 
+            autocmd('BufEnter', {
+              pattern = '*/personal-management/*',
+              command = 'cd ~/Documents/personal-management'
+            })
+
           '';
         }
         {
@@ -337,6 +343,8 @@ vim-table-mode
         }
       ];
     };
+    /*telescope dependencie*/
+    home.packages = [ pkgs.ripgrep ];
   home.file."${config.xdg.configHome}/nvim/spell/pt.utf-8.spl".source = nvim-spell-pt-utf8-dictionary;
   home.file."${config.xdg.configHome}/nvim/spell/pt.latin1.spl".source = nvim-spell-pt-latin1-dictionary;
 }
