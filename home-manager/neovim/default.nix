@@ -324,6 +324,17 @@ vim-table-mode
             }
           '';
         }
+        {
+          plugin = telescope-nvim;
+          type = "lua";
+          config = /*lua*/ ''
+            local builtin = require('telescope.builtin')
+            vim.keymap.set('n', '<leader>tf', builtin.find_files, {})
+            vim.keymap.set('n', '<leader>tg', builtin.live_grep, {})
+            vim.keymap.set('n', '<leader>tb', builtin.buffers, {})
+            vim.keymap.set('n', '<leader>th', builtin.help_tags, {})
+          '';
+        }
       ];
     };
   home.file."${config.xdg.configHome}/nvim/spell/pt.utf-8.spl".source = nvim-spell-pt-utf8-dictionary;
