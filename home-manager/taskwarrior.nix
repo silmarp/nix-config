@@ -5,6 +5,20 @@
     config = {
       report.next.columns=[ "id" "start.age" "entry.age" "depends" "priority" "effort" "project" "tags" "recur" "scheduled.countdown" "due.relative" "until.remaining" "description" "urgency" ];
       report.next.labels=[ "ID" "Active" "Age" "Deps" "Prio" "Effort" "Project" "Tag" "Recur" "S" "Due" "Until" "Description" "Urg" ];
+      report.next.filter="status:pending -WAITING limit:8";
+
+      # Contexts
+      context.academic.read="+academic or +college or +study";
+      context.academic.write="+academic";
+
+      context.work.read="+work or +freelance or +internship";
+      context.work.write="+work";
+
+      context.personal.read="+personal";
+      context.personal.write="+personal";
+
+      context.free.read="+free or +games";
+      context.free.write="+free";
     };
 
     dataLocation = "/home/silmar/.task";
