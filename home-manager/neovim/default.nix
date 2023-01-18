@@ -154,6 +154,9 @@ vim-table-mode
               command = 'cd ~/Documents/personal-management'
             })
 
+            -- Insert date-time link file
+            local options = { noremap = true, silent = true }
+            vim.api.nvim_set_keymap('n', '<leader>id', ":put =strftime('[[%d-%m-%Y_%T]]')<CR>", options)
           '';
         }
         {
