@@ -36,6 +36,8 @@
         polymc = inputs.polymc.overlay;
       };
 
+      templates = import ./templates;
+
       # Reusable nixos modules you might want to export
       # These are usually stuff you would upstream into nixpkgs
       nixosModules = import ./modules/nixos;
