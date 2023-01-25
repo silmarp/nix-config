@@ -2,6 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/master";
     flake-utils.url = "github:numtide/flake-utils";
+    # TODO Change to using dream2nix, mach-nix is now unmantained
     mach-nix.url = "mach-nix/3.5.0";
   };
 
