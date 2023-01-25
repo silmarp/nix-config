@@ -21,6 +21,7 @@
       wl-clipboard
       bitwarden-cli
       rnix-lsp
+      nodePackages.bash-language-server
       polymc # change to another (prism)
       gimp
       helix
