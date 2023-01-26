@@ -45,6 +45,9 @@
       bitwarden
       emacs
       ferdium
+      (tor-browser-bundle-bin.override {
+        useHardenedMalloc = false;
+       })
   ];
 
   home.sessionVariables = {
