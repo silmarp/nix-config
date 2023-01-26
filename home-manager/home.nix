@@ -9,6 +9,7 @@
   imports = [ 
     ./taskwarrior.nix
     ./neovim
+    ./sway
   ];
 
   nixpkgs.config.allowUnfree = true;
