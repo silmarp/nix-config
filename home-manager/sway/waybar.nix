@@ -15,22 +15,14 @@
         output = [
           "eDP-1"
         ];
-        modules-left = [ "sway/workspaces" "sway/mode" "wlr/taskbar" ];
-        modules-center = [ "sway/window" "custom/hello-from-waybar" ];
+        modules-left = [ "sway/workspaces" "sway/mode" "sway/window" ];
+        modules-center = [ "clock" ];
         modules-right = [ "network" "battery" ];
 
         "sway/workspaces" = {
           disable-scroll = true;
           all-outputs = true;
          };
-        "custom/hello-from-waybar" = {
-          format = "hello {}";
-          max-length = 40;
-          interval = "once";
-          exec = pkgs.writeShellScript "hello-from-waybar" ''
-            echo "from within waybar"
-          '';
-        };
         network = {
           interface = "wlp1s0";
           format = "{ifname}";
