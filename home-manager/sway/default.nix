@@ -1,9 +1,14 @@
 { lib, pkgs, config, ... }: 
 
 {
+  imports = [
+    ./waybar.nix
+  ];
+
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
+    systemdIntegration = true;
     config={
       modifier = "Mod4";
       terminal = "alacritty";
@@ -23,15 +28,9 @@
       TODO: config startup
       startup = [];
       */
-      #TODO: config bar with status
-      bars = [
-        {
-          position = "top";
-        }
-      ];
-      #TODO config keybinds
-
-      
+      # Using waybar
+      bars = [];
+      # TODO config keybinds
     };
   };
 
