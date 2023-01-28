@@ -15,14 +15,33 @@
         output = [
           "eDP-1"
         ];
-        modules-left = [ "sway/workspaces" "sway/mode" "sway/window" ];
+        modules-left = [ "sway/workspaces" "sway/mode" ];
         modules-center = [ "clock" ];
         modules-right = [ "network" "battery" ];
 
         "sway/workspaces" = {
           disable-scroll = true;
           all-outputs = true;
-         };
+        };
+        clock = {
+          format = "{:%A, %d de %B de %Y - %R}";
+          tooltip-format = "<tt><small>{calendar}</small></tt>";
+          # TODO: config calendar and on-click open gui calendar app
+          calendar = {
+            mode           = "year";
+            mode-mon-col   = 3;
+            weeks-pos      = "right";
+            on-scroll      = 1;
+            on-click-right = "mode";
+            format = {
+              months =     "<span color='#ffead3'><b>{}</b></span>";
+              days =       "<span color='#ecc6d9'><b>{}</b></span>";
+              weeks =      "<span color='#99ffdd'><b>W{}</b></span>";
+              weekdays =   "<span color='#ffcc66'><b>{}</b></span>";
+              today =      "<span color='#ff6699'><b><u>{}</u></b></span>";
+            };
+          };
+        };
         network = {
           interface = "wlp1s0";
           format = "{ifname}";
