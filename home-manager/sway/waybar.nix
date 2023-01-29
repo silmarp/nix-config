@@ -17,7 +17,7 @@
         ];
         modules-left = [ "sway/workspaces" "sway/mode" ];
         modules-center = [ "clock" ];
-        modules-right = [ "network" "battery" ];
+        modules-right = [ "pulseaudio" "network" "battery" ];
 
         "sway/workspaces" = {
           disable-scroll = true;
@@ -42,6 +42,15 @@
             };
           };
         };
+        pulseaudio = {
+          format = "{volume}% {icon}";
+          format-muted = "";
+          # TODO turn packages in variables
+          on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
+          scroll-step = 1;
+          format-icons = ["" "" ""];
+        };
+        home.packages = with pkgs; [pavucontrol];
         network = {
           interface = "wlp1s0";
           format = "{ifname}";
