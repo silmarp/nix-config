@@ -52,10 +52,9 @@
         };
         home.packages = with pkgs; [pavucontrol];
         network = {
-          interface = "wlp1s0";
           format = "{ifname}";
           format-wifi = "{essid} ({signalStrength}%) ";
-          format-ethernet = "{ipaddr}/{cidr} ";
+          format-ethernet = "Ethernet ";
           format-disconnected = ""; #An empty format will hide the module.
           tooltip-format = "{ifname} via {gwaddr} ";
           tooltip-format-wifi = "{essid} ({signalStrength}%) ";
@@ -68,7 +67,7 @@
           interval = 60;
           states = {
               "warning"= 30;
-              "critical"= 15;
+              "critical"= 20;
           };
           format = "{capacity}% {icon}";
           format-icons = ["" "" "" "" ""];
