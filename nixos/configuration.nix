@@ -41,6 +41,11 @@
     keyMap = "br-abnt2";
   };
 
+  # Lid settings
+  services.logind ={
+    lidSwitch = "lock";
+    lidSwitchExternalPower = "lock";
+  };
   
   # Enable Wayland windowing system
   security.polkit.enable = true; #sway privileges suport
