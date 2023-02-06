@@ -3,6 +3,8 @@
 {
   imports = [
     ./waybar.nix
+    ./swayidle.nix
+    ./swaylock.nix
   ];
 
   wayland.windowManager.sway = {
@@ -11,11 +13,11 @@
     systemdIntegration = true;
     config={
       modifier = "Mod4";
+      menu = "dmenu_path | dmenu -b | xargs swaymsg exec";
       terminal = "alacritty";
       input = {
         "*" = {
           xkb_layout = "br";
-          xkb_variant = "abnt2";
         };
       };
       output = {

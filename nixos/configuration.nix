@@ -79,7 +79,9 @@
       pulse.enable = true;
       wireplumber.enable = true;
   };
-  
+
+  # TODO Move Pam to its own config
+  security.pam.services = { swaylock = { }; };
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
