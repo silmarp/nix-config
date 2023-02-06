@@ -30,6 +30,7 @@
       neomutt # email client
       feh # image viewer
       graphviz  # graph tool
+      nyxt # keyboard browser
       grim
       slurp
       haskellPackages.Monadoro
