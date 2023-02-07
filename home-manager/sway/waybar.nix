@@ -60,7 +60,7 @@
           tooltip-format-wifi = "{essid} ({signalStrength}%) ";
           tooltip-format-ethernet = "{ifname} ";
           tooltip-format-disconnected = "Disconnected";
-          # TODO: add on-click open wpa_supplicant_gui
+          on-click = "${pkgs.wpa_supplicant_gui}/bin/wpa_gui";
         };
         battery = {
           bat = "BAT0";
