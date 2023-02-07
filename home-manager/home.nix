@@ -14,6 +14,8 @@
 
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
+      # TODO move wpa to its own module
+      wpa_supplicant_gui
       htop
       firefox
       librewolf-wayland
