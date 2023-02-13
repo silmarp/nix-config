@@ -49,6 +49,8 @@
     lidSwitch = "lock";
     lidSwitchExternalPower = "lock";
   };
+
+  powerManagement.powertop.enable = true;
   
   # Enable Wayland windowing system
   security.polkit.enable = true; #sway privileges suport
