@@ -33,6 +33,7 @@
       feh # image viewer
       graphviz  # graph tool
       nyxt # keyboard browser
+      rssguard # RSS feed reader
       grim
       slurp
       haskellPackages.Monadoro
