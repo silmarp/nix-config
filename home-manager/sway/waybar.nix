@@ -7,6 +7,10 @@
       enable = true;
       target = "sway-session.target";
     };
+    /*
+    TODO styling of waybar
+    style = "";
+    */
     settings = {
       mainBar = {
         layer = "top";
@@ -17,7 +21,7 @@
         ];
         modules-left = [ "sway/workspaces" "sway/mode" ];
         modules-center = [ "clock" ];
-        modules-right = [ "pulseaudio" "network" "battery" ];
+        modules-right = [ "backlight" "pulseaudio" "network" "battery" ];
 
         "sway/workspaces" = {
           disable-scroll = true;
@@ -42,6 +46,13 @@
             };
           };
         };
+        backlight= {
+          device= "amdgpu_bl0";
+          format= "{percent}% {icon}";
+          format-icons= ["" ""];
+          on-scroll-up = "${pkgs.brightnessctl}/bin/brightnessctl s 5%+";
+          on-scroll-down = "${pkgs.brightnessctl}/bin/brightnessctl s 5%-";
+        };
         pulseaudio = {
           format = "{volume}% {icon}";
           format-muted = "";
@@ -50,7 +61,6 @@
           scroll-step = 1;
           format-icons = ["" "" ""];
         };
-        home.packages = with pkgs; [pavucontrol];
         network = {
           format = "{ifname}";
           format-wifi = "{essid} ({signalStrength}%) ";
