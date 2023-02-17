@@ -15,6 +15,7 @@
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
       # TODO move wpa to its own module
+      zsnes # TODO remove or move to games section
       htop
       firefox
       librewolf-wayland

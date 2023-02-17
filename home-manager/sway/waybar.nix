@@ -65,7 +65,7 @@
           format = "{ifname}";
           format-wifi = "{essid} ({signalStrength}%) ";
           format-ethernet = "Ethernet ";
-          format-disconnected = ""; #An empty format will hide the module.
+          format-disconnected = "No Signal"; #An empty format will hide the module.
           tooltip-format = "{ifname} via {gwaddr} ";
           tooltip-format-wifi = "{essid} ({signalStrength}%) ";
           tooltip-format-ethernet = "{ifname} ";
