@@ -3,11 +3,12 @@
     enable = true;
     colorTheme = "solarized-dark-256";
     config = {
-      report.next.columns=[ "id" "start.age" "entry.age" "depends" "priority" "effort" "project" "tags" "recur" "scheduled.countdown" "due.relative" "until.remaining" "description" "urgency" ];
-      report.next.labels=[ "ID" "Active" "Age" "Deps" "Prio" "Effort" "Project" "Tag" "Recur" "S" "Due" "Until" "Description" "Urg" ];
+      report.next.columns=[ "id" "start.age" "entry.age" "depends" "priority" "project" "tags" "recur" "scheduled.countdown" "due.relative" "until.remaining" "description" "urgency" ];
+      report.next.labels=[ "ID" "Active" "Age" "Deps" "Prio" "Project" "Tag" "Recur" "S" "Due" "Until" "Description" "Urg" ];
       report.next.filter="status:pending -WAITING limit:8";
 
       # Contexts
+      # TODO refactor contexts
       context.academic.read="+academic or +college or +study";
       context.academic.write="+academic";
 
@@ -24,13 +25,7 @@
     dataLocation = "/home/silmar/.task";
 
     extraConfig ="
-      # uda.effort
-      uda.effort.type=string 
-      uda.effort.label=Effort
-      uda.effort.default=L
-      uda.effort.values=H,M,L
-
-      #priority coefficient
+      # priority coefficient
       urgency.uda.priority.H.coefficient=8.0
       urgency.uda.priority.M.coefficient=5.0
       urgency.uda.priority.L.coefficient=1.0
@@ -40,6 +35,12 @@
       urgency.user.tag.college.coefficient=8.0
       urgency.user.tag.work.coefficient=5.0
       urgency.user.tag.personal.coefficient=1.0
+
+      # custom report completed today
+      report.review.description=List of completed tasks today
+      report.review.columns=project,description.count
+      report.review.labels=Proj,Desc
+      report.review.filter=end:today status:completed
     ";
   };
 }
