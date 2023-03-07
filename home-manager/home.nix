@@ -55,10 +55,6 @@
        })
   ];
 
-  home.sessionVariables = {
-      BW_SESSION = "zHhTz2HsbSh2QpTkkDJuqtc1WQte68fuq0WyScijLIkD5y5kjnBGiWeFL77LOn6v8fI7jRL9nsq+ohKkRM9i1Q==";
-  };
-
   programs.git = {
     enable = true;
     diff-so-fancy.enable = true;
