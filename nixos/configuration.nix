@@ -54,8 +54,8 @@
 
   # Lid settings
   services.logind ={
-    lidSwitch = "lock";
-    lidSwitchExternalPower = "lock";
+    lidSwitch = "suspend";
+    lidSwitchExternalPower = "suspend";
   };
 
   powerManagement.powertop.enable = true;
