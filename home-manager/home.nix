@@ -53,6 +53,8 @@
       (tor-browser-bundle-bin.override {
         useHardenedMalloc = false;
        })
+      gnome.pomodoro
+      element-desktop
   ];
 
   programs.git = {
