@@ -5,7 +5,6 @@
     config = {
       report.next.columns=[ "id" "start.age" "entry.age" "depends" "priority" "project" "tags" "recur" "scheduled.countdown" "due.relative" "until.remaining" "description" "urgency" ];
       report.next.labels=[ "ID" "Active" "Age" "Deps" "Prio" "Project" "Tag" "Recur" "S" "Due" "Until" "Description" "Urg" ];
-      report.next.filter="status:pending -WAITING limit:8";
 
       # Contexts
       # TODO refactor contexts
