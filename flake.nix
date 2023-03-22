@@ -86,7 +86,7 @@
             extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
             modules = (builtins.attrValues homeManagerModules) ++ [
               # > Our main home-manager configuration file <
-              ./home-manager/home.nix
+              ./home/home.nix
             ];
           };
       };
