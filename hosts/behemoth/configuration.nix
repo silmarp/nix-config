@@ -31,7 +31,6 @@
         psk = "DUMMYDUMMY";
       };
     };
-
     # imperative networks
     allowAuxiliaryImperativeNetworks = true;
     userControlled.enable = true;
@@ -39,6 +38,11 @@
       update_config=1
     '';
   };
+
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
+
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
