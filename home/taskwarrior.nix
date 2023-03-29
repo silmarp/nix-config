@@ -17,8 +17,6 @@
       context.personal.read="+personal";
       context.personal.write="+personal";
 
-      context.free.read="+free or +games";
-      context.free.write="+free";
     };
 
     dataLocation = "/home/silmar/.task";
