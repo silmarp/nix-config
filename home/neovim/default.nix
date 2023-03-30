@@ -18,6 +18,7 @@ in
   imports = [
     ./lsp.nix
     ./vimwiki.nix
+    ./tree.nix
   ];
   home.sessionVariables.EDITOR = "nvim";
 
