@@ -41,7 +41,7 @@
       zathura
       spotifyd
       spotify-tui
-      (callPackage ./kabmat{})
+      kabmat
       taskwarrior-tui
       steam
       lutris

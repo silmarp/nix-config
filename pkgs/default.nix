@@ -2,4 +2,5 @@
 # These are similar to nixpkgs packages
 { pkgs }: {
   # example = pkgs.callPackage ./example { };
+  kabmat = pkgs.callPackage ./kabmat { };
 }
