@@ -69,18 +69,18 @@
       );
 
       nixosConfigurations = {
-        behemoth = nixpkgs.lib.nixosSystem {
+        pyrolusite = nixpkgs.lib.nixosSystem {
           pkgs = legacyPackages.x86_64-linux;
           specialArgs = { inherit inputs; }; # Pass flake inputs to our config
           modules = (builtins.attrValues nixosModules) ++ [
             # > Our main nixos configuration file <
-            ./hosts/behemoth/configuration.nix
+            ./hosts/pyrolusite/configuration.nix
           ];
         };
       };
 
       homeConfigurations = {
-        "silmar@behemoth" =
+        "silmar@pyrolusite" =
           home-manager.lib.homeManagerConfiguration {
             pkgs = legacyPackages.x86_64-linux;
             extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
