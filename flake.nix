@@ -77,6 +77,14 @@
             ./hosts/pyrolusite/configuration.nix
           ];
         };
+	rutile = nixpkgs.lib.nixosSystem {
+          pkgs = legacyPackages.x86_64-linux;
+          specialArgs = { inherit inputs; }; # Pass flake inputs to our config
+          modules = (builtins.attrValues nixosModules) ++ [
+            # > Our main nixos configuration file <
+            ./hosts/rutile/configuration.nix
+          ];
+        };
       };
 
       homeConfigurations = {
@@ -88,7 +96,17 @@
               # > Our main home-manager configuration file <
               ./home/home.nix
             ];
-          };
+        };
+#      TODO do home config to rutile
+#      "silmar@rutile" =
+#        home-manager.lib.homeManagerConfiguration {
+#          pkgs = legacyPackages.x86_64-linux;
+#          extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
+#          modules = (builtins.attrValues homeManagerModules) ++ [
+#            # > Our main home-manager configuration file <
+#            ./home/home.nix
+#          ];
+#      };
       };
     };
 }
