@@ -94,19 +94,18 @@
             extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
             modules = (builtins.attrValues homeManagerModules) ++ [
               # > Our main home-manager configuration file <
-              ./home/home.nix
+              ./home/pyrolusite.nix
             ];
         };
-#      TODO do home config to rutile
-#      "silmar@rutile" =
-#        home-manager.lib.homeManagerConfiguration {
-#          pkgs = legacyPackages.x86_64-linux;
-#          extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
-#          modules = (builtins.attrValues homeManagerModules) ++ [
-#            # > Our main home-manager configuration file <
-#            ./home/home.nix
-#          ];
-#      };
+        "silmar@rutile" =
+          home-manager.lib.homeManagerConfiguration {
+            pkgs = legacyPackages.x86_64-linux;
+            extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
+            modules = (builtins.attrValues homeManagerModules) ++ [
+              # > Our main home-manager configuration file <
+              ./home/rutile.nix
+            ];
+        };
       };
     };
 }

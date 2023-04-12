@@ -90,9 +90,7 @@
     packages = with pkgs; [
       firefox
       kate
-      neovim
       git
-      bitwarden
     #  thunderbird
     ];
   };
