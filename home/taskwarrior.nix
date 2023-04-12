@@ -1,4 +1,10 @@
+{ config, pkgs, ... }:
+
 {
+  home.packages = with pkgs; [
+    tasksh
+  ];
+
   programs.taskwarrior = {
     enable = true;
     colorTheme = "solarized-dark-256";
