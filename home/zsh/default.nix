@@ -22,6 +22,7 @@
     shellAliases = {
       ls="ls --color";
 	    grep="grep --color";
+      nd="nix develop -c $SHELL";
     };
     localVariables = {
       EDITOR = "nvim";
