@@ -17,7 +17,7 @@
       # TODO move wpa to its own module
       zsnes # TODO remove or move to games section
       htop
-      firefox
+      firefox-wayland
       librewolf-wayland
       qutebrowser
       discord
