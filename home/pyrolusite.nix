@@ -10,6 +10,7 @@
     ./taskwarrior
     ./neovim
     ./sway
+    ./zsh
   ];
 
   nixpkgs.config.allowUnfree = true;

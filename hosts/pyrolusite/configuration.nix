@@ -159,32 +159,13 @@
     alsa-lib
     virt-manager
   ];
+  environment.pathsToLink = [ "/share/zsh" ];
 
   fonts.fonts = with pkgs; [
     nerdfonts
     font-awesome
   ];
 
-  programs.zsh = {
-      enable = true;
-      shellInit = "
-          bindkey -v
-	  HISTSIZE=500
-	  \. \"$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh\"
-      ";
-      shellAliases = {
-          ls="ls --color";
-	  grep="grep --color";
-      };
-
-  };
-  programs.starship = {
-      enable = true;
-      settings = {
-          format = "$all";
-	  add_newline = false;
-      };
-  };
   users.defaultUserShell = pkgs.zsh;
 
   # Enable virtualisation
