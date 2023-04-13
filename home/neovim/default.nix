@@ -25,6 +25,7 @@ in
   programs.neovim = {
     enable = true;
     viAlias = true;
+    defaultEditor = true;
 
     extraConfig = ''
 lua << EOF

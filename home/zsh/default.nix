@@ -23,5 +23,8 @@
       ls="ls --color";
 	    grep="grep --color";
     };
+    localVariables = {
+      EDITOR = "nvim";
+    };
   };
 }
