@@ -7,7 +7,7 @@
   home.homeDirectory = "/home/silmar";
 
   imports = [ 
-    ./taskwarrior.nix
+    ./taskwarrior
     ./neovim
     ./sway
   ];
