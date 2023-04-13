@@ -21,7 +21,7 @@
         ];
         modules-left = [ "sway/workspaces" "sway/mode" ];
         modules-center = [ "clock" ];
-        modules-right = [ "backlight" "pulseaudio" "network" "battery" ];
+        modules-right = [ "backlight" "pulseaudio" "bluetooth" "network" "battery" ];
 
         "sway/workspaces" = {
           disable-scroll = true;
@@ -82,8 +82,23 @@
           format = "{capacity}% {icon}";
           format-icons = ["" "" "" "" ""];
         };
+        bluetooth = {
+          format = " {status}";
+          # format-connected = " {device_alias}";
+          format-connected = " {device_alias} {device_battery_percentage}%";
+          interval = 60;
+          # format-connected-battery = " {device_alias} {device_battery_percentage}%";
+          format-disabled = " Disabled"; # an empty format will hide the module
+          # format-device-preference = [ "device1"; "device2" ], // preference list deciding the displayed device
+          tooltip-format = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
+          tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
+          tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
+          tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
+        };
       };
     };
+    # TODO make custom style for waybar
+    # style = '' '';
   };
 }
 
