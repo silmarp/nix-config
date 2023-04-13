@@ -10,8 +10,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    polymc.url = "github:polymc/polymc";
-    polymc.inputs.nixpkgs.follows = "nixpkgs";
 
     # TODO: Add any other flake you might need
 
@@ -33,7 +31,6 @@
       # Your custom packages and modifications
       overlays = {
         default = import ./overlay { inherit inputs; };
-        polymc = inputs.polymc.overlay;
       };
 
       templates = import ./templates;

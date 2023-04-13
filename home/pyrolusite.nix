@@ -26,7 +26,7 @@
       bitwarden-cli
       rnix-lsp
       nodePackages.bash-language-server
-      polymc # change to another (prism)
+      prismlauncher
       gimp
       helix
       calcurse
