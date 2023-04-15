@@ -87,6 +87,7 @@
           # format-connected = " {device_alias}";
           format-connected = " {device_alias} {device_battery_percentage}%";
           interval = 60;
+          on-click = "${pkgs.blueman}/bin/blueman-manager";
           # format-connected-battery = " {device_alias} {device_battery_percentage}%";
           format-disabled = " Disabled"; # an empty format will hide the module
           # format-device-preference = [ "device1"; "device2" ], // preference list deciding the displayed device
