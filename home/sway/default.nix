@@ -26,6 +26,10 @@
           bg = "~/Pictures/wallpaper.* fill";
         };
       };
+      gaps = {
+        inner = 5;
+        outer = 5;
+      };
       /*
       TODO: config startup
       startup = [];
