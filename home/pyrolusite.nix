@@ -11,6 +11,7 @@
     ./neovim
     ./sway
     ./zsh
+    ./alacritty
   ];
 
   nixpkgs.config.allowUnfree = true;
