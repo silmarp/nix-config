@@ -7,7 +7,7 @@
   home.homeDirectory = "/home/silmar";
 
   imports = [ 
-    ./neovim
+    ./features/neovim
   ];
 
   nixpkgs.config.allowUnfree = true;

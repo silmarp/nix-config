@@ -7,11 +7,11 @@
   home.homeDirectory = "/home/silmar";
 
   imports = [ 
-    ./taskwarrior
-    ./neovim
-    ./sway
-    ./zsh
-    ./alacritty
+    ./features/taskwarrior
+    ./features/neovim
+    ./features/sway
+    ./features/zsh
+    ./features/alacritty
   ];
 
   nixpkgs.config.allowUnfree = true;
