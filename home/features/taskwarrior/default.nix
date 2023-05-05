@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     tasksh
+    taskwarrior-tui
   ];
 
   programs.taskwarrior = {
