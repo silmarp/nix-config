@@ -7,15 +7,15 @@
       enable = true;
       target = "sway-session.target";
     };
-    /*
-    TODO styling of waybar
-    style = "";
-    */
     settings = {
       mainBar = {
         layer = "top";
         position = "top";
         height = 30;
+        margin-bottom = 0;
+        margin-top = 10;
+        margin-left = 5;
+        margin-right = 5;
         output = [
           "eDP-1"
         ];

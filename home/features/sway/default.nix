@@ -27,8 +27,7 @@
         };
       };
       gaps = {
-        inner = 5;
-        outer = 5;
+        inner = 10;
       };
       /*
       TODO: config startup
