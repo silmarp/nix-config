@@ -49,5 +49,6 @@
         useHardenedMalloc = false;
        })
       element-desktop
+      rage # encryption tool
   ];
 }
