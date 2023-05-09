@@ -2,19 +2,21 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/master";
     flake-utils.url = "github:numtide/flake-utils";
-    # TODO Change to using dream2nix, mach-nix is now unmantained
-    mach-nix.url = "mach-nix/3.5.0";
+    # TODO Use a declarative way in the future
   };
 
-  outputs = {self, nixpkgs, flake-utils, mach-nix }@inp:
+  outputs = {self, nixpkgs, flake-utils }@inp:
   flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
 
-        pythonEnv = mach-nix.lib.${system}.mkPython {
-          python = "python310";
-          requirements = builtins.readFile ./requirements.txt;
-        };
+        python = with pkgs; [
+          python310
+          python310Packages.pip
+          python310Packages.virtualenv
+        ];
+
+        # TODO Remove LSP from shell
         devPkgs = with pkgs; [
           nodePackages.pyright
         ];
@@ -22,7 +24,7 @@
       {
         devShell = pkgs.mkShell {
           nativeBuildInputs = [
-            pythonEnv
+            python
             devPkgs
           ];
         };
