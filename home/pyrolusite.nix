@@ -50,5 +50,6 @@
        })
       element-desktop
       rage # encryption tool
+      zk # Note taking/ knowledge management app
   ];
 }
