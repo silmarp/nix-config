@@ -8,7 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../common/greetd.nix
+      ../common/global
+      ../common/optional/greetd.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
