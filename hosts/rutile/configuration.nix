@@ -49,6 +49,9 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Set lid switch behavior as ignore
+  services.logind.lidSwitch = "ignore";
+
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -75,10 +78,7 @@
     description = "Silmar";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
-      kate
       git
-    #  thunderbird
     ];
   };
 
