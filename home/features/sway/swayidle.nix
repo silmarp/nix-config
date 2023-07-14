@@ -8,6 +8,13 @@
     ];
     timeouts = [
       { timeout = 500; command = "${pkgs.swaylock}/bin/swaylock -fFi ~/Pictures/wallpaper.* fill"; }
+
+      { 
+        timeout = 600;
+        command = "${pkgs.sway}/bin/swaymsg 'output * dpms off'";
+        resumeCommand = "${pkgs.sway}/bin/swaymsg 'output * dpms on'";
+      }
+
     ];
   };
 }
