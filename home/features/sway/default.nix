@@ -43,7 +43,6 @@
       */
       # Using waybar
       bars = [];
-      floating.border = 10;
     };
   };
 }
