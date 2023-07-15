@@ -13,6 +13,7 @@
     wrapperFeatures.gtk = true;
     systemdIntegration = true;
     config={
+      defaultWorkspace = "1";
       modifier = "Mod4";
       menu = "${pkgs.dmenu}/bin/dmenu_path | ${pkgs.dmenu}/bin/dmenu -b | xargs swaymsg exec";
       terminal = "${pkgs.alacritty}/bin/alacritty";
@@ -29,13 +30,20 @@
       };
       gaps = {
         inner = 10;
+        smartBorders = "on";
+        smartGaps = true;
       };
+      window = {
+        border = 4;
+      };
+      
       /*
       TODO: config startup
       startup = [];
       */
       # Using waybar
       bars = [];
+      floating.border = 10;
     };
   };
 }
