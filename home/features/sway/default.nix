@@ -13,7 +13,7 @@
     wrapperFeatures.gtk = true;
     systemdIntegration = true;
     config={
-      defaultWorkspace = "1";
+      defaultWorkspace = "workspace number 1";
       modifier = "Mod4";
       menu = "${pkgs.dmenu}/bin/dmenu_path | ${pkgs.dmenu}/bin/dmenu -b | xargs swaymsg exec";
       terminal = "${pkgs.alacritty}/bin/alacritty";
