@@ -94,7 +94,7 @@
           -- Use a loop to conveniently call 'setup' on multiple servers and
           -- map buffer local keybindings when the language server attaches.
           -- Add your language server below:
-          local servers = { 'pyright', 'clangd', 'html', 'cssls', 'jsonls', 'nil_ls', 'texlab', 'rust_analyzer', 'sqls', 'eslint', }
+          local servers = { 'pyright', 'clangd', 'html', 'cssls', 'jsonls', 'nil_ls', 'texlab', 'rust_analyzer', 'sqlls', 'eslint', }
 
           -- Call setup
           for _, lsp in ipairs(servers) do
