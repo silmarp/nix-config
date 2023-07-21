@@ -115,9 +115,9 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+      jack.enable = true;
       wireplumber.enable = true;
   };
-
   # TODO Move Pam to its own config
   security.pam.services = { swaylock = { }; };
   # Enable touchpad support (enabled default in most desktopManager).
