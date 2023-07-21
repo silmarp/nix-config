@@ -4,10 +4,10 @@
   services.swayidle = {
     enable = true;
     events = [
-      { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -fFi ~/Pictures/wallpaper.* fill"; }
+      { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -fFi ~/Pictures/wallpaper.*"; }
     ];
     timeouts = [
-      { timeout = 500; command = "${pkgs.swaylock}/bin/swaylock -fFi ~/Pictures/wallpaper.* fill"; }
+      { timeout = 500; command = "${pkgs.swaylock}/bin/swaylock -fFi ~/Pictures/wallpaper.*"; }
 
       { 
         timeout = 600;

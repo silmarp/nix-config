@@ -98,7 +98,7 @@
       "XF86MonBrightnessUp" = "exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl s 5%+";
       "XF86MonBrightnessDown" = "exec --no-startup-id ${pkgs.brightnessctl}/bin/brightnessctl s 5%-";
 
-      "${modifier}+F10" = "exec ${pkgs.swaylock}/bin/swaylock -fFi ~/Pictures/wallpaper.* fill";
+      "${modifier}+F10" = "exec ${pkgs.swaylock}/bin/swaylock -fFi ~/Pictures/wallpaper.*";
 
       # TODO use grimshot instead
 
