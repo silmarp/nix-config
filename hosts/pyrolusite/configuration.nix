@@ -135,6 +135,8 @@
     ]; 
   };
 
+  users.defaultUserShell = pkgs.zsh;
+  programs.zsh.enable = true; # TODO move common global
 
   services.dbus.enable = true;
   xdg.portal = {
@@ -146,15 +148,7 @@
   };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    glib
-    wget
-    luakit
-    alsa-tools
-    alsa-utils
-    alsa-lib
-    virt-manager
-  ];
+  # environment.systemPackages = with pkgs; [];
   environment.pathsToLink = [ "/share/zsh" ];
 
   fonts.fonts = with pkgs; [
@@ -162,7 +156,6 @@
     font-awesome
   ];
 
-  users.defaultUserShell = pkgs.zsh;
 
   # Enable virtualisation
   virtualisation.libvirtd.enable = true;

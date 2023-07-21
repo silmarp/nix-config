@@ -14,35 +14,35 @@
   ];
 
   home.packages = with pkgs; [
-      # TODO move wpa to its own module
-      zsnes # TODO remove or move to games section
+      # TODO remove or move to games section  
+      # -------
+      zsnes 
+      osu-lazer
+      wine
+      steam
+      prismlauncher
+      lutris
+      # -------
       htop
-      firefox-wayland
+      firefox-wayland # TODO make config
       qutebrowser
       discord
-      wl-clipboard
+      wl-clipboard # TODO move to sway/wayland config
+
       rnix-lsp
       nodePackages.bash-language-server
-      prismlauncher
+
       gimp
-      helix
+      helix # TODO make config
       calcurse
       neomutt # email client
       feh # image viewer
-      graphviz  # graph tool
-      nyxt # keyboard browser
       rssguard # RSS feed reader
-      grim
-      slurp
       zellij
-      zathura
+      zathura # TODO make config
       spotifyd
       spotify-tui
       kabmat
-      steam
-      lutris
-      wine
-      osu-lazer
       bitwarden
       ferdium
       (tor-browser-bundle-bin.override {
