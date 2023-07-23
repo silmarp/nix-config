@@ -22,6 +22,7 @@
 
   # networking.hostName = "nixos"; # Define your hostname.
   networking.hostName = "pyrolusite";
+  networking.nameservers = [ "1.1.1.1" "9.9.9.9" ];
   # Pick only one of the below networking options.
   networking.wireless = {
     enable = true;  # Enables wireless support via wpa_supplicant.
