@@ -172,6 +172,13 @@ EOF
             vim.keymap.set('n', '<leader>th', builtin.help_tags, {})
           '';
         }
+        {
+          plugin = nvim-colorizer-lua;
+          type = "lua";
+          config = /*lua*/''
+            require 'colorizer'.setup()
+          '';
+        }
       ];
     };
     /*telescope dependencie*/
