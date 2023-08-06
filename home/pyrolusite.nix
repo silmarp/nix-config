@@ -16,7 +16,7 @@
   home.packages = with pkgs; [
       # TODO remove or move to games section  
       # -------
-      zsnes 
+      zsnes2 
       osu-lazer
       wine
       steam
