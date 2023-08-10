@@ -57,5 +57,7 @@
       rage # encryption tool
       zk # Note taking/ knowledge management app
       libreoffice # Office suit
+
+      spotify
   ];
 }
