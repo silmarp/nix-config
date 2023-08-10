@@ -9,6 +9,7 @@
     ./features/taskwarrior
     ./features/neovim
     ./features/sway
+    ./features/mako # TODO Create wayland desktop move sway and mako to it
     ./features/zsh
     ./features/alacritty
   ];
