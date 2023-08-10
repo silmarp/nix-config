@@ -27,8 +27,7 @@ in
     viAlias = true;
     defaultEditor = true;
 
-    extraConfig = ''
-lua << EOF
+    extraLuaConfig = ''
 -----------------------------------------------------------
 -- General Neovim settings and configuration
 -----------------------------------------------------------
@@ -145,7 +144,6 @@ autocmd('Filetype', {
   pattern = { 'markdown', 'tex'},
   command = 'set spell spelllang=pt,en'
 })
-EOF
       '';
 
       plugins = with pkgs.vimPlugins; [
