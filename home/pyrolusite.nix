@@ -8,8 +8,12 @@
 
     ./features/taskwarrior
     ./features/neovim
+
+    # TODO move to wayland desktop folder
     ./features/sway
-    ./features/mako # TODO Create wayland desktop move sway and mako to it
+    ./features/mako 
+    ./features/wofi
+
     ./features/zsh
     ./features/alacritty
   ];
