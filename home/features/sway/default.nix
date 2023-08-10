@@ -12,10 +12,10 @@
     enable = true;
     wrapperFeatures.gtk = true;
     systemd.enable = true;
-    config={
+    config = {
       defaultWorkspace = "workspace number 1";
       modifier = "Mod4";
-      menu = "${pkgs.dmenu}/bin/dmenu_path | ${pkgs.dmenu}/bin/dmenu -b | xargs swaymsg exec";
+      menu = "${pkgs.wofi}/bin/wofi -S drun";
       terminal = "${pkgs.alacritty}/bin/alacritty";
       input = {
         "*" = {
