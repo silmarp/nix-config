@@ -38,6 +38,14 @@
           require 'colorizer'.setup()
         '';
       }
+
+      {
+        plugin = which-key-nvim;
+        type = "lua";
+        config = /*lua*/ ''
+          require('which-key').setup() {}
+        '';
+      }
     ];
   };
 }
