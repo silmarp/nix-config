@@ -19,6 +19,7 @@ in
     ./lsp.nix
     ./vimwiki.nix
     ./tree.nix
+    ./ui.nix
   ];
   home.sessionVariables.EDITOR = "nvim";
 
@@ -42,21 +43,6 @@ in
       opt.clipboard = 'unnamedplus'         -- Copy/paste to system clipboard
       opt.swapfile = false                  -- Don't use swapfile
       opt.completeopt = 'menuone,noinsert,noselect'  -- Autocomplete options
-
-      -----------------------------------------------------------
-      -- Neovim UI
-      -----------------------------------------------------------
-      opt.number = true           -- Show line number
-      opt.showmatch = true        -- Highlight matching parenthesis
-      opt.foldmethod = 'marker'   -- Enable folding (default 'foldmarker')
-      opt.splitright = true       -- Vertical split to the right
-      opt.splitbelow = true       -- Horizontal split to the bottom
-      opt.ignorecase = true       -- Ignore case letters when search
-      opt.smartcase = true        -- Ignore lowercase for the whole pattern
-      opt.linebreak = true        -- Wrap on word boundary
-      opt.termguicolors = true    -- Enable 24-bit RGB colors
-      opt.laststatus=3            -- Set global statusline
-      opt.relativenumber = true   -- Relative number lines
 
       -----------------------------------------------------------
       -- Tabs, indent
@@ -149,17 +135,6 @@ in
     plugins = with pkgs.vimPlugins; [
       vim-table-mode
       {
-        plugin = nvim-treesitter.withAllGrammars;
-        type = "lua";
-        config = ''
-          require('nvim-treesitter.configs').setup {
-            highlight = {
-              enable = true,
-            }
-          }
-        '';
-      }
-      {
         plugin = telescope-nvim;
         type = "lua";
         config = /*lua*/ ''
@@ -168,13 +143,6 @@ in
           vim.keymap.set('n', '<leader>tg', builtin.live_grep, {})
           vim.keymap.set('n', '<leader>tb', builtin.buffers, {})
           vim.keymap.set('n', '<leader>th', builtin.help_tags, {})
-        '';
-      }
-      {
-        plugin = nvim-colorizer-lua;
-        type = "lua";
-        config = /*lua*/''
-          require 'colorizer'.setup()
         '';
       }
     ];
