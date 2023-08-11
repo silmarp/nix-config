@@ -62,12 +62,6 @@ in
       opt.updatetime = 700        -- ms to wait for trigger an event
 
       -----------------------------------------------------------
-      -- Colorscheme
-      -----------------------------------------------------------
-      vim.cmd([[ colorscheme slate ]])
-      vim.cmd([[ highlight Normal guibg=none ]])
-
-      -----------------------------------------------------------
       -- Neovim shortcuts
       -----------------------------------------------------------
       vim.g.mapleader = ' '

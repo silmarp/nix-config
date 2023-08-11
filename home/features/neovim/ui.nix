@@ -16,6 +16,11 @@
       opt.termguicolors = true    -- Enable 24-bit RGB colors
       opt.laststatus=3            -- Set global statusline
       opt.relativenumber = true   -- Relative number lines
+
+      vim.cmd([[ colorscheme slate ]])
+      vim.cmd([[ highlight Normal guibg=none ]])
+
+
     '';
 
     plugins = with pkgs.vimPlugins; [
