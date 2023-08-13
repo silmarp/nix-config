@@ -9,14 +9,14 @@
 
   services.greetd = {
     enable = true;
-    settings = rec {
-      initial_session = {
-        command = "${pkgs.cage}/bin/cage -s -- ${pkgs.greetd.regreet}/bin/regreet -l debug";
+    settings = {
+      default_session = {
+        command = "${pkgs.cage}/bin/cage -s -- ${pkgs.greetd.gtkgreet}/bin/gtkgreet -c sway";
         user = "greeter";
       };
-      default_session = initial_session;
     };
   };
+  /*
   programs.regreet = {
     enable = true;
     settings = {
@@ -26,4 +26,5 @@
       };
     };
   };
+  */
 }
