@@ -10,6 +10,8 @@
       ./hardware-configuration.nix
       ../common/global
       ../common/optional/greetd.nix
+
+      ../common/users/silmar
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -123,20 +125,6 @@
   security.pam.services = { swaylock = { }; };
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.silmar = {
-    isNormalUser = true;
-    extraGroups = [
-      "wheel" # Enable ‘sudo’ for the user.
-      "video" # Enable changing video settings
-      "input"
-      "docker"
-      "libvirtd"
-    ]; 
-  };
-
-  users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true; # TODO move common global
 
   services.dbus.enable = true;

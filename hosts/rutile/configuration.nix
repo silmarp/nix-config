@@ -9,6 +9,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../common/global
+
+      ../common/users/silmar
     ];
 
   # Bootloader.
@@ -71,16 +73,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.silmar = {
-    isNormalUser = true;
-    description = "Silmar";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      git
-    ];
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
