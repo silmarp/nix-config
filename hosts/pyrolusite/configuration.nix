@@ -125,7 +125,6 @@
   security.pam.services = { swaylock = { }; };
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-  programs.zsh.enable = true; # TODO move common global
 
   services.dbus.enable = true;
   xdg.portal = {
