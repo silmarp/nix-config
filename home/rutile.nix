@@ -5,6 +5,7 @@
     ./global
 
     ./features/neovim
+    ./features/zsh
   ];
 
   home.packages = with pkgs; [
