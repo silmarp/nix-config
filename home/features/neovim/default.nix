@@ -21,7 +21,8 @@ in
     ./tree.nix
     ./ui.nix
   ];
-  home.sessionVariables.EDITOR = "nvim";
+
+  # home.sessionVariables.EDITOR = "nvim"; deprecated
 
   programs.neovim = {
     enable = true;
