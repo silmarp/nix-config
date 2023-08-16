@@ -16,18 +16,11 @@
 
     ./features/zsh
     ./features/alacritty
+
+    ./features/games
   ];
 
   home.packages = with pkgs; [
-      # TODO remove or move to games section  
-      # -------
-      zsnes2 
-      osu-lazer
-      wine
-      steam
-      prismlauncher
-      lutris
-      # -------
       htop
       firefox-wayland # TODO make config
       qutebrowser
