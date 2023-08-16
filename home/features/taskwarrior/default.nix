@@ -33,6 +33,8 @@
       urgency.uda.priority.H.coefficient=8.0
       urgency.uda.priority.M.coefficient=5.0
       urgency.uda.priority.L.coefficient=1.0
+
+      urgency.inherit=on
  
       # project priority
       urgency.user.tag.urgent.coefficient=40.0 #tasks wich leads to more tasks 
