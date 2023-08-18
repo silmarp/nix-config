@@ -1,10 +1,15 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    tasksh
-    taskwarrior-tui
-  ];
+  home = {
+    packages = with pkgs; [
+      tasksh
+      taskwarrior-tui
+    ];
+    shellAliases = {
+      "t" = "task";
+    };
+  };
 
   programs.taskwarrior = {
     enable = true;
@@ -34,6 +39,7 @@
       urgency.uda.priority.M.coefficient=5.0
       urgency.uda.priority.L.coefficient=1.0
 
+      # tasks with dependents inherit their priority
       urgency.inherit=on
  
       # project priority
