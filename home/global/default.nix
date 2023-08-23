@@ -1,8 +1,8 @@
-{ inputs, lib, pkgs, config, outputs, nix-colors, ... }:
+{ inputs, lib, pkgs, config, outputs, ... }:
 
 {
   imports = [
-    nix-colors.homeManagerModule.default
+    inputs.nix-colors.homeManagerModule
   ];
 
   home = { 
@@ -20,7 +20,7 @@
     stateVersion = "22.05";
   };
 
-  colorScheme = lib.mkDefault nix-colors.colorSchemes.tokyo-night;
+  colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-dark;
 
   nixpkgs.config.allowUnfree = true;
 
