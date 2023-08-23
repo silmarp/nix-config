@@ -20,7 +20,7 @@
     stateVersion = "22.05";
   };
 
-  colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-dark;
+  colorScheme = lib.mkDefault inputs.nix-colors.colorSchemes.tokyo-night-dark;
 
   nixpkgs.config.allowUnfree = true;
 
