@@ -18,6 +18,8 @@
     ./features/alacritty
 
     ./features/games
+
+    ./features/common/gtk.nix
   ];
 
   home.packages = with pkgs; [
