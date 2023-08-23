@@ -1,6 +1,10 @@
-{ inputs, lib, pkgs, config, outputs, ... }:
+{ inputs, lib, pkgs, config, outputs, nix-colors, ... }:
 
 {
+  imports = [
+    nix-colors.homeManagerModule.default
+  ];
+
   home = { 
     username = "silmar";
     homeDirectory = "/home/silmar";
@@ -16,6 +20,7 @@
     stateVersion = "22.05";
   };
 
+  colorScheme = lib.mkDefault nix-colors.colorSchemes.tokyo-night;
 
   nixpkgs.config.allowUnfree = true;
 
