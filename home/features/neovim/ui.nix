@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{ inputs, config, pkgs, ... }:
+
+let
+  libContrib = inputs.nix-colors.lib-contrib { inherit pkgs;};
+  colorscheme = libContrib.vimThemeFromScheme { scheme = config.colorscheme; };
+in
 
 {
   programs.neovim = {
@@ -17,9 +22,7 @@
       opt.laststatus=3            -- Set global statusline
       opt.relativenumber = true   -- Relative number lines
 
-      vim.cmd([[ colorscheme slate ]])
-      vim.cmd([[ highlight Normal guibg=none ]])
-
+      vim.cmd("source ${colorscheme}/colors/nix-${config.colorscheme.slug}.vim")
 
     '';
 
