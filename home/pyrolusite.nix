@@ -18,6 +18,8 @@
     ./features/alacritty
 
     ./features/games
+
+    ./features/zk.nix
   ];
 
   home.packages = with pkgs; [
