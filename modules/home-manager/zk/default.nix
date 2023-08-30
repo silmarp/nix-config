@@ -6,7 +6,7 @@ let
 in
 
 {
-  options.progrmas.zk = {
+  options.programs.zk = {
     enable = lib.mkEnableOption "zk";
     
     package = lib.mkOption {
