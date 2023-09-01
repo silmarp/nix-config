@@ -10,7 +10,7 @@
     ./features/neovim
 
     # TODO move to wayland desktop folder
-    ./features/sway
+    ./features/desktop/sway
     ./features/mako 
     ./features/wofi
 

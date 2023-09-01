@@ -2,6 +2,7 @@
 
 {
   imports = [
+    
     ./keybinds.nix
     ./waybar.nix
     ./swayidle.nix
