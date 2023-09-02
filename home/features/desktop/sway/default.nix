@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../common
     
     ./keybinds.nix
     ./waybar.nix

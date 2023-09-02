@@ -25,8 +25,6 @@
 
   home.packages = with pkgs; [
       htop
-      firefox-wayland # TODO make config
-      qutebrowser
       discord
       wl-clipboard # TODO move to sway/wayland config
 
@@ -57,8 +55,6 @@
       zk # Note taking/ knowledge management app
       fzf # ZK needs fzf for some funcitons
       bat
-
-
 
       spotify
   ];
