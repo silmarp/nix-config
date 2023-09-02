@@ -19,7 +19,6 @@
 
     ./features/games
 
-    ./features/common/gtk.nix
     ./features/zk.nix
   ];
 
