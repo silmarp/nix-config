@@ -6,5 +6,6 @@
     ./browser/qutebrowser.nix
 
     ./gtk.nix
+    ./alacritty.nix
   ];
 }

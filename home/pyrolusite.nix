@@ -15,7 +15,6 @@
     ./features/wofi
 
     ./features/zsh
-    ./features/alacritty
 
     ./features/games
 
