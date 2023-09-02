@@ -19,10 +19,11 @@
     ./features/games
 
     ./features/zk.nix
+
+    ./features/cli
   ];
 
   home.packages = with pkgs; [
-      htop
       discord
       wl-clipboard # TODO move to sway/wayland config
 
@@ -35,7 +36,6 @@
       neomutt # email client
       feh # image viewer
       rssguard # RSS feed reader
-      zellij
       zathura # TODO make config
       spotifyd
       spotify-tui
