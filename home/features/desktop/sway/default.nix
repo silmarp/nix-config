@@ -3,6 +3,11 @@
 {
   imports = [
     ../common
+
+    # Notifications daemon
+    ../common/waylandWM/mako.nix
+    # Application Launcher and Menu
+    ../common/waylandWM/wofi.nix
     
     ./keybinds.nix
     ./waybar.nix

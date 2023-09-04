@@ -9,10 +9,7 @@
     ./features/taskwarrior
     ./features/neovim
 
-    # TODO move to wayland desktop folder
     ./features/desktop/sway
-    ./features/mako 
-    ./features/wofi
 
     ./features/zsh
 
