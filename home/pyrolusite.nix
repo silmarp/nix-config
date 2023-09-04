@@ -45,11 +45,6 @@
       rage # encryption tool
       libreoffice # Office suit
 
-
-      zk # Note taking/ knowledge management app
-      fzf # ZK needs fzf for some funcitons
-      bat
-
       spotify
   ];
 }

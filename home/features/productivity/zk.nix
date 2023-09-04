@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    fzf
+  ];
+
   config.programs.zk = {
     enable = true;
     settings = {
