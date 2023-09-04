@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
-  home.packages = with pkgs; [
+  config.home.packages = with pkgs; [
     fzf
   ];
 
