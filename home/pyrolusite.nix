@@ -6,7 +6,6 @@
   imports = [ 
     ./global
 
-    ./features/taskwarrior
     ./features/neovim
 
     ./features/desktop/sway
@@ -15,7 +14,7 @@
 
     ./features/games
 
-    ./features/zk.nix
+    ./features/productivity
 
     ./features/cli
   ];
