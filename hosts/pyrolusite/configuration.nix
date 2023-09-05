@@ -12,6 +12,7 @@
       ../common/optional/greetd.nix
 
       ../common/users/silmar
+      ../common/optional/wireless.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -26,23 +27,6 @@
   networking.hostName = "pyrolusite";
   networking.nameservers = [ "1.1.1.1" "9.9.9.9" ];
   # Pick only one of the below networking options.
-  networking.wireless = {
-    enable = true;  # Enables wireless support via wpa_supplicant.
-    fallbackToWPA2 = false;
-    # TODO add declarative networks with SOPs 
-    networks = { 
-      # TODO remove dummy network
-      "DUMMY" = { # Dummy network to prevent wpa_supplicant failing to restart
-        psk = "DUMMYDUMMY";
-      };
-    };
-    # imperative networks
-    allowAuxiliaryImperativeNetworks = true;
-    userControlled.enable = true;
-    extraConfig = ''
-      update_config=1
-    '';
-  };
 
   hardware.bluetooth = {
     enable = true;
