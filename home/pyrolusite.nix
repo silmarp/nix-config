@@ -10,8 +10,6 @@
 
     ./features/desktop/sway
 
-    ./features/zsh
-
     ./features/games
 
     ./features/productivity

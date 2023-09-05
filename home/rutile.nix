@@ -5,7 +5,6 @@
     ./global
 
     ./features/neovim
-    ./features/zsh
 
     ./features/cli
   ];
