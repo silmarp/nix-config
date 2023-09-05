@@ -38,11 +38,16 @@
       ferdium
       (tor-browser-bundle-bin.override {
         useHardenedMalloc = false;
-       })
+      })
       element-desktop
       rage # encryption tool
       libreoffice # Office suit
 
       spotify
+
+      # misc
+      ani-cli
+      manga-cli
+      mov-cli
   ];
 }
