@@ -4,15 +4,9 @@
   imports = [
     ../common
 
-    # Notifications daemon
-    ../common/waylandWM/mako.nix
-    # Application Launcher and Menu
-    ../common/waylandWM/wofi.nix
-    
+    ../common/waylandWM/default.nix
+
     ./keybinds.nix
-    ./waybar.nix
-    ./swayidle.nix
-    ./swaylock.nix
   ];
 
   wayland.windowManager.sway = {
