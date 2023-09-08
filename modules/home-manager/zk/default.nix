@@ -3,16 +3,15 @@
 let
   cfg = config.programs.zk;
   tomlFormat = pkgs.formats.toml { };
-in
 
-{
+in {
   options.programs.zk = {
     enable = lib.mkEnableOption "zk";
-    
+
     package = lib.mkOption {
       type = lib.types.package;
       default = pkgs.zk;
-      defaultText = lib.literalExpression "";
+      defaultText = lib.literalExpression "pkgs.zk";
       description = "The package to use for the zk binary";
     };
 
@@ -41,9 +40,9 @@ in
       '';
     };
   };
-  
+
   config = lib.mkIf cfg.enable {
-    xdg.configFile."zk/config.toml" = lib.mkIf (cfg.settings != {}) {
+    xdg.configFile."zk/config.toml" = lib.mkIf (cfg.settings != { }) {
       source = tomlFormat.generate "config.toml" cfg.settings;
     };
   };
