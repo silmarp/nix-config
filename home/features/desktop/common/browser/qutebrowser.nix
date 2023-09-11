@@ -12,5 +12,11 @@
         # ...
       };
     };
+    keyBindings = {
+      normal = {
+        "J" = "tab-prev";
+        "K" = "tab-next";
+      };
+    };
   };
 }
