@@ -42,6 +42,8 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    home.packages = [ cfg.package ];
+    
     xdg.configFile."zk/config.toml" = lib.mkIf (cfg.settings != { }) {
       source = tomlFormat.generate "config.toml" cfg.settings;
     };
