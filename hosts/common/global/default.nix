@@ -1,6 +1,7 @@
 { inputs, outputs, ... }: {
   imports = [
     ./tailscale.nix
+    ./openssh.nix
   ];
 
   nix = {

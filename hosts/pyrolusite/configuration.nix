@@ -143,9 +143,6 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
   # Enable docker
   virtualisation.docker.enable = true;
 
