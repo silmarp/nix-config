@@ -1,6 +1,8 @@
 { lib, pkgs, config, ... }: 
 
-{
+let
+  colors = config.colorScheme.colors;
+in{
   programs.waybar = {
     enable = true;
     systemd = {
@@ -98,8 +100,102 @@
         };
       };
     };
-    # TODO make custom style for waybar
-    # style = '' '';
+    style = ''
+        * {
+            border: none;
+            border-radius: 5;
+            font-family: Roboto, Helvetica, Arial, sans-serif;
+            font-size: 13px;
+            min-height: 0;
+        }
+
+        window#waybar {
+            background: #${colors.base00};
+            border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+            color: white;
+        }
+
+        tooltip {
+          background: rgba(43, 48, 59, 0.5);
+          border: 1px solid rgba(100, 114, 125, 0.5);
+        }
+        tooltip label {
+          color: white;
+        }
+
+        #workspaces button {
+            padding: 0 5px;
+            background: transparent;
+            color: white;
+            border-bottom: 3px solid transparent;
+        }
+
+        #workspaces button.focused {
+            background: #64727D;
+            border-bottom: 3px solid white;
+        }
+
+        #bluetooth,
+        #clock,
+        #battery,
+        #cpu,
+        #memory,
+        #disk,
+        #temperature,
+        #backlight,
+        #network,
+        #pulseaudio,
+        #wireplumber,
+        #custom-media,
+        #tray,
+        #mode,
+        #idle_inhibitor,
+        #scratchpad,
+        #mpd {
+            margin-right: 5px;
+            margin-left: 5px;
+            padding: 0 10px;
+            color: #${colors.base00};
+            background: #${colors.base0C};
+        }
+
+        #battery {
+            background-color: #ffffff;
+            color: black;
+        }
+
+        #battery.charging {
+            color: white;
+            background-color: #26A65B;
+        }
+
+        @keyframes blink {
+            to {
+                background-color: #ffffff;
+                color: black;
+            }
+        }
+
+        #battery.warning:not(.charging) {
+            background: #f53c3c;
+            color: white;
+            animation-name: blink;
+            animation-duration: 0.5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+
+        #pulseaudio.muted {
+            background-color: #90b1b1;
+            color: #2a5c45;
+        }
+
+        #network.disconnected {
+            background-color: red;
+        }
+    '';
   };
 }
 
