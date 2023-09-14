@@ -20,7 +20,6 @@
     syntaxHighlighting.enable = true;
     history.save = 500;
     shellAliases = {
-      ls="ls --color";
 	    grep="grep --color";
       nd="nix develop -c $SHELL";
     };
