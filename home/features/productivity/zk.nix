@@ -3,6 +3,7 @@
 {
   config.home.packages = with pkgs; [
     fzf
+    emanote
   ];
 
   config.programs.zk = {
@@ -10,7 +11,7 @@
     settings = {
 
       notebook ={
-        dir = "~/Documents/notebook";
+        dir = "~/Notes";
       };
 
       note = {
@@ -58,6 +59,7 @@
 
       format.markdown = {
         link-format = "markdown";
+        link-drop-extension = false;
       };
 
       tool = {
@@ -79,7 +81,10 @@
         recent = "zk edit --sort created- --created-after 'last two weeks' --interactive";
         lucky = "zk list --quiet --format full --sort random --limit 1";
         rm = ''zk list --interactive --quiet --format "{{abs-path}}" --delimiter0 $@ | xargs -0 rm -vf --'';
-        review = "zk edit inbox --sort created+ --interactive";
+        # TODO  solve problem incapable of using ${pkgs...}
+        # Permission denied
+        #serve = "${pkgs.emanote} run --port=8080";
+        serve = "emanote run --port=8080";
       };
 
       lsp = {
