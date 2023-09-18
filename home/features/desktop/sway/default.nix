@@ -38,12 +38,12 @@
         border = 4;
       };
       
-      /*
-      TODO: config startup
-      startup = [];
-      */
-      # Using waybar
       bars = [];
     };
+    # TODO use regex for selecting windows 
+    extraConfig = ''
+      set $opacity 0.9
+      for_window [app_id="Alacritty"] opacity $opacity
+    '';
   };
 }
