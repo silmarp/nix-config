@@ -23,6 +23,8 @@
         id-charset = "alphanum";
         id-length = 6;
         id-case = "lower";
+        exclude = [
+        ];
       };
 
       extra = {
@@ -48,13 +50,13 @@
         template = "inbox.md";
       };
 
-      group.structured = {
-        paths = ["structured"];
+      group.ideas = {
+        paths = ["ideas"];
       };
       
-      group.structured.note = {
-        filename = "{{title}}";
-        template = "structured.md";
+      group.ideas.note = {
+        filename = "{{format-date now}}-{{title}}";
+        template = "ideas.md";
       };
 
       format.markdown = {

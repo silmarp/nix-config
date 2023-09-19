@@ -43,10 +43,7 @@
       urgency.inherit=on
  
       # project priority
-      urgency.user.tag.urgent.coefficient=40.0 #tasks wich leads to more tasks 
-      urgency.user.tag.college.coefficient=8.0
-      urgency.user.tag.work.coefficient=5.0
-      urgency.user.tag.personal.coefficient=1.0
+      urgency.user.tag.urgent.coefficient=40.0 
 
       # custom report completed today
       report.review.description=List of completed tasks today
