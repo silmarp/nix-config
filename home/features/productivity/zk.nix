@@ -11,7 +11,7 @@
     settings = {
 
       notebook ={
-        dir = "~/Notes";
+        dir = "~/Notes/zettel";
       };
 
       note = {

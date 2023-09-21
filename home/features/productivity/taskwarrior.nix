@@ -19,16 +19,24 @@
       report.next.labels=[ "ID" "Active" "Age" "Deps" "Prio" "Project" "Tag" "Recur" "S" "Due" "Until" "Description" "Urg" ];
 
       # Contexts
-      # TODO refactor contexts
-      context.academic.read="+academic or +college or +study";
-      context.academic.write="+academic";
-
-      context.work.read="+work or +freelance or +internship";
-      context.work.write="+work";
-
-      context.personal.read="+personal";
-      context.personal.write="+personal";
-
+      context = {
+        academic = {
+          read  = "+academic or +college or +study";
+          write = "+academic";
+        };
+        work = {
+          read  = "+work or +freelance or +internship";
+          write = "+work";
+        };
+        personal = {
+          read  = "+personal";
+          write = "+personal";
+        };
+        hobby = {
+          read  = "+hobby";
+          write = "+hobby";
+        };
+      };
     };
 
     dataLocation = "/home/silmar/.task";
