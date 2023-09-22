@@ -16,9 +16,12 @@
       
       "networkmanager"
     ]; 
+
+    openssh.authorizedKeys.keys = [ (builtins.readFile ../../../../home/ssh.pub) ];
   };
 
   users.defaultUserShell = pkgs.zsh;
 
   programs.zsh.enable = true;
+
 }
