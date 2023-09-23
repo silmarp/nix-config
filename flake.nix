@@ -70,12 +70,20 @@
             ./hosts/pyrolusite/configuration.nix
           ];
         };
-	rutile = nixpkgs.lib.nixosSystem {
+	      rutile = nixpkgs.lib.nixosSystem {
           pkgs = legacyPackages.x86_64-linux;
           specialArgs = { inherit inputs; }; # Pass flake inputs to our config
           modules = (builtins.attrValues nixosModules) ++ [
             # > Our main nixos configuration file <
             ./hosts/rutile/configuration.nix
+          ];
+        };
+        limonite = nixpkgs.lib.nixosSystem {
+          pkgs = legacyPackages.x86_64-linux;
+          specialArgs = { inherit inputs; }; # Pass flake inputs to our config
+          modules = (builtins.attrValues nixosModules) ++ [
+            # > Our main nixos configuration file <
+            ./hosts/limonite/configuration.nix
           ];
         };
       };
@@ -97,6 +105,15 @@
             modules = (builtins.attrValues homeManagerModules) ++ [
               # > Our main home-manager configuration file <
               ./home/rutile.nix
+            ];
+        };
+        "silmar@limonite" =
+          home-manager.lib.homeManagerConfiguration {
+            pkgs = legacyPackages.x86_64-linux;
+            extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
+            modules = (builtins.attrValues homeManagerModules) ++ [
+              # > Our main home-manager configuration file <
+              ./home/limonite.nix
             ];
         };
       };
