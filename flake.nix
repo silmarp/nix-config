@@ -79,7 +79,7 @@
           ];
         };
         limonite = nixpkgs.lib.nixosSystem {
-          pkgs = legacyPackages.x86_64-linux;
+          pkgs = legacyPackages.aarch64-linux;
           specialArgs = { inherit inputs; }; # Pass flake inputs to our config
           modules = (builtins.attrValues nixosModules) ++ [
             # > Our main nixos configuration file <
@@ -109,7 +109,7 @@
         };
         "silmar@limonite" =
           home-manager.lib.homeManagerConfiguration {
-            pkgs = legacyPackages.x86_64-linux;
+            pkgs = legacyPackages.aarch64-linux;
             extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
             modules = (builtins.attrValues homeManagerModules) ++ [
               # > Our main home-manager configuration file <
