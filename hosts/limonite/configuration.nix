@@ -19,15 +19,6 @@
 
   networking.hostName = "limonite"; # Define your hostname.
 
-  # Temporary, for initial setup
-  users = { 
-    mutableUsers = false;
-    users.root = {
-      password = "root";
-      openssh.authorizedKeys.keys = [ (builtins.readFile ../../home/ssh.pub) ];
-    };
-  };
-
   system.stateVersion = "23.05"; # Did you read the comment?
 }
 
