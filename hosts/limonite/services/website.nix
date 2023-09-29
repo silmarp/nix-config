@@ -9,9 +9,8 @@ in
 services.nginx.virtualHosts = {
     "silmarp.dev" = {
       default = true;
-      #TODO enable options bellow
-      #forceSSL = true;
-      #enableACME = true;
+      forceSSL = true;
+      enableACME = true;
       locations = {
         "/" = {
           root = "${website}/";
