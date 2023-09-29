@@ -12,6 +12,12 @@
 
     # Nix-colors
     nix-colors.url = "github:misterio77/nix-colors";
+
+    # Site
+    website = {
+      url = "github:silmarp/site";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
