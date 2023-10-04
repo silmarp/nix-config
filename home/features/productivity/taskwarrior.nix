@@ -55,9 +55,9 @@
 
       # custom report completed today
       report.review.description=List of completed tasks today
-      report.review.columns=project,description.count
-      report.review.labels=Proj,Desc
-      report.review.filter=end:today status:completed
+      report.review.columns=project,description.count,status
+      report.review.labels=Proj,Desc,Status
+      report.review.filter=end:today (status:completed or status:deleted)
     ";
   };
 }
