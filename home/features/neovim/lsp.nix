@@ -165,15 +165,5 @@
         '';
       }
     ];
-
-    # LSP Packages
-    extraPackages = with pkgs;[
-      nil
-      nodePackages.pyright
-      rust-analyzer
-      
-      # CSSLS ESlint html jsonls
-      nodePackages.vscode-langservers-extracted
-    ];
   };
 }
