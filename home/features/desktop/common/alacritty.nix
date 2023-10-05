@@ -2,8 +2,18 @@
 
 let
   colors = config.colorScheme.colors;
+
+  alacritty-xterm = pkgs.writeShellScriptBin "xterm" ''
+    ${config.programs.alacritty.package}/bin/alacritty $@
+  '';
 in
 {
+  home = {
+    packages = [ alacritty-xterm ];
+    sessionVariables = {
+      TERMINAL = "alacritty";
+    };
+  };
   programs.alacritty = {
     enable = true;
     settings = {
