@@ -45,9 +45,7 @@
 
       spotify
 
-      # misc
-      ani-cli
-      manga-cli
-      mov-cli
+      thunderbird
+
   ];
 }
