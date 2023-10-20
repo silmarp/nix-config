@@ -1,14 +1,20 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, lib, ... }:
 
 let
   libContrib = inputs.nix-colors.lib-contrib { inherit pkgs;};
   colorscheme = libContrib.vimThemeFromScheme { scheme = config.colorscheme; };
+  my-nvim-treesitter = pkgs.vimPlugins.nvim-treesitter.withAllGrammars.overrideAttrs (oldAttrs: {
+    src = pkgs.fetchFromGitHub {
+      inherit (oldAttrs.src) owner repo;
+      rev = "49e71322db582147ce8f4df1853d9dab08da0826";
+      hash = "sha256-i7/YKin/AuUgzKvGgAzNTEGXlrejtucJacFXh8t/uFs=";
+    };
+  });
 in
 
 {
   programs.neovim = {
-    extraLuaConfig = ''
-
+    extraLuaConfig = /* lua */ ''
       local opt = vim.opt   -- Set options (global/buffer/windows-scoped)
       opt.number = true           -- Show line number
       opt.showmatch = true        -- Highlight matching parenthesis
@@ -28,17 +34,17 @@ in
 
     plugins = with pkgs.vimPlugins; [
       {
-        plugin = nvim-treesitter.withAllGrammars;
+        plugin = my-nvim-treesitter;
         type = "lua";
-        config = ''
+        config = /* lua */ ''
           require('nvim-treesitter.configs').setup {
             highlight = {
               enable = true,
+              additional_vim_regex_highlighting = false,
             }
           }
         '';
       }
-
       {
         plugin = nvim-colorizer-lua;
         type = "lua";
