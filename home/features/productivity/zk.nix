@@ -3,7 +3,8 @@
 {
   config.home.packages = with pkgs; [
     fzf
-    emanote
+    # TODO: heist is broken?
+    # emanote
   ];
 
   config.programs.zk = {
@@ -86,7 +87,7 @@
         # TODO  solve problem incapable of using ${pkgs...}
         # Permission denied
         #serve = "${pkgs.emanote} run --port=8080";
-        serve = "emanote run --port=8080";
+        # serve = "emanote run --port=8080";
       };
 
       lsp = {

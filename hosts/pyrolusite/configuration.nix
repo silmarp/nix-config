@@ -19,8 +19,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Allow use of unfree software
-  nixpkgs.config.allowUnfree = true;
   hardware.enableAllFirmware = true;
 
   # networking.hostName = "nixos"; # Define your hostname.
@@ -123,7 +121,7 @@
   # environment.systemPackages = with pkgs; [];
   environment.pathsToLink = [ "/share/zsh" ];
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     nerdfonts
     font-awesome
   ];

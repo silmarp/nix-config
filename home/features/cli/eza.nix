@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  programs.exa = {
+  programs.eza = {
     enable = true;
     #package = pkgs.eza;
     enableAliases = true;

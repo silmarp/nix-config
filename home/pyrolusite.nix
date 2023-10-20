@@ -36,9 +36,7 @@
       kabmat
       bitwarden
       ferdium
-      (tor-browser-bundle-bin.override {
-        useHardenedMalloc = false;
-      })
+      tor-browser-bundle-bin
       element-desktop
       rage # encryption tool
       libreoffice # Office suit

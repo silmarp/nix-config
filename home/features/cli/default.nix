@@ -4,7 +4,7 @@
   imports = [
     ./zsh.nix
     ./gpg.nix
-    ./exa.nix
+    ./eza.nix
   ];
 
   home.packages = with pkgs; [

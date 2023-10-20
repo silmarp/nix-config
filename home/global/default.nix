@@ -22,8 +22,6 @@
 
   colorScheme = lib.mkDefault inputs.nix-colors.colorSchemes.tokyo-night-dark;
 
-  nixpkgs.config.allowUnfree = true;
-
   programs.git = {
     enable = true;
     diff-so-fancy.enable = true;
