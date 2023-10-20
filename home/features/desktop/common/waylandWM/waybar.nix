@@ -78,8 +78,8 @@ in{
           bat = "BAT0";
           interval = 60;
           states = {
-              "warning"= 30;
-              "critical"= 20;
+              "warning"= 20;
+              "critical"= 5;
           };
           format = "{capacity}% {icon}";
           format-icons = ["" "" "" "" ""];
