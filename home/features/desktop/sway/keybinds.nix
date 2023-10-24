@@ -103,6 +103,6 @@
       # TODO use grimshot instead
 
       "Print" = "exec --no-startup-id ${pkgs.grim}/bin/grim";
-      "${modifier}+Shift+s" = "exec --no-startup-id ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\" ~/Pictures/final.jpeg";
+      "${modifier}+Shift+s" = "exec --no-startup-id ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\"";
   };
 }
