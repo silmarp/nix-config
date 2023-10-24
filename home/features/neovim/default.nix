@@ -140,6 +140,13 @@ in
           vim.keymap.set('n', '<leader>th', builtin.help_tags, {})
         '';
       }
+      {
+        plugin = nvim-surround;
+        type = "lua";
+        config = /* lua */''
+          require("nvim-surround").setup()
+        '';
+      }
     ];
   };
   /*telescope dependencie*/
