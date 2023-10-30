@@ -5,6 +5,7 @@
     packages = with pkgs; [
       tasksh
       taskwarrior-tui
+      taskopen
     ];
     shellAliases = {
       "t" = "task";
@@ -15,8 +16,47 @@
     enable = true;
     colorTheme = "solarized-dark-256";
     config = {
-      report.next.columns=[ "id" "start.age" "entry.age" "depends" "priority" "project" "tags" "recur" "scheduled.countdown" "due.relative" "until.remaining" "description" "urgency" ];
-      report.next.labels=[ "ID" "Active" "Age" "Deps" "Prio" "Project" "Tag" "Recur" "S" "Due" "Until" "Description" "Urg" ];
+      # Defautl taskwarrior report
+      report = {
+        today = {
+          columns=[ "id" "start.age" "entry.age" "depends" "priority" "project" "tags" "recur" "scheduled.countdown" "due.relative" "until.remaining" "description" "urgency" ];
+          labels=[ "ID" "Active" "Age" "Deps" "Prio" "Project" "Tag" "Recur" "S" "Due" "Until" "Description" "Urg" ];
+          filter ="\+today status:pending -WAITING limit:page";
+        };
+
+        # Report tasks for the week
+        week = {
+          columns=[ "id" "start.age" "entry.age" "depends" "priority" "project" "tags" "recur" "scheduled.countdown" "due.relative" "until.remaining" "description" "urgency" ];
+          labels=[ "ID" "Active" "Age" "Deps" "Prio" "Project" "Tag" "Recur" "S" "Due" "Until" "Description" "Urg" ];
+          filter ="\+week status:pending -WAITING limit:page";
+        };
+
+        backlog = {
+          columns=[ "id" "start.age" "entry.age" "depends" "priority" "project" "tags" "recur" "scheduled.countdown" "due.relative" "until.remaining" "description" "urgency" ];
+          labels=[ "ID" "Active" "Age" "Deps" "Prio" "Project" "Tag" "Recur" "S" "Due" "Until" "Description" "Urg" ];
+          filter ="\+backlog status:pending -WAITING limit:page";
+        };
+
+        someday = {
+          columns=[ "id" "start.age" "entry.age" "depends" "priority" "project" "tags" "recur" "scheduled.countdown" "due.relative" "until.remaining" "description" "urgency" ];
+          labels=[ "ID" "Active" "Age" "Deps" "Prio" "Project" "Tag" "Recur" "S" "Due" "Until" "Description" "Urg" ];
+          filter ="\+someday status:pending -WAITING limit:page";
+        };
+
+        todo = {
+          columns=[ "id" "start.age" "entry.age" "depends" "priority" "project" "tags" "recur" "scheduled.countdown" "due.relative" "until.remaining" "description" "urgency" ];
+          labels=[ "ID" "Active" "Age" "Deps" "Prio" "Project" "Tag" "Recur" "S" "Due" "Until" "Description" "Urg" ];
+          filter ="\+todo status:pending -WAITING limit:page";
+        };
+
+        # custom report completed today
+        review = {
+          description="List of completed tasks today";
+          columns="project,description.count,status";
+          labels="Proj,Desc,Status";
+          filter="end:today (status:completed or status:deleted)";
+        };
+      };
 
       # Contexts
       context = {
@@ -52,12 +92,6 @@
  
       # project priority
       urgency.user.tag.urgent.coefficient=40.0 
-
-      # custom report completed today
-      report.review.description=List of completed tasks today
-      report.review.columns=project,description.count,status
-      report.review.labels=Proj,Desc,Status
-      report.review.filter=end:today (status:completed or status:deleted)
     ";
   };
 }
