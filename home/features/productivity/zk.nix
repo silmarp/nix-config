@@ -1,11 +1,17 @@
 { pkgs, config, ... }:
 
 {
+  # TODO when zk module is added to home-manager remove config.home.*
   config.home.packages = with pkgs; [
     fzf
     # TODO: heist is broken?
     # emanote
   ];
+  
+  config.home.sessionVariables = {
+    # Exports notebook path for zk-nvim use
+    ZK_NOTEBOOK_DIR = "${config.home.homeDirectory}/Notes/zettel/";
+  };
 
   config.programs.zk = {
     enable = true;
