@@ -18,6 +18,14 @@
     config = {
       # Defautl taskwarrior report
       report = {
+        next = {
+          columns=[ "id" "start.age" "entry.age" "depends" "priority" "project" "tags" "recur" "scheduled.countdown" "due.relative" "until.remaining" "description" "urgency" ];
+          labels=[ "ID" "Active" "Age" "Deps" "Prio" "Project" "Tag" "Recur" "S" "Due" "Until" "Description" "Urg" ];
+          filter ="status:pending -WAITING limit:page +next";
+          sort = "urgency-";
+        };
+
+
         today = {
           columns=[ "id" "start.age" "entry.age" "depends" "priority" "project" "tags" "recur" "scheduled.countdown" "due.relative" "until.remaining" "description" "urgency" ];
           labels=[ "ID" "Active" "Age" "Deps" "Prio" "Project" "Tag" "Recur" "S" "Due" "Until" "Description" "Urg" ];
