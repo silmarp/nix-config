@@ -1,8 +1,15 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
+let
+  #Temporary workaround for qutebroeser breaking nixpkgs issue 264668
+  qutePackage = (pkgs.qutebrowser.override {
+    enableVulkan = false;
+  });
+in
 {
   programs.qutebrowser = {
     enable = true;
+    package = qutePackage;
     settings = {
       colors = {
         # Becomes either 'dark' or 'light', based on your colors!
