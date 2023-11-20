@@ -1,11 +1,13 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # TODO make custom theme import here
+  /*
   users.extraUsers.greeter.packages = [
     pkgs.gnome.gnome-themes-extra
-    pkgs.materia-theme
+    pkgs.materia-theme # Fails to build
   ];
+  */
 
   services.greetd = {
     enable = true;
