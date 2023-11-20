@@ -9,6 +9,9 @@
     ];
     shellAliases = {
       "t" = "task";
+      "in" = "task add +in";
+      "inbox" = "task inbox";
+      "next" = "task +next";
     };
   };
 
@@ -19,30 +22,17 @@
       # Defautl taskwarrior report
       report = {
         next = {
-          columns=[ "id" "start.age" "entry.age" "depends" "priority" "project" "tags" "recur" "scheduled.countdown" "due.relative" "until.remaining" "description" "urgency" ];
-          labels=[ "ID" "Active" "Age" "Deps" "Prio" "Project" "Tag" "Recur" "S" "Due" "Until" "Description" "Urg" ];
-          filter ="status:pending -WAITING limit:page +next";
+          columns=[ "id" "start.age" "entry.age" "depends" "priority" "project" "tags" "recur" "scheduled.countdown" "due.relative" "until.remaining" "description" "brainpower" "estimate" "urgency" ];
+          labels=[ "ID" "Active" "Age" "Deps" "Prio" "Project" "Tag" "Recur" "S" "Due" "Until" "Description" "BP" "Estimate" "Urg" ];
+          filter ="status:pending -WAITING limit:page -in -someday";
           sort = "urgency-";
         };
 
-
-        today = {
-          columns=[ "id" "start.age" "entry.age" "depends" "priority" "project" "tags" "recur" "scheduled.countdown" "due.relative" "until.remaining" "description" "urgency" ];
-          labels=[ "ID" "Active" "Age" "Deps" "Prio" "Project" "Tag" "Recur" "S" "Due" "Until" "Description" "Urg" ];
-          filter ="\+today status:pending -WAITING limit:page";
-        };
-
-        # Report tasks for the week
-        week = {
-          columns=[ "id" "start.age" "entry.age" "depends" "priority" "project" "tags" "recur" "scheduled.countdown" "due.relative" "until.remaining" "description" "urgency" ];
-          labels=[ "ID" "Active" "Age" "Deps" "Prio" "Project" "Tag" "Recur" "S" "Due" "Until" "Description" "Urg" ];
-          filter ="\+week status:pending -WAITING limit:page";
-        };
-
-        backlog = {
-          columns=[ "id" "start.age" "entry.age" "depends" "priority" "project" "tags" "recur" "scheduled.countdown" "due.relative" "until.remaining" "description" "urgency" ];
-          labels=[ "ID" "Active" "Age" "Deps" "Prio" "Project" "Tag" "Recur" "S" "Due" "Until" "Description" "Urg" ];
-          filter ="\+backlog status:pending -WAITING limit:page";
+        inbox = {
+          columns=[ "id" "due.relative" "description" "urgency" ];
+          labels=[ "ID" "Due""Description" "Urg" ];
+          filter ="\+in status:pending -WAITING limit:page";
+          sort = "urgency-";
         };
 
         someday = {
@@ -54,7 +44,7 @@
         todo = {
           columns=[ "id" "start.age" "entry.age" "depends" "priority" "project" "tags" "recur" "scheduled.countdown" "due.relative" "until.remaining" "description" "urgency" ];
           labels=[ "ID" "Active" "Age" "Deps" "Prio" "Project" "Tag" "Recur" "S" "Due" "Until" "Description" "Urg" ];
-          filter ="\+todo status:pending -WAITING limit:page";
+          filter ="\+todo status:pending -WAITING limit:page -someday";
         };
 
         # custom report completed today
@@ -63,6 +53,18 @@
           columns="project,description.count,status";
           labels="Proj,Desc,Status";
           filter="end:today (status:completed or status:deleted)";
+        };
+      };
+
+      uda = {
+        estimate = {
+          type = "numeric";
+          label = "Estimate";
+        };
+        brainpower = {
+          type = "string";
+          label = "BrainPower";
+          values = "L,M,H";
         };
       };
 
