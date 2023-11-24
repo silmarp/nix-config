@@ -35,7 +35,6 @@
       spotify-tui
       kabmat
       bitwarden
-      ferdium
       tor-browser-bundle-bin
       element-desktop
       rage # encryption tool
