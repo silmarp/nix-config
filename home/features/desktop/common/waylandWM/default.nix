@@ -7,4 +7,7 @@
     ./swayidle.nix
     ./swaylock.nix
   ];
+  home.sessionVariables = {
+    MOZ_ENABLE_WAYLAND = 1;
+  };
 }
