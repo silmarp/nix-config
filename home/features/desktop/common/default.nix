@@ -6,5 +6,6 @@
 
     ./gtk.nix
     ./alacritty.nix
+    ./mpv.nix
   ];
 }
