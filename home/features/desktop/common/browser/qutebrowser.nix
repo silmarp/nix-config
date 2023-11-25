@@ -23,6 +23,7 @@ in
       normal = {
         "J" = "tab-prev";
         "K" = "tab-next";
+        "<Ctrl-Shift-f>" = "hint links spawn --verbose --userscript view_in_mpv {hint-url}";
       };
     };
   };
