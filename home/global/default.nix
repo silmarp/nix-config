@@ -22,11 +22,7 @@
 
   colorScheme = lib.mkDefault inputs.nix-colors.colorSchemes.tokyo-night-dark;
 
-  programs.git = {
-    enable = true;
-    diff-so-fancy.enable = true;
-  };
-
+  
   home.packages = with pkgs; [ nil ];
 
   # Let Home Manager install and manage itself.
