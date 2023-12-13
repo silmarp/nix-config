@@ -8,7 +8,5 @@
     steam
     prismlauncher
     lutris
-
-    mindustry
   ];
 }
