@@ -86,12 +86,6 @@
 
   environment.pathsToLink = [ "/share/zsh" ];
 
-  fonts.packages = with pkgs; [
-    nerdfonts
-    font-awesome
-  ];
-
-
   # Enable virtualisation
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;

@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs,  ... }:
 
 {
   imports = [
@@ -9,4 +9,8 @@
     ./alacritty.nix
     ./mpv.nix
   ];
+
+  # Add fonts TODO move to own config
+  fonts.fontconfig.enable = true;
+  home.packages = with pkgs; [nerdfonts noto-fonts];
 }
