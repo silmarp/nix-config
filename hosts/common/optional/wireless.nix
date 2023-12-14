@@ -19,4 +19,7 @@
       update_config=1
     '';
   };
+
+  #solves cannot open file error
+  systemd.services.wpa_supplicant.preStart = "touch /etc/wpa_supplicant.conf";
 }
