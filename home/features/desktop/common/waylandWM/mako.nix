@@ -9,7 +9,7 @@ in
     anchor = "top-right";
     layer = "top";
 
-    font = "monospace 10";
+    #font = "monospace 10";
     backgroundColor = "#${colors.base00}dd";
     borderColor = "#${colors.base03}dd";
     textColor = "#${colors.base05}dd";
