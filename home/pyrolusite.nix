@@ -19,20 +19,14 @@
 
   home.packages = with pkgs; [
       discord
-      wl-clipboard # TODO move to sway/wayland config
-
+      
       rnix-lsp
       nodePackages.bash-language-server
 
-      gimp
       helix # TODO make config
-      calcurse
-      neomutt # email client
-      feh # image viewer
+      feh # image viewer TODO make separate config
       rssguard # RSS feed reader
       zathura # TODO make config
-      spotifyd
-      spotify-tui
       kabmat
       bitwarden
       tor-browser-bundle-bin
@@ -41,8 +35,5 @@
       libreoffice # Office suit
 
       spotify
-
-      thunderbird
-
   ];
 }
