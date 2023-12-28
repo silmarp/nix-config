@@ -1,8 +1,17 @@
-{ inputs, outputs, ... }: {
+{ inputs, outputs, config, lib, ... }: {
   imports = [
     ./tailscale.nix
     ./openssh.nix
   ];
+
+  nixpkgs = {
+    overlays = [
+      outputs.overlays.default
+    ];
+    config = {
+      allowUnfree = true;
+    };
+  };
 
   nix = {
     settings = {
@@ -19,5 +28,14 @@
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
+    registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
+    nixPath = ["/etc/nix/path"];
   };
+  environment.etc =
+    lib.mapAttrs'
+    (name: value: {
+      name = "nix/path/${name}";
+      value.source = value.flake;
+    })
+    config.nix.registry;
 }

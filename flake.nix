@@ -16,8 +16,9 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
+      inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
         "aarch64-linux"
         "i686-linux"
@@ -47,22 +48,16 @@
 
       nixosConfigurations = {
         pyrolusite = nixpkgs.lib.nixosSystem {
-          pkgs = legacyPackages.x86_64-linux;
-          specialArgs = { inherit inputs; }; # Pass flake inputs to our config
-          modules = (builtins.attrValues nixosModules)
-            ++ [ ./hosts/pyrolusite/configuration.nix ];
+          specialArgs = { inherit inputs outputs; }; # Pass flake inputs to our config
+          modules = [ ./hosts/pyrolusite/configuration.nix ];
         };
         rutile = nixpkgs.lib.nixosSystem {
-          pkgs = legacyPackages.x86_64-linux;
-          specialArgs = { inherit inputs; }; # Pass flake inputs to our config
-          modules = (builtins.attrValues nixosModules)
-            ++ [ ./hosts/rutile/configuration.nix ];
+          specialArgs = { inherit inputs outputs; }; # Pass flake inputs to our config
+          modules = [ ./hosts/rutile/configuration.nix ];
         };
         limonite = nixpkgs.lib.nixosSystem {
-          pkgs = legacyPackages.aarch64-linux;
-          specialArgs = { inherit inputs; }; # Pass flake inputs to our config
-          modules = (builtins.attrValues nixosModules)
-            ++ [ ./hosts/limonite/configuration.nix ];
+          specialArgs = { inherit inputs outputs; }; # Pass flake inputs to our config
+          modules = [ ./hosts/limonite/configuration.nix ];
         };
       };
 
@@ -70,7 +65,7 @@
         "silmar@pyrolusite" = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages.x86_64-linux;
           extraSpecialArgs = {
-            inherit inputs;
+            inherit inputs outputs;
           }; # Pass flake inputs to our config
           modules = (builtins.attrValues homeManagerModules)
             ++ [ ./home/pyrolusite.nix ];
@@ -78,7 +73,7 @@
         "silmar@rutile" = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages.x86_64-linux;
           extraSpecialArgs = {
-            inherit inputs;
+            inherit inputs outputs;
           }; # Pass flake inputs to our config
           modules = (builtins.attrValues homeManagerModules)
             ++ [ ./home/rutile.nix ];
@@ -86,7 +81,7 @@
         "silmar@limonite" = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages.aarch64-linux;
           extraSpecialArgs = {
-            inherit inputs;
+            inherit inputs outputs;
           }; # Pass flake inputs to our config
           modules = (builtins.attrValues homeManagerModules)
             ++ [ ./home/limonite.nix ];
