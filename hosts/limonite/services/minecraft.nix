@@ -21,7 +21,7 @@
        */
     };
     whitelist = {
-      SwitchTM = "2db23871-6f00-4281-ac11-54a8f83be565";
+      SwitchSilver = "da246bf3-b644-42a2-bdd3-31e8a7f52bbc";
     };
   };
 }
