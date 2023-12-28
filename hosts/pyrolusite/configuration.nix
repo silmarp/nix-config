@@ -17,6 +17,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Allows cross compilation to arm hosts
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   hardware.enableAllFirmware = true;
 
   networking.hostName = "pyrolusite";
