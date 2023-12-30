@@ -8,6 +8,7 @@
     #dataDir = "path ?";
     declarative = true;
     eula = true; # required
+    #jvmOpts = "-Xms10G -Xmx10G"; # TODO add launcher options (memory etc)
     serverProperties = {
        server-port = 43000;
        /*
@@ -24,4 +25,6 @@
       SwitchSilver = "da246bf3-b644-42a2-bdd3-31e8a7f52bbc";
     };
   };
+
+  networking.firewall.allowedTCPPorts = [ 43000 ];
 }
