@@ -23,6 +23,7 @@
     };
     whitelist = {
       SwitchSilver = "da246bf3-b644-42a2-bdd3-31e8a7f52bbc";
+      Shigueto0 = "ca31a54d-3291-4df7-9f16-3105c6077a27";
     };
   };
 
