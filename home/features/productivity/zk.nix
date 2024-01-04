@@ -86,6 +86,10 @@
       };
 
       alias = {
+        "in" = "zk new inbox -t \"$@\"";
+        # Opens oldest inbox note for review
+        review = "zk edit inbox --sort created+ --limit 1 $@";
+        perm = "zk new -t \"$@\"";
         edlast = "zk edit --limit 1 --sort modified- $@";
         recent = "zk edit --sort created- --created-after 'last two weeks' --interactive";
         lucky = "zk list --quiet --format full --sort random --limit 1";
