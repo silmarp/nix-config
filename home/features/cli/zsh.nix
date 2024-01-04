@@ -1,18 +1,6 @@
 { lib, pkgs, config, ... }: 
 
 {
-
-  # TODO move starship to it's own flake
-  programs.starship = {
-      enable = true;
-      enableZshIntegration = true;
-
-      settings = {
-        format = "$all";
-	      add_newline = false;
-      };
-  };
-
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
