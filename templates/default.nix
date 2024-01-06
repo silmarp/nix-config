@@ -1,7 +1,7 @@
 {
-  python = {
+  python-venv = {
     description = "A simple python project template";
-    path = ./python;
+    path = ./python-venv;
   };
   rust = {
     description = "A simple rust project template using naersk";

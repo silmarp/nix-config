@@ -9,23 +9,15 @@
   flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
-
-        python = with pkgs; [
-          python310
-          python310Packages.pip
-          python310Packages.virtualenv
-        ];
-
-        # TODO Remove LSP from shell
-        devPkgs = with pkgs; [
-          nodePackages.pyright
-        ];
       in
       {
         devShell = pkgs.mkShell {
-          nativeBuildInputs = [
-            python
-            devPkgs
+          nativeBuildInputs = with pkgs; [
+            python310
+            python310Packages.pip
+            python310Packages.virtualenv
+
+            nodePackages.pyright
           ];
         };
       });
