@@ -133,11 +133,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1696012231,
-        "narHash": "sha256-ZWEOzDoRzI3m64nJj5d3GGITJ71GVJrtcMnlK9TufNM=",
+        "lastModified": 1704653577,
+        "narHash": "sha256-crklN2q5V/cSRJGSJFz4QYKO9wXMuvyLb5Bi9jrCJyg=",
         "owner": "silmarp",
         "repo": "site",
-        "rev": "bd91b6b86bbc75eaa5f9ca24e6c773a38b2008a3",
+        "rev": "c743f6fde13ea1d557202b18deef204ca5ea94b1",
         "type": "github"
       },
       "original": {
