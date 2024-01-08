@@ -1,10 +1,14 @@
-{ ... }:
+{ pkgs, ... }:
 
 let
-  nomifactory = builtins.fetchurl {
-    url = "https://www.curseforge.com/api/v1/mods/594351/files/4941627/download";
-    sha256 = "sha256:01xlrvadi246sg5gxrbpvz76rfyvk7cc8pa5y58h0mm8siplyql8";
-  };
+  nomifactory = (pkgs.minecraft-server.overrideAttrs (old: rec {
+    name = "minecraft-server-1.12.2";
+    version = "1.12.2";
+    src = builtins.fetchurl {
+      url = "https://www.curseforge.com/api/v1/mods/594351/files/4941627/download";
+      sha256 = "sha256:01xlrvadi246sg5gxrbpvz76rfyvk7cc8pa5y58h0mm8siplyql8";
+    };
+  }));
 in
 {
   services.minecraft-server = {
