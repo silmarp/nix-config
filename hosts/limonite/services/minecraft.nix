@@ -14,7 +14,7 @@ let
 
       cat > $out/bin/minecraft-server << EOF
       #!/bin/sh
-      exec ${pkgs.jre8}/bin/java \$@ -jar $out/lib/minecraft/minecraft_server.1.12.2.jar nogui
+      exec ${pkgs.jre8}/bin/java -server \$@ -Dlog4j.configurationFile=log4j2_112-116.xml -jar $out/lib/minecraft/forge-1.12.2-14.23.5.2860.jar nogui
       EOF
 
       chmod +x $out/bin/minecraft-server
@@ -31,16 +31,37 @@ in
     eula = true; # required
     jvmOpts = "-Xms10G -Xmx10G"; # TODO add launcher options (memory etc)
     serverProperties = {
-       server-port = 43000;
-       difficulty = 3;
-       gamemode = 1;
-       motd = "Silmar's GREG TECH Adventure";
-       /*
+      server-port = 43000;
+      difficulty = 3;
+      motd = "Silmar's GREG TECH Adventure";
+      op-permission-level = 4;
+      level-name = "world";
+      allow-flight = true;
+      prevent-proxy-connections = false;
+      max-world-size = 29999984;
+      network-compression-threshold = 256;
+      max-build-height = 256;
+      spawn-npcs = true;
+      spawn-animals = true;
+      hardcore = false;
+      snooper-enabled = true;
+      online-mode = true;
+      pvp = true;
+      enable-command-block = false;
+      gamemode = 0;
+      player-idle-timeout = 0;
+      max-players = 20;
+      spawn-monsters = true;
+      view-distance = 10;
+      generate-structures = true;
+      level-type = "lostcities";
+      /*
        max-players = 5;
        white-list = true;
        enable-rcon = true;
        "rcon.password" = "hunter2";
-       */
+      */
+
     };
     whitelist = {
       SwitchSilver = "da246bf3-b644-42a2-bdd3-31e8a7f52bbc";
