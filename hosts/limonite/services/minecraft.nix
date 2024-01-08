@@ -1,21 +1,27 @@
-{ pkgs, ... }:
+{ ... }:
 
+let
+  nomifactory = builtins.fetchurl {
+    url = "https://www.curseforge.com/api/v1/mods/594351/files/4941627/download";
+    sha256 = "sha256:01xlrvadi246sg5gxrbpvz76rfyvk7cc8pa5y58h0mm8siplyql8";
+  };
+in
 {
   services.minecraft-server = {
     enable = true;
-    # 1.20.2
-    package = pkgs.minecraft-server;
+    # Nomifactory GTCEU 1.7-alpha-2a
+    package = nomifactory;
     #dataDir = "path ?";
     declarative = true;
     eula = true; # required
-    #jvmOpts = "-Xms10G -Xmx10G"; # TODO add launcher options (memory etc)
+    jvmOpts = "-Xms10G -Xmx10G"; # TODO add launcher options (memory etc)
     serverProperties = {
        server-port = 43000;
-       /*
        difficulty = 3;
        gamemode = 1;
+       motd = "Silmar's GREG TECH Adventure";
+       /*
        max-players = 5;
-       motd = "NixOS Minecraft server!";
        white-list = true;
        enable-rcon = true;
        "rcon.password" = "hunter2";
