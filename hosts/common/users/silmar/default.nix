@@ -1,8 +1,9 @@
-{pkgs, ...}:
+{pkgs, config, ...}:
 
+let 
+  ifExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
+in
 {
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.silmar = {
     isNormalUser = true;
     shell = pkgs.zsh;
@@ -11,9 +12,10 @@
       "wheel" # Enable ‘sudo’ for the user.
       "video" # Enable changing video settings
       "input"
+    ] ++ ifExist [
+      "minecraft"
       "docker"
       "libvirtd"
-      
       "networkmanager"
     ]; 
 
