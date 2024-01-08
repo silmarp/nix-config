@@ -10,8 +10,7 @@ let
     };
     installPhase = ''
       mkdir -p $out/bin $out/lib/minecraft
-      cp -v $src $out/lib/minecraft/server.zip
-      ${pkgs.unzip}/bin/unzip $out/lib/minecraft/server.zip
+      ${pkgs.unzip}/bin/unzip $src -d $out/lib/minecraft/
 
       cat > $out/bin/minecraft-server << EOF
       #!/bin/sh
