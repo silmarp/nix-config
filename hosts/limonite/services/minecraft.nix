@@ -1,13 +1,25 @@
 { pkgs, ... }:
 
 let
-  nomifactory = (pkgs.minecraft-server.overrideAttrs (old: rec {
+  nomifactory = (pkgs.minecraft-server.overrideAttrs (old: {
     name = "minecraft-server-1.12.2";
     version = "1.12.2";
     src = builtins.fetchurl {
       url = "https://www.curseforge.com/api/v1/mods/594351/files/4941627/download";
       sha256 = "sha256:01xlrvadi246sg5gxrbpvz76rfyvk7cc8pa5y58h0mm8siplyql8";
     };
+    installPhase = ''
+      mkdir -p $out/bin $out/lib/minecraft
+      cp -v $src $out/lib/minecraft/server.zip
+      ${pkgs.unzip}/bin/unzip $out/lib/minecraft/server.zip
+
+      cat > $out/bin/minecraft-server << EOF
+      #!/bin/sh
+      exec ${pkgs.jre8}/bin/java \$@ -jar $out/lib/minecraft/minecraft_server.1.12.2.jar nogui
+      EOF
+
+      chmod +x $out/bin/minecraft-server
+    '';
   }));
 in
 {
