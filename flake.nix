@@ -14,6 +14,11 @@
       url = "github:silmarp/site";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    modded-minecraft = {
+      url = "github:mkaito/nixos-modded-minecraft-servers";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
