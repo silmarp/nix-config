@@ -1,16 +1,16 @@
 { pkgs, config, ... }:
 
+let
+  notebook = "${config.home.homeDirectory}/Notes/zettel/";
+in
 {
-  # TODO when zk module is added to home-manager remove config.home.*
   config.home.packages = with pkgs; [
     fzf
-    # TODO: heist is broken?
-    # emanote
   ];
   
   config.home.sessionVariables = {
     # Exports notebook path for zk-nvim use
-    ZK_NOTEBOOK_DIR = "${config.home.homeDirectory}/Notes/zettel/";
+    ZK_NOTEBOOK_DIR = "${notebook}";
   };
 
   config.programs.zk = {
@@ -18,7 +18,7 @@
     settings = {
 
       notebook ={
-        dir = "~/Notes/zettel";
+        dir = "${notebook}";
       };
 
       note = {
@@ -38,34 +38,32 @@
         author = "Silmar";
       };
 
-      group.journal = {
-        paths = ["journal" "journal/weekly" "journal/daily"];
-      };
+      groups = {
+        journal = {
+          paths = ["journal" "journal/weekly" "journal/daily"];
 
-      group.journal.note = {
-        filename = "{{format-date now}}";
-        template = "journal.md";
-      };
+          note = {
+            filename = "{{format-date now}}";
+            template = "journal.md";
+          };
+        };
 
-      # TODO review filenames and templates
-      group.inbox = {
-        paths = ["inbox"];
-      };
+        ideas = {
+          paths = ["ideas"];
+          note = {
+            filename = "{{id}}";
+            template = "ideas.md";
+          };
+        };
 
-      group.inbox.note = {
-        filename = "{{format-date now}}-{{id}}";
-        template = "inbox.md";
-      };
-
-      group.ideas = {
-        paths = ["ideas"];
+        reference = {
+          paths = ["reference"];
+          note = {
+            filename = "{{id}}";
+          };
+        };
       };
       
-      group.ideas.note = {
-        filename = "{{format-date now}}-{{title}}";
-        template = "ideas.md";
-      };
-
       format.markdown = {
         link-format = "markdown";
         link-drop-extension = false;
@@ -86,18 +84,19 @@
       };
 
       alias = {
-        "in" = "zk new inbox -t \"$@\"";
-        # Opens oldest inbox note for review
+        # Create notes
+        lit = "zk new reference --template=literature.md -t \"$@\"";
+        fleet = "zk new reference --template=fleeting.md -t \"$@\"";
+        perm = "zk new ideas --template=permanent.md -t \"$@\"";
+
+        # Open note to edit
         review = "zk edit inbox --sort created+ --limit 1 $@";
-        perm = "zk new -t \"$@\"";
         edlast = "zk edit --limit 1 --sort modified- $@";
         recent = "zk edit --sort created- --created-after 'last two weeks' --interactive";
+
+        # List note
         lucky = "zk list --quiet --format full --sort random --limit 1";
         rm = ''zk list --interactive --quiet --format "{{abs-path}}" --delimiter0 $@ | xargs -0 rm -vf --'';
-        # TODO  solve problem incapable of using ${pkgs...}
-        # Permission denied
-        #serve = "${pkgs.emanote} run --port=8080";
-        # serve = "emanote run --port=8080";
       };
 
       lsp = {
