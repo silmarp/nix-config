@@ -38,7 +38,7 @@ in
         author = "Silmar";
       };
 
-      groups = {
+      group = {
         journal = {
           paths = ["journal" "journal/weekly" "journal/daily"];
 
@@ -88,6 +88,7 @@ in
         lit = "zk new reference --template=literature.md -t \"$@\"";
         fleet = "zk new reference --template=fleeting.md -t \"$@\"";
         perm = "zk new ideas --template=permanent.md -t \"$@\"";
+        journal = "zk new journal/daily";
 
         # Open note to edit
         review = "zk edit inbox --sort created+ --limit 1 $@";
