@@ -41,7 +41,7 @@ in{
         ];
         modules-left = [ "sway/workspaces" "sway/mode" ];
         modules-center = [ "clock" ];
-        modules-right = [ "backlight" "pulseaudio" "bluetooth" "network" "battery" ];
+        modules-right = [ "tray" "backlight" "pulseaudio" "bluetooth" "network" "battery" ];
 
         "sway/workspaces" = {
           disable-scroll = true;
