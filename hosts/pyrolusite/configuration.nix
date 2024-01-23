@@ -75,7 +75,6 @@
       wireplumber.enable = true;
   };
   
-  # TODO Move Pam to its own config
   security.pam.services = { swaylock = { }; };
 
   services.dbus.enable = true;
