@@ -91,7 +91,7 @@ in
         journal = "zk new journal/daily";
 
         # Open note to edit
-        review = "zk edit inbox --sort created+ --limit 1 $@";
+        review = "zk edit -i --sort modified+ --limit 5 -t review $@";
         edlast = "zk edit --limit 1 --sort modified- $@";
         recent = "zk edit --sort created- --created-after 'last two weeks' --interactive";
 
