@@ -7,6 +7,7 @@
     ./eza.nix
     ./git.nix
     ./starship.nix
+    ./ssh.nix
   ];
 
   home.packages = with pkgs; [
