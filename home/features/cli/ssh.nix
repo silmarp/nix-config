@@ -9,8 +9,9 @@
       net = {
         host = "*";
         forwardAgent = true;
+        identityFile = "${config.home.homeDirectory}/.ssh/ssh";
       };
     };
-    addKeysToAgent = "ask";
+    addKeysToAgent = "5m";
   };
 }
