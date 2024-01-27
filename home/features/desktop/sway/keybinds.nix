@@ -42,6 +42,7 @@
       "${modifier}+v" = "splitv";
       "${modifier}+f" = "fullscreen toggle";
       "${modifier}+a" = "focus parent";
+      "${modifier}+z" = "focus child";
 
       "${modifier}+s" = "layout stacking";
       "${modifier}+w" = "layout tabbed";
