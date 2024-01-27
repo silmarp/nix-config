@@ -3,6 +3,7 @@
 {
   services.swayidle = {
     enable = true;
+    systemdTarget = "sway-session.target";
     events = [
       { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -fFi ~/Pictures/wallpaper.*"; }
     ];
