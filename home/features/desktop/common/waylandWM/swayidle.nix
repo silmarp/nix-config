@@ -5,10 +5,10 @@
     enable = true;
     systemdTarget = "sway-session.target";
     events = [
-      { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -fFi ~/Pictures/wallpaper.*"; }
+      { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -fFi ${config.wallpaper}"; }
     ];
     timeouts = [
-      { timeout = 500; command = "${pkgs.swaylock}/bin/swaylock -fFi ~/Pictures/wallpaper.*"; }
+      { timeout = 500; command = "${pkgs.swaylock}/bin/swaylock -fFi ${config.wallpaper}"; }
 
       { 
         timeout = 600;

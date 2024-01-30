@@ -1,12 +1,6 @@
-{ lib, pkgs, config, ... }: 
+{ pkgs, config, ... }: 
 
-let
-wallpaper = builtins.fetchurl {
-  url = "https://i.stack.imgur.com/cmoDG.jpg";
-  sha256 = "0f701igjzh8593if7z0hzx1aj7cy0c9i0vscs1pdcp16ibp2vy14";
-};
-
-in {
+{
   imports = [
     ../common
 
@@ -14,7 +8,7 @@ in {
 
     ./keybinds.nix
   ];
-
+  
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
@@ -32,7 +26,7 @@ in {
       output = {
         eDP-1 = {
           res = "1920x1080@60hz";
-          bg = "${wallpaper} fill";
+          bg = "${config.wallpaper} fill";
         };
       };
       gaps = {
