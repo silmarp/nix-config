@@ -10,6 +10,8 @@
 
     ./features/desktop/sway
 
+    ./features/desktop/hyprland
+
     ./features/games
 
     ./features/productivity
