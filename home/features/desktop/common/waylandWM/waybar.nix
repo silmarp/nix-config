@@ -25,7 +25,7 @@ in{
     enable = true;
     systemd = {
       enable = true;
-      target = "sway-session.target";
+      target = "hyprland-session.target";
     };
     settings = {
       mainBar = {
@@ -39,11 +39,11 @@ in{
         output = [
           "eDP-1"
         ];
-        modules-left = [ "sway/workspaces" "sway/mode" ];
+        modules-left = [ "hyprland/workspaces" "sway/mode" ];
         modules-center = [ "clock" ];
         modules-right = [ "tray" "backlight" "pulseaudio" "bluetooth" "network" "battery" ];
 
-        "sway/workspaces" = {
+        "hyprland/workspaces" = {
           disable-scroll = true;
           all-outputs = true;
         };
@@ -149,7 +149,7 @@ in{
             border-bottom: 3px solid transparent;
         }
 
-        #workspaces button.focused {
+        #workspaces button.active {
             background: #64727D;
             border-bottom: 3px solid white;
         }
