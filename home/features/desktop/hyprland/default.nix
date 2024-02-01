@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -9,7 +9,6 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      exec-once = "waybar";
       monitor = ",prefered,auto,auto";
 
       general = {
@@ -67,6 +66,8 @@
         "$mod SHIFT, 8, movetoworkspace, 8"
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
+
+        "$mod, F10, exec, ${pkgs.swaylock}/bin/swaylock -fFi ${config.wallpaper}"
       ];
     };
   };
