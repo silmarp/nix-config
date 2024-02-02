@@ -9,7 +9,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      monitor = ",prefered,auto,auto";
+      monitor = "eDP-1,1920x1080@60,0x0,1";
 
       general = {
         gaps_in = 5;
