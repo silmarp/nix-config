@@ -31,6 +31,11 @@
 
       "$mod" = "SUPER";
       "$menu" = "${pkgs.wofi}/bin/wofi -S drun";
+      "$lock" = "${pkgs.swaylock}/bin/swaylock -fFi ${config.wallpaper}";
+      "$grimblast" = "${pkgs.grimblast}/bin/grimblast --notify copy ";
+      "$brightnessctl" = "${pkgs.brightnessctl}/bin/brightnessctl s"; 
+      "$wpvolume" = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@";
+      "$wpmute" = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
 
       bind = [
         "$mod, Return, exec, alacritty"
@@ -42,6 +47,9 @@
         "$mod, j, movefocus, d"
         "$mod, k, movefocus, u"
         "$mod, l, movefocus, r"
+
+        # Toggle fullscreen
+        "$mod, f, fullscreen"
 
         # Switch workspaces with mod + [0-9]
         "$mod, 1, workspace, 1"
@@ -67,8 +75,43 @@
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
 
-        "$mod, F10, exec, ${pkgs.swaylock}/bin/swaylock -fFi ${config.wallpaper}"
+        # Move active window to a direction
+        "$mod SHIFT, h, movewindow, l"
+        "$mod SHIFT, j, movewindow, d"
+        "$mod SHIFT, k, movewindow, u"
+        "$mod SHIFT, l, movewindow, r"
+
+        # Resize window
+
+
+        # Scratchpad
+        "$mod, Space, togglespecialworkspace, magic"
+        "$mod SHIFT, Space, movetoworkspace, special:magic"
+ 
+        "$mod, F10, exec, $lock"
+
+        ",XF86AudioRaiseVolume, exec, $wpvolume 0.05+"
+        ",XF86AudioLowerVolume, exec, $wpvolume 0.05-"
+        ",XF86AudioMute, exec, $wpmute"
+
+        ",XF86MonBrightnessUp, exec, $brightnessctl 5%+"
+        ",XF86MonBrightnessDown, exec, $brightnessctl 5%-"
+
+        ",Print, exec, $grimblast output"
+        "$mod Shift, s, exec, $grimblast area"
       ];
     };
+    extraConfig = ''
+      # window resize
+      bind = $mod, r, submap, resize
+
+      submap = resize
+      binde = , h, resizeactive, -10 0
+      binde = , j, resizeactive, 0 10
+      binde = , k, resizeactive, 0 -10
+      binde = , l, resizeactive, 10 0
+      bind = , Return, submap, reset
+      submap = reset
+    '';
   };
 }

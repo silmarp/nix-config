@@ -39,7 +39,7 @@ in{
         output = [
           "eDP-1"
         ];
-        modules-left = [ "hyprland/workspaces" "sway/mode" ];
+        modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
         modules-center = [ "clock" ];
         modules-right = [ "tray" "backlight" "pulseaudio" "bluetooth" "network" "battery" ];
 
@@ -168,6 +168,7 @@ in{
         #custom-media,
         #tray,
         #mode,
+        #submap,
         #idle_inhibitor,
         #scratchpad,
         #mpd {
