@@ -31,7 +31,7 @@
 
       "$mod" = "SUPER";
       "$menu" = "${pkgs.wofi}/bin/wofi -S drun";
-      "$lock" = "${pkgs.swaylock}/bin/swaylock -fFi ${config.wallpaper}";
+      "$lock" = "${pkgs.swaylock-effects}/bin/swaylock";
       "$grimblast" = "${pkgs.grimblast}/bin/grimblast --notify copy ";
       "$brightnessctl" = "${pkgs.brightnessctl}/bin/brightnessctl s"; 
       "$wpvolume" = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@";

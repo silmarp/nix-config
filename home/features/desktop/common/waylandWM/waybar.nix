@@ -14,7 +14,7 @@ let
                 exec ${pkgs.systemd}/bin/systemctl reboot
                 ;;
             lock)
-                ${pkgs.swaylock}/bin/swaylock
+                ${pkgs.swaylock-effects}/bin/swaylock
                 ;;
     esac
   '';

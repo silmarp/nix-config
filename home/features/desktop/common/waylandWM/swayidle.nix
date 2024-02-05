@@ -5,10 +5,10 @@
     enable = true;
     systemdTarget = "hyprland-session.target";
     events = [
-      { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -fFi ${config.wallpaper}"; }
+      { event = "before-sleep"; command = "${pkgs.swaylock-effects}/bin/swaylock"; }
     ];
     timeouts = [
-      { timeout = 500; command = "${pkgs.swaylock}/bin/swaylock -fFi ${config.wallpaper}"; }
+      { timeout = 500; command = "${pkgs.swaylock-effects}/bin/swaylock"; }
 
       { 
         timeout = 600;
