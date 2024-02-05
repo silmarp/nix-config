@@ -19,6 +19,10 @@ in
     settings = {
       font = {
         size = 14;
+        normal = {
+          family = "MapleMono";
+          style = "Regular";
+        };
       };
       colors = {
         # Default colors
