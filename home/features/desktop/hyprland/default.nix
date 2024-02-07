@@ -30,7 +30,7 @@
       };
 
       "$mod" = "SUPER";
-      "$menu" = "${pkgs.wofi}/bin/wofi -S drun";
+      "$menu" = "${pkgs.rofi-wayland}/bin/rofi -show drun";
       "$lock" = "${pkgs.swaylock-effects}/bin/swaylock";
       "$grimblast" = "${pkgs.grimblast}/bin/grimblast --notify copy ";
       "$brightnessctl" = "${pkgs.brightnessctl}/bin/brightnessctl s"; 

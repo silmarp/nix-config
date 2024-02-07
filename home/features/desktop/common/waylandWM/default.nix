@@ -7,6 +7,7 @@
     ./waybar.nix
     ./swayidle.nix
     ./swaylock.nix
+    ./rofi.nix
   ];
 
   home.sessionVariables = {
