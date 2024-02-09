@@ -1,9 +1,9 @@
-{ lib, pkgs, config, ... }: 
+{ pkgs, config, ... }: 
 
 {
   services.swayidle = {
     enable = true;
-    systemdTarget = "hyprland-session.target";
+    systemdTarget = "graphical-session.target";
     events = [
       { event = "before-sleep"; command = "${pkgs.swaylock-effects}/bin/swaylock"; }
     ];
@@ -11,11 +11,10 @@
       { timeout = 500; command = "${pkgs.swaylock-effects}/bin/swaylock"; }
 
       { 
-        timeout = 600;
-        command = "${pkgs.sway}/bin/swaymsg 'output * dpms off'";
-        resumeCommand = "${pkgs.sway}/bin/swaymsg 'output * dpms on'";
+        timeout = 400;
+        command = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms off";
+        resumeCommand = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms on";
       }
-
     ];
   };
 }
