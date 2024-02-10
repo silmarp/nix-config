@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, ... }: 
+{ pkgs, config, ... }: 
 
 let
   colors = config.colorScheme.colors;
@@ -15,6 +15,7 @@ in
       indicator-idle-visible = false;
       indicator-radius = 100;
       show-failed-attempts = true;
+      daemonize = true;
 
       line-color = "#${colors.base01}";
 			ring-color = "#${colors.base0C}";

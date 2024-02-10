@@ -11,7 +11,7 @@
       { timeout = 500; command = "${pkgs.swaylock-effects}/bin/swaylock"; }
 
       { 
-        timeout = 400;
+        timeout = 550;
         command = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms off";
         resumeCommand = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms on";
       }
