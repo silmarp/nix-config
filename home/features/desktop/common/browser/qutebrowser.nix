@@ -4,6 +4,7 @@
   programs.qutebrowser = {
     enable = true;
     settings = {
+      tabs.show = "switching";
       colors = {
         # Becomes either 'dark' or 'light', based on your colors!
         webpage.preferred_color_scheme = "${config.colorScheme.kind}";
@@ -16,7 +17,6 @@
       normal = {
         "J" = "tab-prev";
         "K" = "tab-next";
-        "<Ctrl-Shift-f>" = "hint links spawn --verbose --userscript view_in_mpv {hint-url}";
       };
     };
   };
