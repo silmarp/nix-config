@@ -6,4 +6,5 @@
   # my-module = import ./my-module.nix;
   zk = import ./zk;
   wallpaper = import ./wallpaper.nix;
+  hyprpaper = import ./hyprpaper;
 }
