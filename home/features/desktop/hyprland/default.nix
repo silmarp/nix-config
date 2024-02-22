@@ -3,6 +3,7 @@
 {
   imports = [
     ../common
+    ../common/hyprpaper.nix
     ../common/waylandWM/default.nix
   ];
 
