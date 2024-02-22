@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -31,6 +31,7 @@
 
       "$mod" = "SUPER";
       "$menu" = "${pkgs.rofi-wayland}/bin/rofi -show drun";
+      "$password" = "${pkgs.rofi-rbw-wayland}/bin/rofi-rbw -t password";
       "$lock" = "${pkgs.swaylock-effects}/bin/swaylock";
       "$grimblast" = "${pkgs.grimblast}/bin/grimblast --notify copy ";
       "$brightnessctl" = "${pkgs.brightnessctl}/bin/brightnessctl s"; 
@@ -41,6 +42,7 @@
         "$mod, Return, exec, alacritty"
         "$mod Shift, q, killactive"
         "$mod, d, exec, $menu"
+        "$mod, p, exec, $password"
 
         # Move focus with mainMod + arrow keys
         "$mod, h, movefocus, l"
