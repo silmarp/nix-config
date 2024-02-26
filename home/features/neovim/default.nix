@@ -29,7 +29,7 @@ in
     viAlias = true;
     defaultEditor = true;
 
-    extraLuaConfig = ''
+    extraLuaConfig = /*lua*/''
       -----------------------------------------------------------
       -- General Neovim settings and configuration
       -----------------------------------------------------------
@@ -58,7 +58,7 @@ in
       -----------------------------------------------------------
       opt.hidden = true           -- Enable background buffers
       opt.history = 100           -- Remember N lines in history
-      opt.lazyredraw = true       -- Faster scrolling
+      -- opt.lazyredraw = true       -- Faster scrolling | disabled problems with noice
       opt.synmaxcol = 240         -- Max column for syntax highlight
       opt.updatetime = 700        -- ms to wait for trigger an event
 
