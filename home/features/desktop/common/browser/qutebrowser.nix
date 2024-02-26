@@ -7,9 +7,9 @@
       tabs.show = "switching";
       colors = {
         # Becomes either 'dark' or 'light', based on your colors!
-        webpage.preferred_color_scheme = "${config.colorScheme.kind}";
-        tabs.bar.bg = "#${config.colorScheme.colors.base00}";
-        keyhint.fg = "#${config.colorScheme.colors.base05}";
+        webpage.preferred_color_scheme = "${config.colorScheme.variant}";
+        tabs.bar.bg = "#${config.colorScheme.palette.base00}";
+        keyhint.fg = "#${config.colorScheme.palette.base05}";
         # ...
       };
     };

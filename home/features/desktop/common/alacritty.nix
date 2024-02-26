@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let
-  colors = config.colorScheme.colors;
+  palette = config.colorScheme.palette;
 
   alacritty-xterm = pkgs.writeShellScriptBin "xterm" ''
     ${config.programs.alacritty.package}/bin/alacritty $@
@@ -27,30 +27,30 @@ in
       colors = {
         # Default colors
         primary = {
-          background = "#${colors.base00}";
-          foreground = "#${colors.base05}";
+          background = "#${palette.base00}";
+          foreground = "#${palette.base05}";
         };
 
         # Normal colors
         normal = {
-          black =   "#${colors.base04}";
-          red =     "#${colors.base0F}";
-          green =   "#${colors.base0B}";
-          blue =    "#${colors.base0C}";
-          magenta = "#${colors.base0E}";
-          cyan =    "#${colors.base0D}";
-          white =   "#${colors.base04}";
+          black =   "#${palette.base04}";
+          red =     "#${palette.base0F}";
+          green =   "#${palette.base0B}";
+          blue =    "#${palette.base0C}";
+          magenta = "#${palette.base0E}";
+          cyan =    "#${palette.base0D}";
+          white =   "#${palette.base04}";
         };
 
         # Bright colors
         bright = {
-          black =   "#${colors.base04}";
-          red =     "#${colors.base0F}";
-          green =   "#${colors.base0B}";
-          blue =    "#${colors.base0C}";
-          magenta = "#${colors.base0E}";
-          cyan =    "#${colors.base0D}";
-          white =   "#${colors.base04}";
+          black =   "#${palette.base04}";
+          red =     "#${palette.base0F}";
+          green =   "#${palette.base0B}";
+          blue =    "#${palette.base0C}";
+          magenta = "#${palette.base0E}";
+          cyan =    "#${palette.base0D}";
+          white =   "#${palette.base04}";
         };
       };
     };

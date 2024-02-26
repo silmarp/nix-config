@@ -1,7 +1,7 @@
 { pkgs, config, ... }: 
 
 let
-  colors = config.colorScheme.colors;
+  palette = config.colorScheme.palette;
 in 
 {
   programs.swaylock = {
@@ -17,10 +17,10 @@ in
       show-failed-attempts = true;
       daemonize = true;
 
-      line-color = "#${colors.base01}";
-			ring-color = "#${colors.base0C}";
-			key-hl-color = "#${colors.base0D}";
-			inside-color = "#${colors.base02}88";
+      line-color = "#${palette.base01}";
+			ring-color = "#${palette.base0C}";
+			key-hl-color = "#${palette.base0D}";
+			inside-color = "#${palette.base02}88";
     };
   };
 }

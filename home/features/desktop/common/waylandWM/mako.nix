@@ -1,7 +1,7 @@
 { lib, pkgs, config, ... }: 
 
 let
-  inherit (config.colorscheme) colors;
+  inherit (config.colorscheme) palette;
 in
 {
   services.mako = {
@@ -10,11 +10,11 @@ in
     layer = "top";
 
     #font = "monospace 10";
-    backgroundColor = "#${colors.base00}dd";
-    borderColor = "#${colors.base03}dd";
-    textColor = "#${colors.base05}dd";
+    backgroundColor = "#${palette.base00}dd";
+    borderColor = "#${palette.base03}dd";
+    textColor = "#${palette.base05}dd";
     # TODO redo color config
-    #progressColor = "#${colors.base08}dd";
+    #progressColor = "#${palette.base08}dd";
 
     extraConfig = ''
     '';

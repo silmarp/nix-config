@@ -1,7 +1,7 @@
 { lib, pkgs, config, ... }: 
 
 let
-  colors = config.colorScheme.colors;
+  palette = config.colorScheme.palette;
   powermenu = pkgs.writeShellScriptBin "powerMenu"
   ''
     op=$( echo -e " Poweroff\n Reboot\n Lock" | ${pkgs.wofi}/bin/wofi -i --dmenu | ${pkgs.gawk}/bin/awk '{print tolower($2)}' )
@@ -129,7 +129,7 @@ in{
         }
 
         window#waybar {
-            background: #${colors.base00};
+            background: #${palette.base00};
             border-bottom: 3px solid rgba(100, 114, 125, 0.5);
             color: white;
         }
@@ -175,8 +175,8 @@ in{
             margin-right: 5px;
             margin-left: 5px;
             padding: 0 10px;
-            color: #${colors.base00};
-            background: #${colors.base0C};
+            color: #${palette.base00};
+            background: #${palette.base0C};
         }
 
         #battery {
