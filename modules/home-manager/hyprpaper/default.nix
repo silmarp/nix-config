@@ -41,14 +41,15 @@ in
           '';
         };
 
-        extraConfig = mkOption {
-          type = str;
-          default = "";
-          description = "Check https://github.com/hyprwm/hyprpaper#usage for info";
-          example = ''
-            newConfigOption = foo,bar
-          '';
-        };
+      };
+
+      extraConfig = mkOption {
+        type = str;
+        default = "";
+        description = "Check https://github.com/hyprwm/hyprpaper#usage for info";
+        example = ''
+          newConfigOption = foo,bar
+        '';
       };
     };
   };

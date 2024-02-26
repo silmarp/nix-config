@@ -12,10 +12,10 @@
       wallpapers = [
         "eDP-1,${config.wallpaper}"
       ];
-      extraConfig = ''
-        splash = true
-        ipc = false
-      '';
     };
+    extraConfig = ''
+      splash = true
+      ipc = off
+    '';
    };
   }
