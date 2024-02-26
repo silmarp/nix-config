@@ -3,13 +3,6 @@
 let
   libContrib = inputs.nix-colors.lib-contrib { inherit pkgs;};
   colorscheme = libContrib.vimThemeFromScheme { scheme = config.colorscheme; };
-  my-nvim-treesitter = pkgs.vimPlugins.nvim-treesitter.withAllGrammars.overrideAttrs (oldAttrs: {
-    src = pkgs.fetchFromGitHub {
-      inherit (oldAttrs.src) owner repo;
-      rev = "49e71322db582147ce8f4df1853d9dab08da0826";
-      hash = "sha256-i7/YKin/AuUgzKvGgAzNTEGXlrejtucJacFXh8t/uFs=";
-    };
-  });
 in
 
 {
@@ -34,7 +27,7 @@ in
 
     plugins = with pkgs.vimPlugins; [
       {
-        plugin = my-nvim-treesitter;
+        plugin = nvim-treesitter.withAllGrammars;
         type = "lua";
         config = /* lua */ ''
           require('nvim-treesitter.configs').setup {
