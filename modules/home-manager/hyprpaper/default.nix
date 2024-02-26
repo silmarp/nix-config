@@ -44,7 +44,7 @@ in
       };
 
       extraConfig = mkOption {
-        type = str;
+        type = types.str;
         default = "";
         description = "Check https://github.com/hyprwm/hyprpaper#usage for info";
         example = ''
@@ -91,8 +91,8 @@ in
         # hyprpaper.settings.wallpapers
         ${(lists.foldl (acc: v: acc + "wallpaper = ${v}\n") "" cfg.settings.wallpapers)}
 
-        # hyprpaper.settings.extraConfig
-        ${cfg.settings.extraConfig}
+        # hyprpaper.extraConfig
+        ${cfg.extraConfig}
       '';
     };
   };
