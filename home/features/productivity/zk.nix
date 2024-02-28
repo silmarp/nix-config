@@ -85,9 +85,9 @@ in
 
       alias = {
         # Create notes
-        lit = "zk new reference --template=literature.md -t \"$@\"";
-        fleet = "zk new reference --template=fleeting.md -t \"$@\"";
-        perm = "zk new ideas --template=permanent.md -t \"$@\"";
+        lit = "zk new reference --template=literature.md";
+        fleet = "zk new reference --template=fleeting.md";
+        perm = "zk new ideas --template=permanent.md";
         journal = "zk new journal/daily";
 
         # Open note to edit
