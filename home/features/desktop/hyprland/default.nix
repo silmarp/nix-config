@@ -44,12 +44,14 @@
       "$brightnessctl" = "${pkgs.brightnessctl}/bin/brightnessctl s"; 
       "$wpvolume" = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@";
       "$wpmute" = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+      "$powermenu" = "${pkgs.wlogout}/bin/wlogout";
 
       bind = [
         "$mod, Return, exec, alacritty"
         "$mod Shift, q, killactive"
         "$mod, d, exec, $menu"
         "$mod, p, exec, $password"
+        "$mod Shift, p, exec, $powermenu"
 
         # Move focus with mainMod + arrow keys
         "$mod, h, movefocus, l"

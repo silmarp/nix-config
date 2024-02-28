@@ -2,25 +2,7 @@
 
 let
   palette = config.colorScheme.palette;
-  powermenu = pkgs.writeShellScriptBin "powerMenu"
-  ''
-    op=$( echo -e " Poweroff\n Reboot\n Lock" | ${pkgs.wofi}/bin/wofi -i --dmenu | ${pkgs.gawk}/bin/awk '{print tolower($2)}' )
-
-    case $op in 
-            poweroff)
-                exec ${pkgs.systemd}/bin/systemctl poweroff -i
-                ;;       
-            reboot)
-                exec ${pkgs.systemd}/bin/systemctl reboot
-                ;;
-            lock)
-                ${pkgs.swaylock-effects}/bin/swaylock
-                ;;
-    esac
-  '';
-
 in{
-  home.packages = [ powermenu ];
   programs.waybar = {
     enable = true;
     systemd = {
@@ -101,7 +83,7 @@ in{
           };
           format = "{capacity}% {icon}";
           format-icons = ["" "" "" "" ""];
-          on-click = "${powermenu}/bin/powerMenu";
+          on-click = "${pkgs.wlogout}/bin/wlogout";
         };
         bluetooth = {
           format = " {status}";
