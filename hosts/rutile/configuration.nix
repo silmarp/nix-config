@@ -9,6 +9,8 @@
       ../common/users/silmar
 
       ../common/optional/wireless.nix
+
+      ./services
     ];
 
   # Bootloader.
