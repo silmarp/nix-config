@@ -12,6 +12,6 @@
         identityFile = "${config.home.homeDirectory}/.ssh/ssh";
       };
     };
-    addKeysToAgent = "5m";
+    addKeysToAgent = "30m";
   };
 }
