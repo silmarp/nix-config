@@ -8,6 +8,7 @@
     ./swayidle.nix
     ./swaylock.nix
     ./rofi.nix
+    ./wlogout.nix
   ];
 
   home.sessionVariables = {
