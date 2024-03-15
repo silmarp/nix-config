@@ -27,7 +27,6 @@ wallpaper = builtins.fetchurl {
   home.packages = with pkgs; [
       discord
       
-      rnix-lsp
       nodePackages.bash-language-server
 
       feh # image viewer TODO make separate config

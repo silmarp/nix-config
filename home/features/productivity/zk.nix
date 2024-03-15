@@ -4,16 +4,16 @@ let
   notebook = "${config.home.homeDirectory}/Notes/zettel/";
 in
 {
-  config.home.packages = with pkgs; [
+  home.packages = with pkgs; [
     fzf
   ];
   
-  config.home.sessionVariables = {
+  home.sessionVariables = {
     # Exports notebook path for zk-nvim use
     ZK_NOTEBOOK_DIR = "${notebook}";
   };
 
-  config.programs.zk = {
+  programs.zk = {
     enable = true;
     settings = {
 

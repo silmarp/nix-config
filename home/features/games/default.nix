@@ -9,6 +9,6 @@
     prismlauncher
     lutris
 
-    mindustry
+    # mindustry TODO, mindustry not building
   ];
 }

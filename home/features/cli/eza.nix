@@ -4,7 +4,7 @@
   programs.eza = {
     enable = true;
     #package = pkgs.eza;
-    enableAliases = true;
+    enableZshIntegration = true;
     icons = true;
   };
 }
