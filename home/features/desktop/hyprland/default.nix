@@ -45,6 +45,7 @@
       "$wpvolume" = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@";
       "$wpmute" = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
       "$powermenu" = "${pkgs.wlogout}/bin/wlogout";
+      "$notificationDismiss" = "${pkgs.mako}/bin/makoctl dismiss -a";
 
       bind = [
         "$mod, Return, exec, alacritty"
@@ -52,6 +53,7 @@
         "$mod, d, exec, $menu"
         "$mod, p, exec, $password"
         "$mod Shift, p, exec, $powermenu"
+        "$mod, m, exec, $notificationDismiss"
 
         # Move focus with mainMod + arrow keys
         "$mod, h, movefocus, l"
