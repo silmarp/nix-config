@@ -30,11 +30,9 @@ wallpaper = builtins.fetchurl {
       rnix-lsp
       nodePackages.bash-language-server
 
-      helix # TODO make config
       feh # image viewer TODO make separate config
       rssguard # RSS feed reader
       zathura # TODO make config
-      kabmat
       bitwarden
       tor-browser-bundle-bin
       element-desktop
