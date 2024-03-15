@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
 {
-  home.packages = [ pkgs.pinentry-gtk2 ];
-
   programs.gpg = {
     enable = true;
   };
