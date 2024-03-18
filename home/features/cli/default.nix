@@ -13,5 +13,8 @@
   home.packages = with pkgs; [
     htop
     zellij
+
+    age # encryption tool
+    sops # secret management
   ];
 }

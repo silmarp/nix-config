@@ -35,8 +35,6 @@ wallpaper = builtins.fetchurl {
       bitwarden
       tor-browser-bundle-bin
       element-desktop
-      age # encryption tool
-      sops # secret management
       libreoffice # Office suit
 
       spotify
