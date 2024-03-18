@@ -12,6 +12,8 @@
     };
     aliases = {
       graph = "log --graph";
+      st = "status";
+      p = "pull";
     };
   };
 }
