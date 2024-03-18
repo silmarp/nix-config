@@ -89,18 +89,8 @@ in
       vim.api.nvim_set_keymap('n', '<F2>', ':set invpaste paste?<CR>', options)
       vim.opt.pastetoggle = '<F2>'
 
-      -- Move around splits using Leader + {h,j,k,l}
-      vim.api.nvim_set_keymap('n', '<leader>h', '<C-w>h', options)
-      vim.api.nvim_set_keymap('n', '<leader>j', '<C-w>j', options)
-      vim.api.nvim_set_keymap('n', '<leader>k', '<C-w>k', options)
-      vim.api.nvim_set_keymap('n', '<leader>l', '<C-w>l', options)
-
-      -- Fast saving with <leader> and s
-      vim.api.nvim_set_keymap('n', '<leader>w', ':wall<CR>', options)
-
-      -- Close all windows and exit from Neovim with <leader> and q
-      vim.api.nvim_set_keymap('n', '<leader>qa', ':qa!<CR>', options)
-      vim.api.nvim_set_keymap('n', '<leader>q', ':q<CR>', options)
+      -- Map ':' key to ';' faster command mode
+      vim.api.nvim_set_keymap('n', ';', ':', options)
 
       -----------------------------------------------------------
       -- Neovim autocommands
