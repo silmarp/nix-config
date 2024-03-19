@@ -1,14 +1,24 @@
-{ ... }:
+{ inputs, config, ... }:
 
 {
+  imports = [
+    inputs.sops-nix.nixosModules.sops
+  ];
+
+  sops.secrets.wireless = {
+    sopsFile = ../../../secrets/secrets.yaml;
+    neededForUsers = true;
+  };
+
+  sops.age.keyFile = "/home/silmar/.config/sops/age/keys.txt";
+
   networking.wireless = {
     enable = true;  # Enables wireless support via wpa_supplicant.
     fallbackToWPA2 = false;
-    # TODO add declarative networks with SOPs 
+    environmentFile = config.sops.secrets.wireless.path;
     networks = { 
-      # TODO remove dummy network
-      "DUMMY" = { # Dummy network to prevent wpa_supplicant failing to restart
-        psk = "DUMMYDUMMY";
+      "NET_5G2D9052" = {
+        psk = "@HOME@";
       };
     };
 
