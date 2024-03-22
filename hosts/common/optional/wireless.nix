@@ -1,16 +1,11 @@
-{ inputs, config, ... }:
+{ config, ... }:
 
 {
-  imports = [
-    inputs.sops-nix.nixosModules.sops
-  ];
-
   sops.secrets.wireless = {
     sopsFile = ../../../secrets/secrets.yaml;
     neededForUsers = true;
   };
 
-  sops.age.keyFile = "/home/silmar/.config/sops/age/keys.txt";
 
   networking.wireless = {
     enable = true;  # Enables wireless support via wpa_supplicant.

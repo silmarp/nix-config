@@ -2,6 +2,7 @@
   imports = [
     ./tailscale.nix
     ./openssh.nix
+    ./sops.nix
   ];
 
   nixpkgs = {
