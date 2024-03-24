@@ -8,6 +8,7 @@
     ./git.nix
     ./starship.nix
     ./ssh.nix
+    ./nix-index.nix
   ];
 
   home.packages = with pkgs; [
