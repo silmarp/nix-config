@@ -37,6 +37,7 @@
       };
 
       "$mod" = "SUPER";
+      "$terminal" = "${pkgs.alacritty}/bin/alacritty";
       "$menu" = "${pkgs.rofi-wayland}/bin/rofi -show drun";
       "$password" = "${pkgs.rofi-rbw-wayland}/bin/rofi-rbw -t password";
       "$lock" = "${pkgs.swaylock-effects}/bin/swaylock";
@@ -46,14 +47,16 @@
       "$wpmute" = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
       "$powermenu" = "${pkgs.wlogout}/bin/wlogout";
       "$notificationDismiss" = "${pkgs.mako}/bin/makoctl dismiss -a";
+      "$fileManager" = "$terminal -e ${pkgs.ranger}/bin/ranger";
 
       bind = [
-        "$mod, Return, exec, alacritty"
+        "$mod, Return, exec, $terminal"
         "$mod Shift, q, killactive"
         "$mod, d, exec, $menu"
         "$mod, p, exec, $password"
         "$mod Shift, p, exec, $powermenu"
-        "$mod, m, exec, $notificationDismiss"
+        "$mod, n, exec, $notificationDismiss"
+        "$mod, m, exec, $fileManager"
 
         # Move focus with mainMod + arrow keys
         "$mod, h, movefocus, l"
