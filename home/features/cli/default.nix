@@ -9,6 +9,7 @@
     ./starship.nix
     ./ssh.nix
     ./nix-index.nix
+    ./ranger.nix
   ];
 
   home.packages = with pkgs; [
