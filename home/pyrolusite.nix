@@ -8,8 +8,6 @@
 
     ./features/neovim
 
-    ./features/desktop/sway
-
     ./features/desktop/hyprland
 
     ./features/games
