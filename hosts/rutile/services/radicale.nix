@@ -22,10 +22,20 @@
  };
 
   services.nginx.virtualHosts = {
-    "rutile.tail4dadf.ts.net" = {
+    "dav.silmarp.dev" = {
       forceSSL = true;
       enableACME = true;
       locations."/".proxyPass = "http://127.0.0.1:5232";
+    };
+  };
+  security.acme.certs = {
+    "dav.silmarp.dev" = {
+      dnsProvider = "porkbun";
+      webroot = null;
+      credentialFiles = {
+        "PORKBUN_API_KEY_FILE" = /tmp/secrets/api_key;
+        "PORKBUN_SECRET_API_KEY_FILE" = /tmp/secrets/secret_key;
+      };
     };
   };
 }
