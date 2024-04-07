@@ -10,3 +10,8 @@ creation_rules:
     - age:
       - *main
       - *rutile
+  - path_regex: hosts/rutile/secrets.yaml$
+    key_groups:
+    - age:
+      - *main
+      - *rutile

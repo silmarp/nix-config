@@ -1,7 +1,12 @@
-{...}:
+{config, ...}:
 
 {
- services.radicale = {
+  sops.secrets = {
+    api_key.sopsFile = ../secrets.yaml;
+    secret_key.sopsFile = ../secrets.yaml;
+  };
+
+  services.radicale = {
   enable = true;
   #config = '''';
   #extraArgs = [];
@@ -33,8 +38,8 @@
       dnsProvider = "porkbun";
       webroot = null;
       credentialFiles = {
-        "PORKBUN_API_KEY_FILE" = /tmp/secrets/api_key;
-        "PORKBUN_SECRET_API_KEY_FILE" = /tmp/secrets/secret_key;
+        "PORKBUN_API_KEY_FILE" = config.sops.secrets.api_key.path;
+        "PORKBUN_SECRET_API_KEY_FILE" = config.sops.secrets.secret_key.path;
       };
     };
   };
