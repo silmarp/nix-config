@@ -2,8 +2,11 @@
 
 keys: 
   - &main age1xsrghna6fg7xqkm3ye42dmjkdmhg6az4z84vc82e2nxlc7mewdfsp404az
+  - &hosts:
+    - &rutile age1wx5f23w9tkqwatrq9a4x5ypxzvjeapmcpung4qhmfwljnt56tepqjt5me8
 creation_rules:
   - path_regex: secrets/secrets.yaml$
     key_groups:
     - age:
       - *main
+      - *rutile
