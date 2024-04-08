@@ -4,6 +4,11 @@
   sops.secrets = {
     api_key.sopsFile = ../secrets.yaml;
     secret_key.sopsFile = ../secrets.yaml;
+    radicale-htpasswd = {
+      sopsFile = ../secrets.yaml;
+      owner = config.users.users.radicale.name;
+      group = config.users.users.radicale.group;
+    };
   };
 
   services.radicale = {
@@ -17,7 +22,7 @@
     };
     auth = {
       type = "htpasswd";
-      htpasswd_filename = "/etc/radicale/users";
+      htpasswd_filename = config.sops.secrets.radicale-htpasswd.path;
       htpasswd_encryption = "bcrypt";
     };
     storage = {
