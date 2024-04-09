@@ -3,13 +3,17 @@
 keys: 
   - &main age1xsrghna6fg7xqkm3ye42dmjkdmhg6az4z84vc82e2nxlc7mewdfsp404az
   - &hosts:
+    - &pyrolusite age1efwueqs0aj6g7z6jr6etup2pd8mjdz9r3m469v9hqncxwnk7ypequzcy8s
     - &rutile age1wx5f23w9tkqwatrq9a4x5ypxzvjeapmcpung4qhmfwljnt56tepqjt5me8
+    - &limonite age1gfj3qgs4xmtcn2sauv5znglvlglcwc0j95fm9pyergftgyqd74cs29u9sd
 creation_rules:
   - path_regex: secrets/secrets.yaml$
     key_groups:
     - age:
       - *main
+      - *pyrolusite
       - *rutile
+      - *limonite
   - path_regex: hosts/rutile/secrets.yaml$
     key_groups:
     - age:
