@@ -2,7 +2,7 @@
 
 {
   sops.secrets.wireless = {
-    sopsFile = ../../../secrets/secrets.yaml;
+    sopsFile = ../secrets.yaml;
     neededForUsers = true;
   };
 
