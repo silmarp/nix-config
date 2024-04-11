@@ -11,7 +11,6 @@ in
       local opt = vim.opt   -- Set options (global/buffer/windows-scoped)
       opt.number = true           -- Show line number
       opt.showmatch = true        -- Highlight matching parenthesis
-      opt.foldmethod = 'marker'   -- Enable folding (default 'foldmarker')
       opt.splitright = true       -- Vertical split to the right
       opt.splitbelow = true       -- Horizontal split to the bottom
       opt.ignorecase = true       -- Ignore case letters when search
@@ -21,6 +20,11 @@ in
       opt.laststatus=3            -- Set global statusline
       opt.relativenumber = true   -- Relative number lines
 
+      -- Folds
+      opt.foldmethod = 'expr'   -- Enable folding (default 'foldmarker')
+      opt.foldlevel=20
+      opt.foldexpr="nvim_treesitter#foldexpr()" -- Set fold expr to treesitter
+ 
       vim.cmd("source ${colorscheme}/colors/nix-${config.colorscheme.slug}.vim")
     '';
 
