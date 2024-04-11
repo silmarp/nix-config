@@ -22,7 +22,6 @@ in
       opt.relativenumber = true   -- Relative number lines
 
       vim.cmd("source ${colorscheme}/colors/nix-${config.colorscheme.slug}.vim")
-
     '';
 
     plugins = with pkgs.vimPlugins; [
@@ -38,15 +37,7 @@ in
           }
         '';
       }
-      {
-        plugin = nvim-colorizer-lua;
-        type = "lua";
-        config = /*lua*/''
-          require 'colorizer'.setup()
-        '';
-      }
       
-      # TODO config noice UI
       nvim-notify
       {
         plugin = noice-nvim;
