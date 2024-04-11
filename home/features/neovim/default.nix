@@ -1,18 +1,16 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
 
 let
+  nvim-spell-pt-utf8-dictionary = builtins.fetchurl {
+    url = "http://ftp.vim.org/vim/runtime/spell/pt.utf-8.spl";
+    sha256 = "sha256:0fxnd9fvvxawmwas9yh47rakk65k7jjav1ikzcy7h6wmnq0c2pry";
+  };
 
-nvim-spell-pt-utf8-dictionary = builtins.fetchurl {
-  url = "http://ftp.vim.org/vim/runtime/spell/pt.utf-8.spl";
-  sha256 = "sha256:0fxnd9fvvxawmwas9yh47rakk65k7jjav1ikzcy7h6wmnq0c2pry";
-};
-
-nvim-spell-pt-latin1-dictionary = builtins.fetchurl {
-  url = "http://ftp.vim.org/vim/runtime/spell/pt.latin1.spl";
-  sha256 = "sha256:1046a4v595g30p1gnrhkddqdqscbvxs9dj9yd078jk226likc71w";
-};
-
+  nvim-spell-pt-latin1-dictionary = builtins.fetchurl {
+    url = "http://ftp.vim.org/vim/runtime/spell/pt.latin1.spl";
+    sha256 = "sha256:1046a4v595g30p1gnrhkddqdqscbvxs9dj9yd078jk226likc71w";
+  };
 in
 {
   imports = [
@@ -22,49 +20,43 @@ in
     ./ui.nix
   ];
 
-  # home.sessionVariables.EDITOR = "nvim"; deprecated
-
   programs.neovim = {
     enable = true;
     viAlias = true;
     defaultEditor = true;
-
     extraLuaConfig = /*lua*/''
-      -----------------------------------------------------------
-      -- General Neovim settings and configuration
-      -----------------------------------------------------------
-
+      -- Variables
       local g = vim.g       -- Global variables
       local opt = vim.opt   -- Set options (global/buffer/windows-scoped)
+      local augroup = vim.api.nvim_create_augroup   -- Create/get autocommand group
+      local autocmd = vim.api.nvim_create_autocmd   -- Create autocommand
 
-      -----------------------------------------------------------
       -- General
-      -----------------------------------------------------------
       opt.mouse = 'a'                       -- Enable mouse support
       opt.clipboard = 'unnamedplus'         -- Copy/paste to system clipboard
       opt.swapfile = false                  -- Don't use swapfile
       opt.completeopt = 'menuone,noinsert,noselect'  -- Autocomplete options
 
-      -----------------------------------------------------------
       -- Tabs, indent
-      -----------------------------------------------------------
       opt.expandtab = true        -- Use spaces instead of tabs
       opt.shiftwidth = 4          -- Shift 4 spaces when tab
       opt.tabstop = 4             -- 1 tab == 4 spaces
-      -- opt.smartindent = true      -- Autoindent new lines
+      opt.smartindent = true      -- Autoindent new lines
+      augroup('setIndent', { clear = true }) -- set indentation to 2 in certain filetypes
+      autocmd('Filetype', {
+        group = 'setIndent',
+        pattern = { 'xml', 'html', 'xhtml', 'css', 'scss', 'javascript', 'typescript','yaml', 'lua', 'nix', 'vue',},
+        command = 'setlocal shiftwidth=2 tabstop=2'
+      })
 
-      -----------------------------------------------------------
       -- Memory, CPU
-      -----------------------------------------------------------
       opt.hidden = true           -- Enable background buffers
       opt.history = 100           -- Remember N lines in history
       -- opt.lazyredraw = true       -- Faster scrolling | disabled problems with noice
       opt.synmaxcol = 240         -- Max column for syntax highlight
       opt.updatetime = 700        -- ms to wait for trigger an event
 
-      -----------------------------------------------------------
-      -- Neovim shortcuts
-      -----------------------------------------------------------
+      -- Shortcuts
       vim.g.mapleader = ' '
 
       local options = { noremap = true, silent = true }
@@ -82,31 +74,8 @@ in
       vim.api.nvim_set_keymap("", 'k', 'gk', options)
       vim.api.nvim_set_keymap("", 'j', 'gj', options)
 
-      -- Clear search highlighting with <leader> and c
-      vim.api.nvim_set_keymap('n', '<leader>c', ':nohl<CR>', options)
-
       -- Toggle auto-indenting for code paste
       vim.api.nvim_set_keymap('n', '<F2>', ':set invpaste paste?<CR>', options)
-      vim.opt.pastetoggle = '<F2>'
-
-      -- Map ':' key to ';' faster command mode
-      vim.api.nvim_set_keymap('n', ';', ':', options)
-
-      -----------------------------------------------------------
-      -- Neovim autocommands
-      -----------------------------------------------------------
-      local augroup = vim.api.nvim_create_augroup   -- Create/get autocommand group
-      local autocmd = vim.api.nvim_create_autocmd   -- Create autocommand
-
-      -- Set indentation to 2 spaces
-      augroup('setIndent', { clear = true })
-      autocmd('Filetype', {
-        group = 'setIndent',
-        pattern = { 'xml', 'html', 'xhtml', 'css', 'scss', 'javascript', 'typescript',
-          'yaml', 'lua', 'nix', 'vue',
-        },
-        command = 'setlocal shiftwidth=2 tabstop=2'
-      })
 
       -- Set spellcheck
       augroup('spell', { clear = true })
@@ -119,6 +88,7 @@ in
 
     plugins = with pkgs.vimPlugins; [
       vim-table-mode
+			nvim-surround
       {
         plugin = telescope-nvim;
         type = "lua";
@@ -130,13 +100,13 @@ in
           vim.keymap.set('n', '<leader>th', builtin.help_tags, {})
         '';
       }
-      {
-        plugin = nvim-surround;
-        type = "lua";
-        config = /* lua */''
-          require("nvim-surround").setup()
-        '';
-      }
+			{
+				plugin = nvim-autopairs;
+				type = "lua";
+				config = /*lua*/''
+					require("nvim-autopairs").setup {}
+				'';
+			}
     ];
   };
   /*telescope dependencie*/
