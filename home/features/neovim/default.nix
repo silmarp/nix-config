@@ -88,7 +88,13 @@ in
 
     plugins = with pkgs.vimPlugins; [
       vim-table-mode
-			nvim-surround
+      {
+        plugin = nvim-surround;
+        type = "lua";
+        config = /*lua*/ ''
+          require("nvim-surround").setup()
+        '';
+      }
       {
         plugin = telescope-nvim;
         type = "lua";
