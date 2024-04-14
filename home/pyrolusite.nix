@@ -23,8 +23,6 @@ wallpaper = builtins.fetchurl {
 };
 
   home.packages = with pkgs; [
-      discord
-      
       nodePackages.bash-language-server
 
       feh # image viewer TODO make separate config
