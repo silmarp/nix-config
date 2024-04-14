@@ -5,10 +5,10 @@
     enable = true;
     systemdTarget = "graphical-session.target";
     events = [
-      { event = "before-sleep"; command = "${pkgs.swaylock-effects}/bin/swaylock"; }
+      { event = "before-sleep"; command = "${pkgs.swaylock-effects}/bin/swaylock -f"; }
     ];
     timeouts = [
-      { timeout = 500; command = "${pkgs.swaylock-effects}/bin/swaylock"; }
+      { timeout = 500; command = "${pkgs.swaylock-effects}/bin/swaylock -f --grace 10"; }
 
       { 
         timeout = 550;
