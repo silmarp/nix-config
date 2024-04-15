@@ -47,6 +47,7 @@ in
         plugin = noice-nvim;
         type = "lua";
         config = /*lua*/''
+          vim.api.nvim_set_keymap('n', '<leader>nn', ':NoiceDismiss<CR>', options)
           require("noice").setup({
             lsp = {
               override = {
