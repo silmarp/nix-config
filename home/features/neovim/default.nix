@@ -18,7 +18,6 @@ in
     ./vimwiki.nix
     ./tree.nix
     ./ui.nix
-    ./database.nix
   ];
 
   programs.neovim = {
