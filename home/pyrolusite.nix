@@ -27,7 +27,6 @@ wallpaper = builtins.fetchurl {
 
       feh # image viewer TODO make separate config
       rssguard # RSS feed reader
-      zathura # TODO make config
       bitwarden
       tor-browser-bundle-bin
       element-desktop

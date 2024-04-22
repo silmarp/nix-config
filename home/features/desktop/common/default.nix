@@ -8,6 +8,7 @@
     ./gtk.nix
     ./alacritty.nix
     ./mpv.nix
+    ./zathura.nix
   ];
 
   xdg.portal.enable = true;
