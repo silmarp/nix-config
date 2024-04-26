@@ -49,6 +49,16 @@ in
         command = 'setlocal shiftwidth=2 tabstop=2'
       })
 
+      -- Custom filetypes
+      vim.filetype.add({
+        pattern = {
+          ['docker-compose%.yml'] = 'yaml.docker-compose',
+          ['docker-compose%.yaml'] = 'yaml.docker-compose',
+          ['compose%.yml'] = 'yaml.docker-compose',
+          ['compose%.yaml'] = 'yaml.docker-compose',
+        },
+      })
+
       -- Memory, CPU
       opt.hidden = true           -- Enable background buffers
       opt.history = 100           -- Remember N lines in history
