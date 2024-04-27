@@ -19,6 +19,8 @@
     maple-mono 
     noto-fonts-color-emoji 
     nerdfonts
+
     vesktop
+    cinny-desktop
   ];
 }

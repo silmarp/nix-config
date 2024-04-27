@@ -29,7 +29,6 @@ wallpaper = builtins.fetchurl {
       rssguard # RSS feed reader
       bitwarden
       tor-browser-bundle-bin
-      element-desktop
       libreoffice # Office suit
 
       spotify
