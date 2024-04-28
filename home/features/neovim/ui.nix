@@ -24,7 +24,6 @@ in
       opt.foldmethod = 'expr'   -- Enable folding (default 'foldmarker')
       opt.foldlevel=20
       opt.foldexpr="nvim_treesitter#foldexpr()" -- Set fold expr to treesitter
- 
       vim.cmd("source ${colorscheme}/colors/nix-${config.colorscheme.slug}.vim")
     '';
 
@@ -38,12 +37,12 @@ in
          -- you can specify color or cterm_color instead of specifying both of them
          -- DevIcon will be appended to `name`
          override = {
-          zsh = {
+           zsh = {
             icon = "",
             color = "#428850",
             cterm_color = "65",
             name = "Zsh"
-          }
+           }
          };
          -- globally enable different highlight colors per icon (default to true)
          -- if set to false all icons will have the default icon's color
@@ -143,6 +142,16 @@ in
               workspace_text      = "Working on %s",            -- Format string rendered when in a git repository (either string or function(project_name: string|nil, filename: string): string)
               line_number_text    = "Line %s out of %s",        -- Format string rendered when `enable_line_number` is set to true (either string or function(line_number: number, line_count: number): string)
           })
+        '';
+      }
+      {
+        plugin = indent-blankline-nvim;
+        type = "lua";
+        config = /* lua */ ''
+          require('ibl').setup{
+            scope = { highlight = {"IndentBlankLine"} },
+            indent = { highlight = {"IndentBlankLine"} },
+          }
         '';
       }
 
