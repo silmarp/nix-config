@@ -13,9 +13,9 @@ in{
       mainBar = {
         layer = "top";
         position = "top";
-        height = 30;
+        height = 40;
         margin-bottom = 0;
-        margin-top = 5;
+        margin-top = 0;
         margin-left = 0;
         margin-right = 0;
         output = [
@@ -101,12 +101,12 @@ in{
         };
       };
     };
-    style = ''
+    style = /* css */''
         * {
             border: none;
-            border-radius: 5;
+            border-radius: 0;
             font-family: Roboto, Helvetica, Arial, sans-serif;
-            font-size: 13px;
+            font-size: 15px;
             min-height: 0;
         }
 
@@ -200,4 +200,3 @@ in{
     '';
   };
 }
-
