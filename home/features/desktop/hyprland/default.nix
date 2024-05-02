@@ -65,7 +65,8 @@
         "$mod, l, movefocus, r"
 
         # Toggle fullscreen
-        "$mod, f, fullscreen"
+        "$mod, f, fullscreen, 1"
+        "$mod SHIFT, f, fullscreen, 0"
 
         # Switch workspaces with mod + [0-9]
         "$mod, 1, workspace, 1"
