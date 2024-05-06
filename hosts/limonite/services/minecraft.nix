@@ -14,6 +14,12 @@ in
       # Version 1.7-alpha-2a
       nomifactory = {
         enable = true;
+
+        # does not build without this option
+        rsyncSSHKeys = [
+          (builtins.readFile ../../../home/ssh.pub)
+        ];
+
         jvmMaxAllocation = "10G";
         jvmInitialAllocation = "5G";
         jvmPackage = java8;
