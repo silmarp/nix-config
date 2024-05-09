@@ -11,6 +11,7 @@
       ../common/optional/wireless.nix
 
       ../common/users/silmar
+      ../common/optional/openconnect.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
