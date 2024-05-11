@@ -15,7 +15,7 @@ in
 {
   imports = [
     ./lsp.nix
-    ./vimwiki.nix
+    ./notes.nix
     ./tree.nix
     ./ui.nix
   ];
