@@ -33,9 +33,7 @@ in
       type = "lua";
       config = /* lua */ ''
          require'nvim-web-devicons'.setup {
-         -- your personnal icons can go here (to override)
-         -- you can specify color or cterm_color instead of specifying both of them
-         -- DevIcon will be appended to `name`
+
          override = {
            zsh = {
             icon = "",
@@ -154,7 +152,17 @@ in
           }
         '';
       }
-
+      {
+        plugin = telescope-nvim;
+        type = "lua";
+        config = /*lua*/ ''
+          local builtin = require('telescope.builtin')
+          vim.keymap.set('n', '<leader>tf', builtin.find_files, {})
+          vim.keymap.set('n', '<leader>tg', builtin.live_grep, {})
+          vim.keymap.set('n', '<leader>tb', builtin.buffers, {})
+          vim.keymap.set('n', '<leader>th', builtin.help_tags, {})
+        '';
+      }
 /*
       {
         plugin = which-key-nvim;
@@ -163,4 +171,6 @@ in
 */
     ];
   };
+    
+  home.packages = [ pkgs.ripgrep ];
 }
