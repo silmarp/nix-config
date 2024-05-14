@@ -15,6 +15,18 @@
       "NET_5G2D9052" = {
         psk = "@HOME@";
       };
+      "eduroam" = {
+        authProtocols = ["WPA-EAP"];
+        auth = ''
+          pairwise=CCMP
+          group=CCMP TKIP
+          eap=TTLS
+          domain_suffix_match="semfio.usp.br"
+          identity="12623950@usp.br"
+          password="@EDUROAM@"
+          phase2="auth=MSCHAPV2"
+        '';
+      };
     };
 
     # imperative networks
