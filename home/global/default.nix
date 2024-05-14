@@ -23,7 +23,7 @@
   colorScheme = lib.mkDefault inputs.nix-colors.colorSchemes.tokyo-night-dark;
 
   
-  home.packages = with pkgs; [ nil ];
+  home.packages = with pkgs; [ nil marksman ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

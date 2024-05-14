@@ -97,7 +97,7 @@
           local servers = { 
             'pyright', 'html', 'cssls', 'jsonls', 'nil_ls', 'texlab',
             'rust_analyzer', 'eslint', 'phpactor', 'gopls', 'ccls', 
-            'dockerls', 'docker_compose_language_service',
+            'dockerls', 'docker_compose_language_service', 'marksman',
           }
 
           -- Call setup
