@@ -3,7 +3,7 @@
 {
   services.swayidle = {
     enable = true;
-    systemdTarget = "graphical-session.target";
+    systemdTarget = "hyprland-session.target";
     events = [
       { event = "before-sleep"; command = "${pkgs.swaylock-effects}/bin/swaylock -f"; }
     ];
