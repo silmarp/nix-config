@@ -192,6 +192,17 @@ in
           vim.keymap.set("n", "<space>h", ":Alpha<CR>", { desc = "Open home dashboard" })
         '';
       }
+    {
+      plugin = bufferline-nvim;
+      type = "lua";
+      config =
+        /*
+        lua
+        */
+        ''
+          require('bufferline').setup{}
+        '';
+    }
 /*
       {
         plugin = which-key-nvim;
