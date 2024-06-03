@@ -6,7 +6,10 @@
     diff-so-fancy.enable = true;
     userName = "Silmar";
     userEmail = "silmarjr2@gmail.com";
-    ignores = [ "result" ];
+    ignores = [ 
+      "result"
+      ".direnv"
+    ];
     extraConfig = {
       init.defaultBranch = "main";
     };

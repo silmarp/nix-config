@@ -10,6 +10,7 @@
     ./ssh.nix
     ./nix-index.nix
     ./ranger.nix
+    ./direnv.nix
   ];
 
   home.packages = with pkgs; [
