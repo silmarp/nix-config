@@ -23,7 +23,7 @@ wallpaper = builtins.fetchurl {
 };
 
   home.packages = with pkgs; [
-      nodePackages.bash-language-server
+      #nodePackages.bash-language-server
 
       feh # image viewer TODO make separate config
       rssguard # RSS feed reader
