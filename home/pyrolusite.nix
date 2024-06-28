@@ -32,6 +32,5 @@ wallpaper = builtins.fetchurl {
       libreoffice # Office suit
 
       spotify
-      dbeaver-bin
   ];
 }
