@@ -1,32 +1,22 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
 {
-  # TODO make custom theme import here
-  /*
-  users.extraUsers.greeter.packages = [
-    pkgs.gnome.gnome-themes-extra
-    pkgs.materia-theme # Fails to build
-  ];
-  */
+  users.extraUsers.greeter = {
+    # Does not work without
+    home = "/tmp/greeter-home";
+    createHome = true;
+  };
 
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.cage}/bin/cage -s -- ${pkgs.greetd.gtkgreet}/bin/gtkgreet -c Hyprland";
+        command = "${lib.getExe pkgs.cage} -m last -s -- ${lib.getExe config.programs.regreet.package}";
         user = "greeter";
       };
     };
   };
-  /*
   programs.regreet = {
     enable = true;
-    settings = {
-      GTK = {
-        theme_name = "Materia-dark";
-        icon_theme_name = "Materia-dark";
-      };
-    };
   };
-  */
 }
