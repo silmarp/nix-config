@@ -1,9 +1,17 @@
 { inputs, outputs, config, lib, ... }: {
   imports = [
+    inputs.home-manager.nixosModules.home-manager
     ./tailscale.nix
     ./openssh.nix
     ./sops.nix
   ];
+
+  home-manager = {
+    useGlobalPkgs = true;
+    extraSpecialArgs = {
+      inherit inputs outputs;
+    };
+  };
 
   nixpkgs = {
     overlays = [

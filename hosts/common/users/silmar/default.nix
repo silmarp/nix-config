@@ -20,10 +20,15 @@ in
     ]; 
 
     openssh.authorizedKeys.keys = [ (builtins.readFile ../../../../home/ssh.pub) ];
+    packages = [pkgs.home-manager];
   };
 
   users.defaultUserShell = pkgs.zsh;
 
   programs.zsh.enable = true;
+
+  # home-manager
+  home-manager.users.silmar = ../../../../home/${config.networking.hostName}.nix;
+
 
 }

@@ -3,7 +3,8 @@
 {
   imports = [
     inputs.nix-colors.homeManagerModule
-  ];
+  ]
+  ++ (builtins.attrValues outputs.homeManagerModules);
 
   home = { 
     username = "silmar";

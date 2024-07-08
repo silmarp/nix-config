@@ -83,24 +83,21 @@
           extraSpecialArgs = {
             inherit inputs outputs;
           }; # Pass flake inputs to our config
-          modules = (builtins.attrValues homeManagerModules)
-            ++ [ ./home/pyrolusite.nix ];
+          modules = [ ./home/pyrolusite.nix ];
         };
         "silmar@rutile" = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages.x86_64-linux;
           extraSpecialArgs = {
             inherit inputs outputs;
           }; # Pass flake inputs to our config
-          modules = (builtins.attrValues homeManagerModules)
-            ++ [ ./home/rutile.nix ];
+          modules = [ ./home/rutile.nix ];
         };
         "silmar@limonite" = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages.aarch64-linux;
           extraSpecialArgs = {
             inherit inputs outputs;
           }; # Pass flake inputs to our config
-          modules = (builtins.attrValues homeManagerModules)
-            ++ [ ./home/limonite.nix ];
+          modules = [ ./home/limonite.nix ];
         };
       };
     };
