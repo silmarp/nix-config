@@ -2,4 +2,5 @@
 # These are similar to nixpkgs packages
 { pkgs }: {
   # example = pkgs.callPackage ./example { };
+  plymouth-hexagon-2 = pkgs.callPackage ./plymouth-hexagon-2 {};
 }
