@@ -14,6 +14,28 @@
       ../common/optional/openconnect.nix
     ];
 
+  # Loader can be accessed by pressing space
+  boot.loader.timeout = 0;
+
+  boot.plymouth = {
+    enable = true;
+    theme = "spinfinity";
+    themePackages = [pkgs.plymouth-hexagon-2];
+  };
+
+  boot = {
+    kernelParams = [
+      "quiet"
+      "loglevel=3"
+      "systemd.show_status=auto"
+      "udev.log_level=3"
+      "rd.udev.log_level=3"
+      "vt.global_cursor_default=0"
+    ];
+    consoleLogLevel = 0;
+    initrd.verbose = false;
+  };
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
