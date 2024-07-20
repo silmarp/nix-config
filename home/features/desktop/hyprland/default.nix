@@ -1,4 +1,16 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, lib, ... }:
+let
+  directions = rec {
+    left = "l";
+    right = "r";
+    up = "u";
+    down = "d";
+    h = left;
+    l = right;
+    k = up;
+    j = down;
+  };
+in
 
 {
   imports = [
@@ -59,12 +71,6 @@
         "$mod, n, exec, $notificationDismiss"
         "$mod, m, exec, $fileManager"
 
-        # Move focus with mainMod + arrow keys
-        "$mod, h, movefocus, l"
-        "$mod, j, movefocus, d"
-        "$mod, k, movefocus, u"
-        "$mod, l, movefocus, r"
-
         # Toggle fullscreen
         "$mod, f, fullscreen, 1"
         "$mod SHIFT, f, fullscreen, 0"
@@ -93,15 +99,6 @@
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
 
-        # Move active window to a direction
-        "$mod SHIFT, h, movewindow, l"
-        "$mod SHIFT, j, movewindow, d"
-        "$mod SHIFT, k, movewindow, u"
-        "$mod SHIFT, l, movewindow, r"
-
-        # Resize window
-
-
         # Scratchpad
         "$mod, Space, togglespecialworkspace, magic"
         "$mod SHIFT, Space, movetoworkspace, special:magic"
@@ -117,8 +114,15 @@
 
         ",Print, exec, $grimblast output"
         "$mod Shift, s, exec, $grimblast area"
-      ];
+      ]
+      ++
+      # move window focus
+      (lib.mapAttrsToList (key: value: "$mod, ${key}, movefocus, ${value}") directions)
+      ++
+      # swap active window with other in direction
+      (lib.mapAttrsToList (key: value: "$mod SHIFT, ${key}, swapwindow, ${value}") directions);
     };
+
     extraConfig = ''
       # window resize
       bind = $mod, r, submap, resize
