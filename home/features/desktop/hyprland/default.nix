@@ -34,6 +34,7 @@
 
       input = {
         kb_layout = "br";
+        follow_mouse = 2;
       };
 
       "$mod" = "SUPER";
