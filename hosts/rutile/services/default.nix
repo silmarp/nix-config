@@ -5,5 +5,6 @@
     ../../common/optional/nginx.nix
 
     ./radicale.nix
+    ./git-server.nix
   ];
 }
