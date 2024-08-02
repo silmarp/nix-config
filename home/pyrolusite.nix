@@ -32,5 +32,6 @@ wallpaper = builtins.fetchurl {
       libreoffice # Office suit
 
       spotify
+      thunderbird
   ];
 }
