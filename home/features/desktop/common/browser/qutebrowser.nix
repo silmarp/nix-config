@@ -12,6 +12,7 @@
         keyhint.fg = "#${config.colorScheme.palette.base05}";
         # ...
       };
+      content.pdfjs = true;
     };
     keyBindings = {
       normal = {
