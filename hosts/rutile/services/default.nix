@@ -6,5 +6,6 @@
 
     ./radicale.nix
     ./git-server.nix
+    ./nextcloud.nix
   ];
 }
