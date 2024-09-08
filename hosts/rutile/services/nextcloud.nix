@@ -16,6 +16,11 @@ in
 
       extraApps = {
         inherit (config.services.nextcloud.package.packages.apps) deck;
+        news = pkgs.fetchNextcloudApp {
+                sha256 = "1lp7ldcx6jnlj13v8akzjdzfid3m8l4rprm809spzzzsnrl68wwn";
+                url = "https://github.com/nextcloud/news/releases/download/25.0.0-alpha5/news.tar.gz";
+                license = "agpl3Plus";
+            };
       };
       extraAppsEnable = true;
     };
