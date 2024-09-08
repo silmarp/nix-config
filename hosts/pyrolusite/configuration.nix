@@ -80,11 +80,10 @@
   # Enable Wayland windowing system
   security.polkit.enable = true; #sway privileges suport
   hardware = {
-    opengl = {
+    graphics = {
       enable = true;
       extraPackages = with pkgs; [ amdvlk ];
-      driSupport = true;
-      driSupport32Bit = true;
+      enable32Bit = true;
     };
   };
 

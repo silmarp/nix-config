@@ -21,6 +21,5 @@
     nerdfonts
 
     vesktop
-    cinny-desktop
   ];
 }
