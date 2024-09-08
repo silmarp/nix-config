@@ -13,6 +13,11 @@ in
 
       home = "/media/nextcloud";
       config.adminpassFile = config.sops.secrets.nextcloud-pass.path;
+
+      extraApps = {
+        inherit (config.services.nextcloud.package.packages.apps) deck;
+      };
+      extraAppsEnable = true;
     };
 
     nginx.virtualHosts.${hostName} = {
