@@ -8,7 +8,7 @@
       { event = "before-sleep"; command = "${pkgs.swaylock-effects}/bin/swaylock -f"; }
     ];
     timeouts = [
-      { timeout = 500; command = "${pkgs.swaylock-effects}/bin/swaylock -f --grace 10"; }
+      { timeout = 500; command = "${pkgs.swaylock-effects}/bin/swaylock -f"; }
 
       { 
         timeout = 550;
