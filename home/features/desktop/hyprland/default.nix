@@ -59,7 +59,7 @@ in
       "$terminal" = "${pkgs.alacritty}/bin/alacritty";
       "$menu" = "${pkgs.rofi-wayland}/bin/rofi -show drun";
       "$password" = "${pkgs.rofi-rbw-wayland}/bin/rofi-rbw -t password";
-      "$lock" = "${pkgs.swaylock-effects}/bin/swaylock";
+      "$lock" = "${pkgs.swaylock-effects}/bin/swaylock -f --grace 10 --grace-no-mouse";
       "$grimblast" = "${pkgs.grimblast}/bin/grimblast --notify copy ";
       "$brightnessctl" = "${pkgs.brightnessctl}/bin/brightnessctl s"; 
       "$wpvolume" = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@";
