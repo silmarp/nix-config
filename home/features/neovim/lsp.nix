@@ -95,7 +95,7 @@
           -- map buffer local keybindings when the language server attaches.
           -- Add your language server below:
           local servers = { 
-            'pyright', 'html', 'cssls', 'jsonls', 'nil_ls', 'texlab',
+            'pyright', 'html', 'cssls', 'jsonls', 'nil_ls', 'nixd', 'texlab',
             'rust_analyzer', 'eslint', 'phpactor', 'gopls', 'ccls', 
             'dockerls', 'docker_compose_language_service', 'marksman',
           }
