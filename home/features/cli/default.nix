@@ -3,6 +3,7 @@
 {
   imports = [
     ./zsh.nix
+    ./nushell.nix
     ./eza.nix
     ./git.nix
     ./starship.nix

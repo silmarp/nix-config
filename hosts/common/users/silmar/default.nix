@@ -6,7 +6,7 @@ in
 {
   users.users.silmar = {
     isNormalUser = true;
-    shell = pkgs.zsh;
+    shell = pkgs.nushell;
     description = "Silmar";
     extraGroups = [
       "wheel" # Enable ‘sudo’ for the user.
