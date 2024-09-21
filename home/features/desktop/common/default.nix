@@ -7,6 +7,7 @@
 
     ./gtk.nix
     ./alacritty.nix
+    ./kitty.nix
     ./mpv.nix
     ./zathura.nix
   ];
