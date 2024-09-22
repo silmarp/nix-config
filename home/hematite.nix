@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs,  ... }:
 
 {
   imports = [
@@ -8,6 +8,7 @@
   ];
 
   home.packages = with pkgs; [
+    inputs.nixgl.packages.x86_64-linux.nixGLIntel
     lunarvim
     ansible
   ];

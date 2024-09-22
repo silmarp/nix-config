@@ -30,6 +30,11 @@
     };
 
     sops-nix.url = "github:Mic92/sops-nix";
+
+    nixgl = {
+      url = "github:nix-community/nixGL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
