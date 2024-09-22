@@ -99,6 +99,13 @@
           }; # Pass flake inputs to our config
           modules = [ ./home/limonite.nix ];
         };
+        "silmar@hematite" = home-manager.lib.homeManagerConfiguration {
+          pkgs = legacyPackages.x86_64-linux;
+          extraSpecialArgs = {
+            inherit inputs outputs;
+          }; # Pass flake inputs to our config
+          modules = [ ./home/hematite.nix ];
+        };
       };
     };
 }
