@@ -1,21 +1,20 @@
 { config, ... }:
 
 {
-  programs.hyprpaper = {
+  services.hyprpaper = {
     enable = true;
-    systemd.enable = true;
     #package = ;
     settings = {
+      ipc = "on";
+      splash = true;
+
       preload = [
         "${config.wallpaper}"
       ];
-      wallpapers = [
+      wallpaper = [
         "eDP-1,${config.wallpaper}"
+        "HDMI-A-1,${config.wallpaper}"
       ];
     };
-    extraConfig = ''
-      splash = true
-      ipc = off
-    '';
    };
   }
