@@ -4,8 +4,35 @@ let
   java8 = pkgs.jre8;
 in
 {
-  imports = [ inputs.modded-minecraft.module ];
+  #imports = [ inputs.modded-minecraft.module ];
 
+  services.minecraft-server = {
+    enable = true;
+    package = pkgs.minecraft-server;
+    dataDir = "/var/lib/mc-vanilla";
+    declarative = true;
+    eula = true;
+    #jvmOpts = "-Xmx2048M -Xms2048M";
+    openFirewall = true;
+    serverProperties = {
+      server-port = 43000;
+      difficulty = 2;
+      gamemode = 0;
+      max-players = 3;
+      motd = "Silmar's vanilla server";
+      white-list = true;
+      #enable-rcon = true;
+      #"rcon.password" = "hunter2";
+    };
+    whitelist = {
+      switchsilver = "da246bf3-b644-42a2-bdd3-31e8a7f52bbc";
+      Ovelha666 = "55541d08-8c32-4fac-8444-1c966de78531";
+    };
+  };
+
+  networking.firewall.allowedTCPPorts = [ 43000 ];
+
+/*
   services.modded-minecraft-servers = {
     eula = true;
 
@@ -49,14 +76,13 @@ in
           view-distance = 10;
           generate-structures = true;
           level-type = "lostcities";
-          /*
-           max-players = 5;
-           white-list = true;
-           enable-rcon = true;
-           "rcon.password" = "hunter2";
-          */
+           #max-players = 5;
+           #white-list = true;
+           #enable-rcon = true;
+           #"rcon.password" = "hunter2";
         };
       };
     };
   };
+  */
 }
