@@ -5,7 +5,7 @@
     enable = true;
     systemdTarget = "hyprland-session.target";
     events = [
-      { event = "before-sleep"; command = "${pkgs.swaylock-effects}/bin/swaylock -f --grace 10 --grace-no-mouse"; }
+      { event = "before-sleep"; command = "${pkgs.swaylock-effects}/bin/swaylock -f"; }
     ];
     timeouts = [
       { timeout = 500; command = "${pkgs.swaylock-effects}/bin/swaylock -f --grace 10 --grace-no-mouse"; }
