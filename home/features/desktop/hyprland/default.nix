@@ -55,6 +55,10 @@ in
         follow_mouse = 2;
       };
 
+      cursor = {
+        no_warps = true;
+      };
+
       "$mod" = "SUPER";
       "$terminal" = "${pkgs.alacritty}/bin/alacritty";
       "$menu" = "${pkgs.rofi-wayland}/bin/rofi -show drun";
