@@ -4,7 +4,8 @@
   programs.qutebrowser = {
     enable = true;
     settings = {
-      tabs.show = "switching";
+      tabs.show = "never";
+      tabs.position = "left";
       colors = {
         # Becomes either 'dark' or 'light', based on your colors!
         webpage.preferred_color_scheme = "${config.colorScheme.variant}";
@@ -16,8 +17,7 @@
     };
     keyBindings = {
       normal = {
-        "J" = "tab-prev";
-        "K" = "tab-next";
+        "tt" = "config-cycle tabs.show always never";
       };
     };
   };
