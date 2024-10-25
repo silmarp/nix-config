@@ -2,13 +2,17 @@
 
 let
   java8 = pkgs.jre8;
+
+  mine-server = pkgs.minecraft-server.overrideAttrs (finalAttrs: previousAttrs: {
+    version = "1.21.1";
+    });
 in
 {
   #imports = [ inputs.modded-minecraft.module ];
 
   services.minecraft-server = {
     enable = true;
-    package = pkgs.minecraft-server;
+    package = mine-server;
     dataDir = "/var/lib/mc-vanilla";
     declarative = true;
     eula = true;
