@@ -3,9 +3,18 @@
 let
   java8 = pkgs.jre8;
 
-  mine-server = pkgs.minecraft-server.overrideAttrs (finalAttrs: previousAttrs: {
-    version = "1.21.1";
-    });
+  mine-server = let
+    version = "1.21.3";
+    url = "https://piston-data.mojang.com/v1/objects/45810d238246d90e811d896f87b14695b7fb6839/server.jar";
+    sha256 = "1ddgz0dh830869v82q0cp3zkyanl1p45f7ccbvgrr0y00advhlz1";
+  in (pkgs.minecraft-server.overrideAttrs (old: rec {
+    name = "minecraft-server-${version}";
+    inherit version;
+    src = pkgs.fetchurl {
+      inherit url sha256;
+    };
+  }));
+
 in
 {
   #imports = [ inputs.modded-minecraft.module ];
