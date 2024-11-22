@@ -14,6 +14,7 @@
         # ...
       };
       content.pdfjs = true;
+      url.start_pages = ["nextcloud.silmarp.dev"];
     };
     keyBindings = {
       normal = {
