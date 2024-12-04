@@ -26,12 +26,13 @@ wallpaper = builtins.fetchurl {
       #nodePackages.bash-language-server
 
       feh # image viewer TODO make separate config
-      rssguard # RSS feed reader
       bitwarden
       tor-browser-bundle-bin
       libreoffice # Office suit
 
       spotify
       thunderbird
+
+      eww
   ];
 }
