@@ -29,7 +29,7 @@ in
     openFirewall = true;
     serverProperties = {
       server-port = 43000;
-      difficulty = 2;
+      difficulty = 3;
       gamemode = 0;
       max-players = 3;
       motd = "Silmar's vanilla server";
