@@ -10,10 +10,10 @@
   networking.wireless = {
     enable = true;  # Enables wireless support via wpa_supplicant.
     fallbackToWPA2 = false;
-    environmentFile = config.sops.secrets.wireless.path;
+    secretsFile = config.sops.secrets.wireless.path;
     networks = { 
       "NET_5G2D9052" = {
-        psk = "@HOME@";
+        psk = "@HOME_NETWORK_PASS@";
       };
       "eduroam" = {
         authProtocols = ["WPA-EAP"];
