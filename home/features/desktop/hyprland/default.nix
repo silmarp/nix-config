@@ -40,10 +40,6 @@ in
         allow_tearing = false;
       };
 
-      dwindle = {
-        no_gaps_when_only = true;
-      };
-
       decoration = {
         rounding = 10;
         dim_inactive = true;
