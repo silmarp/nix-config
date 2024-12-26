@@ -19,7 +19,7 @@
   home.packages = with pkgs; [ 
     maple-mono 
     noto-fonts-color-emoji 
-    nerdfonts
+    nerd-fonts.jetbrains-mono
 
     vesktop
   ];
