@@ -80,6 +80,10 @@
           specialArgs = { inherit inputs outputs; }; # Pass flake inputs to our config
           modules = [ ./hosts/limonite/configuration.nix ];
         };
+        hematite = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; }; # Pass flake inputs to our config
+          modules = [ ./hosts/hematite/configuration.nix ];
+        };
       };
 
       homeConfigurations = {
