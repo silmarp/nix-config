@@ -8,10 +8,7 @@
 
     ./features/desktop/hyprland
     
-    ./features/cli/nushell.nix
-    ./features/cli/starship.nix
-    ./features/cli/direnv.nix
-    ./features/cli/git.nix
+    ./features/cli
 
     ./features/productivity
   ];
@@ -26,5 +23,7 @@ wallpaper = builtins.fetchurl {
     lunarvim
     ansible
     commitizen
+    discord-canary
+    spotify
   ];
 }
