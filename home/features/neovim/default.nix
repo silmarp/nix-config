@@ -1,17 +1,5 @@
 { config, pkgs, ... }:
 
-
-let
-  nvim-spell-pt-utf8-dictionary = builtins.fetchurl {
-    url = "http://ftp.vim.org/vim/runtime/spell/pt.utf-8.spl";
-    sha256 = "sha256:0fxnd9fvvxawmwas9yh47rakk65k7jjav1ikzcy7h6wmnq0c2pry";
-  };
-
-  nvim-spell-pt-latin1-dictionary = builtins.fetchurl {
-    url = "http://ftp.vim.org/vim/runtime/spell/pt.latin1.spl";
-    sha256 = "sha256:1046a4v595g30p1gnrhkddqdqscbvxs9dj9yd078jk226likc71w";
-  };
-in
 {
   imports = [
     ./lsp.nix
@@ -114,7 +102,4 @@ in
 			}
     ];
   };
-  /*telescope dependencie*/
-  home.file."${config.xdg.configHome}/nvim/spell/pt.utf-8.spl".source = nvim-spell-pt-utf8-dictionary;
-  home.file."${config.xdg.configHome}/nvim/spell/pt.latin1.spl".source = nvim-spell-pt-latin1-dictionary;
 }
