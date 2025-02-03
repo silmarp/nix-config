@@ -39,6 +39,9 @@
     keyMap = "br-abnt2";
   };
 
+  # Enable docker
+  virtualisation.docker.enable = true;
+
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
