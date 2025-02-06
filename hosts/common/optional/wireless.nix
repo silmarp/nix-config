@@ -4,6 +4,7 @@
   sops.secrets.wireless = {
     sopsFile = ../secrets.yaml;
     neededForUsers = true;
+    group = "network";
   };
 
 
@@ -13,7 +14,7 @@
     secretsFile = config.sops.secrets.wireless.path;
     networks = { 
       "NET_5G2D9052" = {
-        psk = "@HOME_NETWORK_PASS@";
+        pskRaw = "ext:home_psk";
       };
       "eduroam" = {
         authProtocols = ["WPA-EAP"];
@@ -23,7 +24,7 @@
           eap=TTLS
           domain_suffix_match="semfio.usp.br"
           identity="12623950@usp.br"
-          password="@EDUROAM@"
+          password="ext:eduroam_psk"
           phase2="auth=MSCHAPV2"
         '';
       };
@@ -31,11 +32,18 @@
 
     # imperative networks
     allowAuxiliaryImperativeNetworks = true;
-    userControlled.enable = true;
+    userControlled = {
+      enable = true;
+      group = "network";
+    };
+
     extraConfig = ''
       update_config=1
     '';
   };
+
+  # ensure group exists
+  users.groups.network = {};
 
   #solves cannot open file error
   systemd.services.wpa_supplicant.preStart = "touch /etc/wpa_supplicant.conf";

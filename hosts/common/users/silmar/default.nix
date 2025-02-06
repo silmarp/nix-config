@@ -16,7 +16,7 @@ in
       "minecraft"
       "docker"
       "libvirtd"
-      "networkmanager"
+      "network"
     ]; 
 
     openssh.authorizedKeys.keys = [ (builtins.readFile ../../../../home/ssh.pub) ];
