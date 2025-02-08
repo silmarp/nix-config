@@ -12,6 +12,7 @@
       ../common/optional/wireless.nix
       ../common/optional/openconnect.nix
       ../common/optional/silentboot.nix
+      ../common/optional/bluetooth.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -24,17 +25,6 @@
   hardware.enableAllFirmware = true;
 
   networking.hostName = "pyrolusite";
-
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = false;
-    settings = {
-      General = {
-        Experimental = true;
-      };
-    };
-  };
-  services.blueman.enable = true;
 
   # TODO move to locale global config
   time.timeZone = "America/Sao_Paulo";
