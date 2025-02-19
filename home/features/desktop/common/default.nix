@@ -21,6 +21,6 @@
     noto-fonts-color-emoji 
     nerd-fonts.jetbrains-mono
 
-    vesktop
+    discord-canary
   ];
 }
