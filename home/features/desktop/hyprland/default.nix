@@ -109,7 +109,7 @@ in
         "$mod, Space, togglespecialworkspace, magic"
         "$mod SHIFT, Space, movetoworkspace, special:magic"
  
-        "$mod, F10, exec, $lock"
+        "$mod, Escape, exec, $lock"
 
         ",XF86AudioRaiseVolume, exec, $wpvolume 0.05+"
         ",XF86AudioLowerVolume, exec, $wpvolume 0.05-"
@@ -119,7 +119,7 @@ in
         ",XF86MonBrightnessDown, exec, $brightnessctl 5%-"
 
         ",Print, exec, $grimblast output"
-        "$mod Shift, s, exec, $grimblast area"
+        "Shift, Print, exec, $grimblast area"
       ]
       ++
       # move window focus
