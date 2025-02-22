@@ -13,6 +13,7 @@ in
 
       home = "/media/nextcloud";
       config.adminpassFile = config.sops.secrets.nextcloud-pass.path;
+      config.dbtype = "sqlite";
 
       extraApps = {
         inherit (config.services.nextcloud.package.packages.apps) deck;

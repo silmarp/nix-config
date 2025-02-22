@@ -19,11 +19,6 @@ in
     ../common/waylandWM/default.nix
   ];
 
-  xdg.portal = {
-    extraPortals = [ inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland ];
-    configPackages = [ inputs.hyprland.packages.${pkgs.system}.hyprland ];
-  };
-
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
