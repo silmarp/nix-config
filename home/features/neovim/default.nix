@@ -4,8 +4,8 @@
   imports = [
     ./lsp.nix
     ./notes.nix
-    ./tree.nix
     ./ui.nix
+    ./util.nix
   ];
 
   programs.neovim = {
@@ -21,15 +21,14 @@
 
       -- General
       opt.mouse = 'a'                       -- Enable mouse support
-      opt.clipboard = 'unnamedplus'         -- Copy/paste to system clipboard
       opt.swapfile = false                  -- Don't use swapfile
       opt.completeopt = 'menuone,noinsert,noselect'  -- Autocomplete options
 
       -- Tabs, indent
+      opt.smartindent = true      -- Autoindent new lines
       opt.expandtab = true        -- Use spaces instead of tabs
       opt.shiftwidth = 4          -- Shift 4 spaces when tab
       opt.tabstop = 4             -- 1 tab == 4 spaces
-      opt.smartindent = true      -- Autoindent new lines
       augroup('setIndent', { clear = true }) -- set indentation to 2 in certain filetypes
       autocmd('Filetype', {
         group = 'setIndent',
@@ -62,44 +61,9 @@
       vim.api.nvim_set_keymap('n', '<leader>bp', ':bprevious<CR>', options)
       vim.api.nvim_set_keymap('n', '<leader>bn', ':bnext<CR>', options)
 
-      -- Disable arrow keys
-      vim.api.nvim_set_keymap("", '<up>', '<nop>', options)
-      vim.api.nvim_set_keymap("", '<down>', '<nop>', options)
-      vim.api.nvim_set_keymap("", '<left>', '<nop>', options)
-      vim.api.nvim_set_keymap("", '<right>', '<nop>', options)
-
-      --Relative movement
+      -- Relative movement on linebreak
       vim.api.nvim_set_keymap("", 'k', 'gk', options)
       vim.api.nvim_set_keymap("", 'j', 'gj', options)
-
-      -- Toggle auto-indenting for code paste
-      vim.api.nvim_set_keymap('n', '<F2>', ':set invpaste paste?<CR>', options)
-
-      -- Set spellcheck
-      augroup('spell', { clear = true })
-      autocmd('Filetype', {
-        group = 'spell',
-        pattern = { 'markdown', 'tex'},
-        command = 'set spell spelllang=pt,en'
-      })
     '';
-
-    plugins = with pkgs.vimPlugins; [
-      vim-table-mode
-      {
-        plugin = nvim-surround;
-        type = "lua";
-        config = /*lua*/ ''
-          require("nvim-surround").setup()
-        '';
-      }
-      {
-				plugin = nvim-autopairs;
-				type = "lua";
-				config = /*lua*/''
-					require("nvim-autopairs").setup {}
-				'';
-			}
-    ];
   };
 }

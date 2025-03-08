@@ -177,22 +177,16 @@ in
     {
       plugin = bufferline-nvim;
       type = "lua";
-      config =
-        /*
-        lua
-        */
-        ''
+      config =/*lua*/''
           require('bufferline').setup{}
         '';
     }
-/*
       {
         plugin = which-key-nvim;
         type = "lua";
       }
-*/
     ];
   };
     
-  home.packages = [ pkgs.ripgrep ];
+  home.packages = [ pkgs.ripgrep ]; #TODO is this really necessary ?
 }
