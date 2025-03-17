@@ -97,7 +97,7 @@
           local servers = { 
             'pyright', 'html', 'cssls', 'jsonls', 'nil_ls', 'nixd', 'texlab',
             'rust_analyzer', 'eslint', 'phpactor', 'gopls', 'ccls', 
-            'dockerls', 'docker_compose_language_service', 'marksman',
+            'dockerls', 'docker_compose_language_service', 'zk',
             'nushell',
           }
 
