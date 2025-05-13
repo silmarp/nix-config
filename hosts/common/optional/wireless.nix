@@ -16,6 +16,9 @@
       "NET_5G2D9052" = {
         pskRaw = "ext:home_psk";
       };
+      "NET_2G2D9052" = {
+        pskRaw = "ext:home_psk";
+      };
       "eduroam" = {
         authProtocols = ["WPA-EAP"];
         auth = ''
