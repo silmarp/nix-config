@@ -1,12 +1,10 @@
 { pkgs, inputs, ... }:
 
 let
-  java8 = pkgs.jre8;
-
   mine-server = let
     version = "1.21.4";
-    url = "https://piston-data.mojang.com/v1/objects/4707d00eb834b446575d89a61a11b5d548d8c001/server.jar";
-    sha256 = "0n0k1zhpirx09w0gg2w3hlmsrh8whx51qabj8n273ip9145rfrhh";
+    url = "https://piston-data.mojang.com/v1/objects/e6ec2f64e6080b9b5d9b471b291c33cc7f509733/server.jar";
+    sha256 = "0afw2bw597hbai7rjsb91886qsyqcyspx3nj2x06n6z2vkd82xmf";
   in (pkgs.minecraft-server.overrideAttrs (old: rec {
     name = "minecraft-server-${version}";
     inherit version;
@@ -14,7 +12,6 @@ let
       inherit url sha256;
     };
   }));
-
 in
 {
   #imports = [ inputs.modded-minecraft.module ];
@@ -25,21 +22,26 @@ in
     dataDir = "/var/lib/mc-vanilla";
     declarative = true;
     eula = true;
-    #jvmOpts = "-Xmx2048M -Xms2048M";
+    jvmOpts = "-Xms4092M -Xmx4092M";
     openFirewall = true;
     serverProperties = {
       server-port = 43000;
       difficulty = 3;
       gamemode = 0;
-      max-players = 3;
+      max-players = 10;
       motd = "Silmar's vanilla server";
       white-list = true;
+      allow-cheats = true;
+      op-permission-level = 2;
       #enable-rcon = true;
       #"rcon.password" = "hunter2";
     };
     whitelist = {
       switchsilver = "da246bf3-b644-42a2-bdd3-31e8a7f52bbc";
       Ovelha666 = "55541d08-8c32-4fac-8444-1c966de78531";
+      ZAP = "1ff35137-8195-4f36-b398-08a03e6e6b11";
+      Gnoto = "e7330bdf-a04f-43c8-9357-6f278d29039a";
+      Gab = "e8c2d509-dcbd-4077-b74a-fcdab32c7a86";
     };
   };
 
