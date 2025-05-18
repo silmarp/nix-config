@@ -10,6 +10,7 @@
     ./ssh.nix
     ./nix-index.nix
     ./ranger.nix
+    ./yazi.nix
     ./direnv.nix
   ];
 
