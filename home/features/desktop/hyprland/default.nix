@@ -51,7 +51,7 @@ in
       };
 
       "$mod" = "SUPER";
-      "$terminal" = "${pkgs.alacritty}/bin/alacritty";
+      "$terminal" = "${pkgs.kitty}/bin/kitty";
       "$menu" = "${pkgs.rofi-wayland}/bin/rofi -show drun";
       "$password" = "${pkgs.rofi-rbw-wayland}/bin/rofi-rbw -t password";
       "$lock" = "${pkgs.swaylock-effects}/bin/swaylock -f";
@@ -61,7 +61,7 @@ in
       "$wpmute" = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
       "$powermenu" = "${pkgs.wlogout}/bin/wlogout";
       "$notificationDismiss" = "${pkgs.mako}/bin/makoctl dismiss -a";
-      "$fileManager" = "$terminal -e ${pkgs.ranger}/bin/ranger";
+      "$fileManager" = "$terminal -e ${pkgs.yazi}/bin/yazi";
 
       bind = [
         "$mod, Return, exec, $terminal"
