@@ -26,8 +26,9 @@
           group=CCMP TKIP
           eap=TTLS
           domain_suffix_match="semfio.usp.br"
+          ca_cert="${./eduroam-cert.pem}"
           identity="12623950@usp.br"
-          password="ext:eduroam_psk"
+          password=ext:eduroam_psk
           phase2="auth=MSCHAPV2"
         '';
       };
