@@ -40,7 +40,7 @@ in
       switchsilver = "da246bf3-b644-42a2-bdd3-31e8a7f52bbc";
       Ovelha666 = "55541d08-8c32-4fac-8444-1c966de78531";
       ZAP = "1ff35137-8195-4f36-b398-08a03e6e6b11";
-      Gnoto = "e7330bdf-a04f-43c8-9357-6f278d29039a";
+      Gnoto = "3dfecd45-7420-41a3-817a-5ff85180cef8";
       Gab = "e8c2d509-dcbd-4077-b74a-fcdab32c7a86";
     };
   };
