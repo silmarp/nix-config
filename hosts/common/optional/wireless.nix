@@ -13,6 +13,13 @@
     fallbackToWPA2 = false;
     secretsFile = config.sops.secrets.wireless.path;
     networks = { 
+      "Alcans" = {
+        authProtocols = ["WPA-PSK"];
+        pskRaw = "ext:alcans_psk";
+        extraConfig = ''
+          pairwise=CCMP
+        '';
+      };
       "NET_5G2D9052" = {
         pskRaw = "ext:home_psk";
       };
