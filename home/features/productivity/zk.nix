@@ -39,11 +39,11 @@ in
             template = "yearly.md";
           };
         };
-        montly = {
+        monthly = {
           paths = ["journal"];
           note = {
             filename = "{{format-date now '%Y-%m'}}";
-            template = "montly.md";
+            template = "monthly.md";
           };
         };
         daily = {
