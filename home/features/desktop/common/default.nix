@@ -17,7 +17,7 @@
   # Add fonts TODO move to own config
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [ 
-    maple-mono 
+    maple-mono.NF 
     noto-fonts-color-emoji 
     nerd-fonts.jetbrains-mono
 
