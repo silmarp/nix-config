@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 let
-  notebook = "${config.home.homeDirectory}/Notes/";
+  notebook = "${config.home.homeDirectory}/Nextcloud/Notes";
 in
 {
   home.packages = with pkgs; [
