@@ -2,9 +2,9 @@
 
 let
   mine-server = let
-    version = "1.21.4";
-    url = "https://piston-data.mojang.com/v1/objects/e6ec2f64e6080b9b5d9b471b291c33cc7f509733/server.jar";
-    sha256 = "0afw2bw597hbai7rjsb91886qsyqcyspx3nj2x06n6z2vkd82xmf";
+    version = "1.21.8";
+    url = "https://piston-data.mojang.com/v1/objects/eb1e1eb47cb740012fc82eacc394859463684132/server.txt";
+    sha256 = "0gjhmsffn910zanhbip2rn97smw57rzj9028pp3z7rirk1bblwz3";
   in (pkgs.minecraft-server.overrideAttrs (old: rec {
     name = "minecraft-server-${version}";
     inherit version;
