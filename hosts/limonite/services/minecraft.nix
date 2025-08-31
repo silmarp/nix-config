@@ -2,8 +2,8 @@
 
 let
   modpack = pkgs.fetchPackwizModpack {
-    url = "https://github.com/silmarp/modpack/raw/1.0.0/pack.toml";
-    packHash = "sha256-aPo4bh3S7rbbcerZicMrqCMXoR1Qlf0aqtmshtzqgC8=";
+    url = "https://github.com/silmarp/modpack/raw/2.2.1/pack.toml";
+    packHash = "sha256-g24WNdGrRIMIQ+ZA7Hi74xAXWKG5fA3YRXAcB0Ve2Kg=";
   };
 in
 {
@@ -17,9 +17,9 @@ in
     openFirewall = true;
     managementSystem.systemd-socket.enable = true;
     servers = {
-      silmay = {
+      AiCalica = {
         enable = true;
-        package = pkgs.fabricServers.fabric-1_21_8.override { loaderVersion = "0.17.2"; };
+        package = pkgs.fabricServers.fabric-1_21.override { loaderVersion = "0.17.2"; };
         symlinks = {
           "mods" = "${modpack}/mods";
         };
@@ -32,7 +32,7 @@ in
           max-players = 10;
           motd = "Silmar's modded server";
           white-list = true;
-          allow-cheats = true;
+          allow-cheats = false;
           op-permission-level = 2;
           #enable-rcon = true;
           #"rcon.password" = "hunter2";
