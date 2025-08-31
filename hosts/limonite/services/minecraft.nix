@@ -8,34 +8,38 @@ let
 in
 {
   imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
+  nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
 
-  services.minecraft-servers.servers = {
-    SilMay = {
-      enable = true;
-      package = pkgs.fabricServers.fabric-1_21_8.override { loaderVersion = "0.17.2"; };
-      symlinks = {
-        "mods" = "${modpack}/mods";
-      };
+  services.minecraft-servers = {
+    dataDir = "/var/lib/minecraft";
+    eula = true;
+    openFirewall = true;
+    managementSystem.systemd-socket.enable = true;
+    servers = {
+      silmay = {
+        enable = true;
+        package = pkgs.fabricServers.fabric-1_21_8.override { loaderVersion = "0.17.2"; };
+        symlinks = {
+          "mods" = "${modpack}/mods";
+        };
 
-      dataDir = "/var/lib/mc-modded-silmay";
-      eula = true;
-      jvmOpts = "-Xms4092M -Xmx4092M";
-      openFirewall = true;
-      serverProperties = {
-        server-port = 43000;
-        difficulty = 3;
-        gamemode = 0;
-        max-players = 10;
-        motd = "Silmar's modded server";
-        white-list = true;
-        allow-cheats = true;
-        op-permission-level = 2;
-        #enable-rcon = true;
-        #"rcon.password" = "hunter2";
-      };
-      whitelist = {
-        switchsilver = "da246bf3-b644-42a2-bdd3-31e8a7f52bbc";
-        Ovelha666 = "55541d08-8c32-4fac-8444-1c966de78531";
+        jvmOpts = "-Xms4092M -Xmx4092M";
+        serverProperties = {
+          server-port = 43000;
+          difficulty = 3;
+          gamemode = 0;
+          max-players = 10;
+          motd = "Silmar's modded server";
+          white-list = true;
+          allow-cheats = true;
+          op-permission-level = 2;
+          #enable-rcon = true;
+          #"rcon.password" = "hunter2";
+        };
+        whitelist = {
+          switchsilver = "da246bf3-b644-42a2-bdd3-31e8a7f52bbc";
+          Ovelha666 = "55541d08-8c32-4fac-8444-1c966de78531";
+        };
       };
     };
   };
