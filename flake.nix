@@ -20,10 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    modded-minecraft = {
-      url = "github:mkaito/nixos-modded-minecraft-servers";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
     hyprland = {
       url = "git+https://github.com/hyprwm/Hyprland?submodules=1";

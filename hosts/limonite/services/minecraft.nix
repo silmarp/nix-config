@@ -1,21 +1,45 @@
 { pkgs, inputs, ... }:
 
 let
-  mine-server = let
-    version = "1.21.8";
-    url = "https://piston-data.mojang.com/v1/objects/6bce4ef400e4efaa63a13d5e6f6b500be969ef81/server.jar";
-    sha256 = "1rxvgyz969yhc1a0fnwmwwap1c548vpr0a39wx02rgnly2ldjj93";
-  in (pkgs.minecraft-server.overrideAttrs (old: rec {
-    name = "minecraft-server-${version}";
-    inherit version;
-    src = pkgs.fetchurl {
-      inherit url sha256;
-    };
-  }));
+  modpack = pkgs.fetchPackwizModpack {
+    url = "https://raw.githubusercontent.com/silmarp/modpack/refs/heads/main/pack.toml";
+    hash = "sha256-0jjwmm2g9m58gavrssfd1npsds9yhyqwj29h4gcz6rnavbc7zfpa";
+  };
 in
 {
-  #imports = [ inputs.modded-minecraft.module ];
+  imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
 
+  services.minecraft-servers.servers = {
+    SilMay = {
+      enable = true;
+      package = pkgs.fabricServers.fabric-1_21_8.override { loaderVersion = "0.17.2"; };
+      symlinks = {
+        "mods" = "${modpack}/mods";
+      };
+
+      dataDir = "/var/lib/mc-modded-silmay";
+      eula = true;
+      jvmOpts = "-Xms4092M -Xmx4092M";
+      openFirewall = true;
+      serverProperties = {
+        server-port = 43000;
+        difficulty = 3;
+        gamemode = 0;
+        max-players = 10;
+        motd = "Silmar's modded server";
+        white-list = true;
+        allow-cheats = true;
+        op-permission-level = 2;
+        #enable-rcon = true;
+        #"rcon.password" = "hunter2";
+      };
+      whitelist = {
+        switchsilver = "da246bf3-b644-42a2-bdd3-31e8a7f52bbc";
+        Ovelha666 = "55541d08-8c32-4fac-8444-1c966de78531";
+      };
+    };
+  };
+/*
   services.minecraft-server = {
     enable = true;
     package = mine-server;
@@ -45,6 +69,7 @@ in
     };
   };
 
+*/
   networking.firewall.allowedTCPPorts = [ 43000 ];
 
 /*
