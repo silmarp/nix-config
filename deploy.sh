@@ -7,5 +7,5 @@ fi
 
 for host in "$@"; do
     echo "Building for $host"
-    nixos-rebuild switch --target-host $host --flake .\#$host --use-remote-sudo
+    nixos-rebuild switch --target-host $host --flake .\#$host --sudo --ask-sudo-password
 done
