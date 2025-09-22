@@ -3,7 +3,7 @@
 let
   modpack = pkgs.fetchPackwizModpack {
     url = "https://github.com/silmarp/modpack/raw/2.2.1/pack.toml";
-    packHash = "sha256-g24WNdGrRIMIQ+ZA7Hi74xAXWKG5fA3YRXAcB0Ve2Kg=";
+    packHash = "sha256-Rt8aVVzSjbN8mFwMUsfZ9JVz1u/N2v/E+6x2M3EMAj4=";
   };
 in
 {
@@ -40,6 +40,7 @@ in
         whitelist = {
           switchsilver = "da246bf3-b644-42a2-bdd3-31e8a7f52bbc";
           Ovelha666 = "55541d08-8c32-4fac-8444-1c966de78531";
+          moonNaight = "7db63568-7692-42f9-a200-f9d91359e716";
         };
       };
     };
