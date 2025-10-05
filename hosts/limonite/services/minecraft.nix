@@ -2,8 +2,8 @@
 
 let
   modpack = pkgs.fetchPackwizModpack {
-    url = "https://github.com/silmarp/modpack/raw/2.2.1/pack.toml";
-    packHash = "sha256-Rt8aVVzSjbN8mFwMUsfZ9JVz1u/N2v/E+6x2M3EMAj4=";
+    url = "https://github.com/silmarp/modpack/raw/2.3.1/pack.toml";
+    packHash = "sha256-4IFjemXyFZj0d6f0n476NCHTJ7T4Kqb+w9JU1y/Mxmc=";
   };
 in
 {
