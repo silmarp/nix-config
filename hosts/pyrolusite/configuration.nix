@@ -13,6 +13,7 @@
       ../common/optional/openconnect.nix
       ../common/optional/silentboot.nix
       ../common/optional/bluetooth.nix
+      ../common/optional/devices.nix
     ];
 
   # Use the systemd-boot EFI boot loader.

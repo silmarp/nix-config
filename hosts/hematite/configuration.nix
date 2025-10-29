@@ -14,6 +14,7 @@
       ../common/optional/wireless.nix
 
       ../common/users/silmar
+      ../common/optional/devices.nix
     ];
 
   # Use the systemd-boot EFI boot loader.

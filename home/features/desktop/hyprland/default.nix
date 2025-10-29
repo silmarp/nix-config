@@ -46,6 +46,13 @@ in
         follow_mouse = 2;
       };
 
+      device = [
+        {
+          name = "squalius-cephalus-silakka54";
+          kb_layout = "us";
+        }
+      ];
+
       cursor = {
         no_warps = true;
       };
