@@ -17,4 +17,6 @@
   home.packages = with pkgs; [
     wl-clipboard
   ];
+
+  xdg.mimeApps.enable = true;
 }
