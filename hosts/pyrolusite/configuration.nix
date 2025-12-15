@@ -51,7 +51,6 @@
   hardware = {
     graphics = {
       enable = true;
-      extraPackages = with pkgs; [ amdvlk ];
       enable32Bit = true;
     };
   };

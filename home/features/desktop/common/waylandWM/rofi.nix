@@ -4,7 +4,6 @@ let palette = config.colorScheme.palette;
 in {
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
 
     # TODO change font
     font = "JetBrainsMono Nerd Font 10";

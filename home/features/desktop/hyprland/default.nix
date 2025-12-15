@@ -59,7 +59,7 @@ in
 
       "$mod" = "SUPER";
       "$terminal" = "${pkgs.kitty}/bin/kitty";
-      "$menu" = "${pkgs.rofi-wayland}/bin/rofi -show drun";
+      "$menu" = "${pkgs.rofi}/bin/rofi -show drun";
       "$password" = "${pkgs.rofi-rbw-wayland}/bin/rofi-rbw -t password";
       "$lock" = "${pkgs.swaylock-effects}/bin/swaylock -f";
       "$grimblast" = "${pkgs.grimblast}/bin/grimblast --notify copy ";

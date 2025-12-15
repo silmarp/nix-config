@@ -26,8 +26,8 @@ wallpaper = builtins.fetchurl {
       #nodePackages.bash-language-server
 
       feh # image viewer TODO make separate config
-      bitwarden
-      tor-browser-bundle-bin
+      bitwarden-desktop
+      tor-browser
       libreoffice # Office suit
 
       spotify
