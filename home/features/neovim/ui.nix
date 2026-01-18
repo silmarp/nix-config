@@ -79,7 +79,7 @@ in
         plugin = nvim-treesitter.withAllGrammars;
         type = "lua";
         config = /* lua */ ''
-          require('nvim-treesitter.configs').setup {
+          require('nvim-treesitter').setup {
             highlight = {
               enable = true,
               additional_vim_regex_highlighting = false,
@@ -134,6 +134,7 @@ in
           vim.keymap.set('n', '<leader>th', builtin.help_tags, {})
         '';
       }
+      plenary-nvim
       {
         plugin = alpha-nvim;
         type = "lua";
