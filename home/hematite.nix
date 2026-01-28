@@ -6,6 +6,8 @@
 
     ./features/neovim
 
+    ./features/helix
+
     ./features/desktop/hyprland
     
     ./features/cli
