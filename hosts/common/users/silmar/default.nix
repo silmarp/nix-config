@@ -17,6 +17,7 @@ in
       "docker"
       "libvirtd"
       "network"
+      "wpa_supplicant"
     ]; 
 
     openssh.authorizedKeys.keys = [ (builtins.readFile ../../../../home/ssh.pub) ];

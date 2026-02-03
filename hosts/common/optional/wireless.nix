@@ -4,7 +4,7 @@
   sops.secrets.wireless = {
     sopsFile = ../secrets.yaml;
     neededForUsers = true;
-    group = "network";
+    group = "wpa_supplicant";
   };
 
 
@@ -43,10 +43,7 @@
 
     # imperative networks
     allowAuxiliaryImperativeNetworks = true;
-    userControlled = {
-      enable = true;
-      group = "network";
-    };
+    userControlled = true;
 
     extraConfig = ''
       update_config=1
@@ -54,5 +51,5 @@
   };
 
   # ensure group exists
-  users.groups.network = {};
+  users.groups.wpa_supplicant = {};
 }
