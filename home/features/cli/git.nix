@@ -9,6 +9,9 @@
     ignores = [ 
       "result"
       ".direnv"
+      ".helix"
+      ".envrc"
+      ".nix"
     ];
     extraConfig = {
       init.defaultBranch = "main";
