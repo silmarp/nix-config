@@ -40,11 +40,11 @@
   };
 
   # Lid settings
-  services.logind ={
-    lidSwitch = "suspend";
-    lidSwitchExternalPower = "suspend";
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend";
+    HandleLidSwitchExternalPower = "suspend";
+    HandleLidSwitchDocked = "ignore";
   };
-
   
   # Enable Wayland windowing system
   security.polkit.enable = true; #sway privileges suport

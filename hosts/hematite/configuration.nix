@@ -46,6 +46,12 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
+  # Lid settings
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend";
+    HandleLidSwitchExternalPower = "suspend";
+    HandleLidSwitchDocked = "ignore";
+  };
 
   programs.dconf.enable = true;
 
