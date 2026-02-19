@@ -23,5 +23,6 @@
   home.packages = with pkgs; [
     commitizen
     discord-canary
+    jira-cli-go
   ];
 }
