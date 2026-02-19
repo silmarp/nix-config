@@ -23,6 +23,5 @@
   home.packages = with pkgs; [
     commitizen
     discord-canary
-    spotify
   ];
 }

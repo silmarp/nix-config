@@ -32,7 +32,6 @@ wallpaper = builtins.fetchurl {
       tor-browser
       libreoffice # Office suit
 
-      spotify
       thunderbird
 
       eww
