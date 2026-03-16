@@ -17,11 +17,11 @@ in
 
       note = {
         language = "en";
-        filename = "{{id}}";
+        filename = "{{id}}-{{slug title}}";
         extension = "md";
         template = "default.md";
         id-charset = "alphanum";
-        id-length = 6;
+        id-length = 8;
         id-case = "lower";
         exclude = [
         ];
@@ -32,52 +32,25 @@ in
       };
 
       group = {
-        yearly = {
-          paths = ["journal"];
+        source = {
           note = {
-            filename = "{{format-date now '%Y'}}";
-            template = "yearly.md";
+            template = "source.md";
           };
         };
-        monthly = {
-          paths = ["journal"];
+        fleeting = {
           note = {
-            filename = "{{format-date now '%Y-%m'}}";
-            template = "monthly.md";
+            template = "fleeting.md";
           };
-        };
-        daily = {
-          paths = ["journal"];
-          note = {
-            filename = "{{format-date now}}";
-            template = "daily.md";
-          };
-        };
-
-        note = {
-          paths = ["note"];
-          note = {
-            filename = "{{id}}";
-            template = "note.md";
-          };
-        };
-
-        zettel = {
-          paths = ["zettel"];
-          note = {
-            filename = "{{id}}";
-            template = "zettel.md";
-          };
-        };
-      };
+        };      };
       
       format.markdown = {
-        link-format = "[[{{title}}]]";
+        link-format = "wiki";
+        hashtags = true;
       };
 
       tool = {
         #editor = "${pkgs.neovim}/bin/nvim";
-        editor = "nvim";
+        editor = "hx";
         shell = "${pkgs.zsh}/bin/zsh";
         pager = "${pkgs.less}/bin/less -FIRX";
         fzf-preview = "${pkgs.bat}/bin/bat -p --color always {-1}";
@@ -90,10 +63,10 @@ in
       };
 
       alias = {
-        # Create notes
-        journal = "zk new daily";
-        zettel = ""; # todo 
-        note = ""; # todo (maybe separate in literature and fleeting)
+        source = "zk new -g source -t $@";
+        note = "zk new -t $@";
+        fleet = "zk new -g fleeting -t $@";
+        ed = "zk edit -i $@";
       };
 
       lsp = {
