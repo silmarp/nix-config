@@ -32,9 +32,9 @@ in
       };
 
       group = {
-        source = {
+        literature = {
           note = {
-            template = "source.md";
+            template = "literature.md";
           };
         };
         fleeting = {
@@ -63,7 +63,7 @@ in
       };
 
       alias = {
-        source = "zk new -g source -t $@";
+        lit = "zk new -g literature -t $@";
         note = "zk new -t $@";
         fleet = "zk new -g fleeting -t $@";
         ed = "zk edit -i $@";
