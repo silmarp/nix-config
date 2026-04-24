@@ -10,7 +10,7 @@
         line-number = "relative";
         soft-wrap.enable = true;
         bufferline = "always";
-        shell = ["nu" "-c"];
+        shell = ["nu" "--stdin" "-c"];
         cursor-shape = {
           normal = "block";
           insert = "bar";
