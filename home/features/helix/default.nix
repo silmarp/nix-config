@@ -10,6 +10,7 @@
         line-number = "relative";
         soft-wrap.enable = true;
         bufferline = "always";
+        shell = ["nu" "-c"];
         cursor-shape = {
           normal = "block";
           insert = "bar";
