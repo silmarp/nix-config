@@ -15,6 +15,7 @@
     ];
     extraConfig = {
       init.defaultBranch = "main";
+      core.editor = "hx";
     };
     aliases = {
       graph = "log --graph";

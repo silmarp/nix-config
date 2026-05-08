@@ -8,7 +8,7 @@
       nd = "nix develop -c $env.SHELL";
     };
     envFile.text = ''
-      $env.EDITOR = 'nvim'
+      $env.EDITOR = 'hx'
     '';
     extraConfig = /* nu */ ''
       let carapace_completer = {|spans|
