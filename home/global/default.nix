@@ -1,8 +1,7 @@
-{ inputs, lib, pkgs, config, outputs, ... }:
+{ lib, pkgs, config, outputs, ... }:
 
 {
   imports = [
-    inputs.nix-colors.homeManagerModule
   ]
   ++ (builtins.attrValues outputs.homeManagerModules);
 
@@ -21,9 +20,6 @@
     stateVersion = "22.05";
   };
 
-  colorScheme = lib.mkDefault inputs.nix-colors.colorSchemes.tokyo-night-dark;
-
-  
   home.packages = with pkgs; [ nil nixd ];
 
   # Let Home Manager install and manage itself.

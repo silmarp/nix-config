@@ -1,8 +1,5 @@
-{ inputs, config, pkgs, ... }:
+{ config, pkgs, ... }:
 
-let
-  libContrib = inputs.nix-colors.lib-contrib { inherit pkgs;};
-in
 {
   home.pointerCursor = {
     gtk.enable = true;
@@ -13,9 +10,5 @@ in
 
   gtk = {
     enable = true;
-    theme = {
-      name = "${config.colorscheme.slug}";
-      package = libContrib.gtkThemeFromScheme { scheme = config.colorscheme; };
-    };
   };
 }

@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
-let palette = config.colorScheme.palette;
-in {
+{
   programs.rofi = {
     enable = true;
 
@@ -30,7 +29,7 @@ in {
         padding = mkLiteral "0px";
         border = mkLiteral "2px";
         border-radius = mkLiteral "40px";
-        border-color = mkLiteral "#${palette.base00}";
+        #border-color = mkLiteral "#${palette.base00}";
         background-color = mkLiteral "transparent";
       };
       mainbox = {
@@ -54,20 +53,20 @@ in {
       button = {
         cursor = mkLiteral "pointer";
         border-radius = mkLiteral "50px";
-        background-color = mkLiteral "#${palette.base00}";
-        text-color = mkLiteral "#${palette.base05}";
+        #background-color = mkLiteral "#${palette.base00}";
+        #text-color = mkLiteral "#${palette.base05}";
       };
 
       "button selected" = {
-        background-color = mkLiteral "#${palette.base05}";
-        text-color = mkLiteral "#${palette.base00}";
+        #background-color = mkLiteral "#${palette.base05}";
+        #text-color = mkLiteral "#${palette.base00}";
       };
       # Lists 
       listbox = {
         spacing = mkLiteral "10px";
         padding = mkLiteral "30px";
         children = [ "listview" ];
-        background-color = mkLiteral "#${palette.base00}";
+        #background-color = mkLiteral "#${palette.base00}";
       };
       listview = {
         enabled = true;
@@ -81,7 +80,7 @@ in {
         fixed-columns = true;
         cursor = "default";
         background-color = mkLiteral "transparent";
-        text-color = mkLiteral "#${palette.base05}";
+        #text-color = mkLiteral "#${palette.base05}";
       };
       # Elements
       element = {
@@ -91,11 +90,11 @@ in {
         border-radius = mkLiteral "20px";
         cursor = mkLiteral "pointer";
         background-color = mkLiteral "transparent";
-        text-color = mkLiteral "#${palette.base05}";
+        #text-color = mkLiteral "#${palette.base05}";
       };
       "element selected.normal" = {
-        background-color = mkLiteral "#${palette.base02}";
-        text-color = mkLiteral "#${palette.base0E}";
+        #background-color = mkLiteral "#${palette.base02}";
+        #text-color = mkLiteral "#${palette.base0E}";
       };
       element-icon = {
         size = mkLiteral "48px";

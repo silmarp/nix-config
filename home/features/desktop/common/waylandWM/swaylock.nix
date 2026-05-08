@@ -1,8 +1,5 @@
 { pkgs, config, ... }: 
 
-let
-  palette = config.colorScheme.palette;
-in 
 {
   programs.swaylock = {
     package = pkgs.swaylock-effects;
@@ -16,11 +13,6 @@ in
       indicator-radius = 100;
       show-failed-attempts = true;
       daemonize = true;
-
-      line-color = "#${palette.base01}";
-			ring-color = "#${palette.base0C}";
-			key-hl-color = "#${palette.base0D}";
-			inside-color = "#${palette.base02}88";
     };
   };
 }

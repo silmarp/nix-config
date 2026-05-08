@@ -1,8 +1,6 @@
 { lib, pkgs, config, ... }: 
 
-let
-  palette = config.colorScheme.palette;
-in{
+{
   programs.waybar = {
     enable = true;
     systemd = {
@@ -110,9 +108,7 @@ in{
             min-height: 0;
         }
 
-        window#waybar {
-            background: #${palette.base00};
-            border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+            border-bottom: 3px solid rgba(100, 114, 125, 0.;
             color: white;
         }
 
@@ -156,10 +152,7 @@ in{
         #mpd {
             margin-right: 5px;
             margin-left: 5px;
-            padding: 0 10px;
-            color: #${palette.base00};
-            background: #${palette.base0C};
-        }
+      }
 
         #battery {
             background-color: #ffffff;

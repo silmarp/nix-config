@@ -12,8 +12,6 @@
 
     home-manager.url = "github:nix-community/home-manager";
 
-    nix-colors.url = "github:misterio77/nix-colors";
-
     website = {
       url = "github:silmarp/site";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -1,10 +1,5 @@
 { inputs, config, pkgs, lib, ... }:
 
-let
-  libContrib = inputs.nix-colors.lib-contrib { inherit pkgs;};
-  colorscheme = libContrib.vimThemeFromScheme { scheme = config.colorscheme; };
-in
-
 {
   programs.neovim = {
     extraLuaConfig = /* lua */ ''
@@ -24,7 +19,6 @@ in
       opt.foldmethod = 'expr'   -- Enable folding (default 'foldmarker')
       opt.foldlevel=20
       opt.foldexpr="nvim_treesitter#foldexpr()" -- Set fold expr to treesitter
-      vim.cmd("source ${colorscheme}/colors/nix-${config.colorscheme.slug}.vim")
     '';
 
     plugins = with pkgs.vimPlugins; [
