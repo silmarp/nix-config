@@ -7,7 +7,7 @@
     wine
     steam
     prismlauncher
-    lutris
+    # lutris
 
     # mindustry TODO, mindustry not building
   ];

@@ -15,6 +15,11 @@
       ../common/optional/bluetooth.nix
       ../common/optional/devices.nix
     ];
+    
+  nixpkgs.config.permittedInsecurePackages = [
+    "openssl-1.1.1w"
+  ];
+
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;

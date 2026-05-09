@@ -108,7 +108,8 @@
             min-height: 0;
         }
 
-            border-bottom: 3px solid rgba(100, 114, 125, 0.;
+        window#waybar {
+            border-bottom: 3px solid rgba(100, 114, 125, 0.5);
             color: white;
         }
 
