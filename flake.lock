@@ -719,11 +719,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1740258019,
-        "narHash": "sha256-VL92B2ExCqdNJ3IH/u6QiosUor7o8hUKJuTYxyNTP6U=",
+        "lastModified": 1779326420,
+        "narHash": "sha256-uW05IfQ5SwrYvrss6NXb3WwSWd5vDKuqV6HKQ5zaQMs=",
         "owner": "silmarp",
         "repo": "site",
-        "rev": "44d047714410679c209dd4ebdc71a69b3f6b298a",
+        "rev": "eeba51ce6ef2e34a305fa807b6deedbc9f940a8b",
         "type": "github"
       },
       "original": {
