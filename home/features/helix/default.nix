@@ -5,7 +5,6 @@
     enable = true;
     #defaultEditor = true;
     settings = {
-      theme = "adwaita-dark";
       editor = {
         line-number = "relative";
         soft-wrap.enable = true;

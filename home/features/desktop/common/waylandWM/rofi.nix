@@ -5,7 +5,6 @@
     enable = true;
 
     # TODO change font
-    font = "JetBrainsMono Nerd Font 10";
     location = "center";
     #terminal = "";
     #extraConfig = {};
@@ -30,14 +29,14 @@
         border = mkLiteral "2px";
         border-radius = mkLiteral "40px";
         #border-color = mkLiteral "#${palette.base00}";
-        background-color = mkLiteral "transparent";
+        # background-color = mkLiteral "transparent";
       };
       mainbox = {
         enabled = true;
         spacing = mkLiteral "0px";
         orientation = mkLiteral "horizontal";
         children = [ "inputbar" "listbox" ];
-        background-color = mkLiteral "transparent";
+        # background-color = mkLiteral "transparent";
         background-image = mkLiteral ''url("${config.wallpaper}", height)'';
       };
       # Inputs
@@ -45,7 +44,7 @@
         enabled = true;
         width = mkLiteral "30%";
         children = [ "entry" ];
-        background-color = mkLiteral "transparent";
+        # background-color = mkLiteral "transparent";
         background-image = mkLiteral ''url("${config.wallpaper}", height)'';
       };
       entry = { enabled = false; };
@@ -79,7 +78,7 @@
         fixed-height = true;
         fixed-columns = true;
         cursor = "default";
-        background-color = mkLiteral "transparent";
+        # background-color = mkLiteral "transparent";
         #text-color = mkLiteral "#${palette.base05}";
       };
       # Elements
@@ -89,7 +88,7 @@
         padding = mkLiteral "8px";
         border-radius = mkLiteral "20px";
         cursor = mkLiteral "pointer";
-        background-color = mkLiteral "transparent";
+        # background-color = mkLiteral "transparent";
         #text-color = mkLiteral "#${palette.base05}";
       };
       "element selected.normal" = {
@@ -99,14 +98,14 @@
       element-icon = {
         size = mkLiteral "48px";
         cursor = mkLiteral "inherit";
-        background-color = mkLiteral "transparent";
+        # background-color = mkLiteral "transparent";
         text-color = mkLiteral "inherit";
       };
       element-text = {
         vertical-align = mkLiteral "0.5";
         horizontal-align = mkLiteral "0.0";
         cursor = mkLiteral "inherit";
-        background-color = mkLiteral "transparent";
+        # background-color = mkLiteral "transparent";
         text-color = mkLiteral "inherit";
       };
     };

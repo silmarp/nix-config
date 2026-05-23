@@ -12,6 +12,11 @@
 
     home-manager.url = "github:nix-community/home-manager";
 
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     website = {
       url = "github:silmarp/site";
       inputs.nixpkgs.follows = "nixpkgs";

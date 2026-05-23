@@ -16,13 +16,13 @@ in
     enable = true;
     settings = {
       env.TERM = "xterm-256color";
-      font = {
-        size = 14;
-        normal = {
-          family = "MapleMono";
-          style = "Regular";
-        };
-      };
+      # font = {
+      #   size = 14;
+      #   normal = {
+      #     family = "MapleMono";
+      #     style = "Regular";
+      #   };
+      # };
       colors = {
         # Default colors
         primary = {

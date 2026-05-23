@@ -1,7 +1,8 @@
-{ lib, pkgs, config, outputs, ... }:
+{ lib, pkgs, config, outputs, inputs, ... }:
 
 {
   imports = [
+    inputs.stylix.homeManagerModules.stylix
   ]
   ++ (builtins.attrValues outputs.homeManagerModules);
 
@@ -21,6 +22,14 @@
   };
 
   home.packages = with pkgs; [ nil nixd ];
+
+  stylix = {
+    enable = true;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    targets = {
+      hyprland.enable = false;
+    };
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
