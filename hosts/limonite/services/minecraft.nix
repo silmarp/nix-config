@@ -43,6 +43,67 @@ in
           moonNaight = "7db63568-7692-42f9-a200-f9d91359e716";
         };
       };
+
+      pindamonhangaba-records = {
+        enable = true;
+
+        openFirewall = true;
+
+        package = pkgs.paperServers.paper-26_1_2;
+
+        symlinks = {
+          "plugins/geysermc.jar" = pkgs.fetchurl {
+            url = "https://download.geysermc.org/v2/projects/geyser/versions/2.10.0/builds/1153/downloads/spigot";
+            hash = "sha256-1vX9kk9A6R2wMgZ/i3Bo88YwVCd3r3A40jVCuvdD3JA=";
+            name = "geyser.jar";
+          };
+          
+          "plugins/floodgate.jar" = pkgs.fetchurl {
+            url = "https://download.geysermc.org/v2/projects/floodgate/versions/2.2.5/builds/132/downloads/spigot";
+            hash = "sha256-ZR31ephvY1BqEcLyxrJxR+3snFkJT6ffzCGhMdqKEDA=";
+            name = "floodgate.jar";
+          };
+        };
+            
+        files = {
+          "plugins/floodgate/config.yml".value = {
+            enabled = true;
+            use-global-linking = true;
+          };
+
+          "plugins/Geyser-Spigot/config.yml".value = {
+            remote = {
+              auth-type = "floodgate";
+            };
+            bedrock = {
+              servername = "pindamonhangaba";
+            };
+            max-players = 10;
+            config-version = 4;
+          };
+         };
+
+        serverProperties = {
+          server-port = 43100;
+          difficulty = 2;
+          gamemode = 0;
+          max-players = 10;
+          motd = "Pindamonhangaba records server";
+          white-list = true;
+          allow-cheats = false;
+          op-permission-level = 2;
+          #enable-rcon = true;
+          #"rcon.password" = "hunter2";
+        };       
+
+        whitelist = {
+          switchsilver = "da246bf3-b644-42a2-bdd3-31e8a7f52bbc";
+          Ovelha666 = "55541d08-8c32-4fac-8444-1c966de78531";
+          moonNaight = "7db63568-7692-42f9-a200-f9d91359e716";
+          Gab = "e8c2d509-dcbd-4077-b74a-fcdab32c7a86";
+          ousada25 = "00000000-0000-0000-0009-01f009ccb9b4";
+        };
+      };
     };
   };
 /*
@@ -76,7 +137,10 @@ in
   };
 
 */
-  networking.firewall.allowedTCPPorts = [ 43000 ];
+  networking.firewall.allowedTCPPorts = [ 43000 43100 ];
+
+  # needed for geyser
+  networking.firewall.allowedUDPPorts = [ 19132 ];
 
 /*
   services.modded-minecraft-servers = {
