@@ -30,7 +30,6 @@ wallpaper = builtins.fetchurl {
       feh # image viewer TODO make separate config
       bitwarden-desktop
       tor-browser
-      libreoffice # Office suit
 
       thunderbird
 
