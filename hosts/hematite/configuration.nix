@@ -58,8 +58,6 @@
     HandleLidSwitchDocked = "ignore";
   };
 
-  programs.dconf.enable = true;
-
   security.pam.services = { swaylock = { }; };
 
   security.polkit.enable = true; #sway privileges suport

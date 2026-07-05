@@ -79,7 +79,6 @@
 
   # Enable virtualisation
   virtualisation.libvirtd.enable = true;
-  programs.dconf.enable = true;
 
   # Enable docker
   virtualisation.docker.enable = true;

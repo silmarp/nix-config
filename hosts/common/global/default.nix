@@ -47,4 +47,7 @@
       value.source = value.flake;
     })
     config.nix.registry;
+
+  # Needed for stylix to work
+  programs.dconf.enable = true;
 }
