@@ -24,9 +24,7 @@ in
     packages = [pkgs.home-manager];
   };
 
-  users.defaultUserShell = pkgs.zsh;
-
-  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.bash;
 
   # home-manager
   home-manager.users.silmar = ../../../../home/${config.networking.hostName}.nix;
