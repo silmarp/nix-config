@@ -35,11 +35,11 @@ in
         allow_tearing = false;
       };
 
-      decoration = {
-        rounding = 10;
-        dim_inactive = true;
-        dim_strength = 0.5;
-      };
+      # decoration = {
+      #   rounding = 10;
+      #   dim_inactive = true;
+      #   dim_strength = 0.5;
+      # };
 
       input = {
         kb_layout = "br";
@@ -49,7 +49,7 @@ in
       device = [
         {
           name = "squalius-cephalus-silakka54";
-          kb_layout = "us";
+          kb_layout = "br";
         }
       ];
 
