@@ -101,7 +101,7 @@ in
           Ovelha666 = "55541d08-8c32-4fac-8444-1c966de78531";
           moonNaight = "7db63568-7692-42f9-a200-f9d91359e716";
           Gab = "e8c2d509-dcbd-4077-b74a-fcdab32c7a86";
-          ousada25 = "00000000-0000-0000-0009-01f009ccb9b4";
+          ousada25 = "5bcef916-ecfc-4f17-8d33-140a0cc0eed8";
         };
       };
     };
