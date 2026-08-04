@@ -12,7 +12,7 @@
       nd="nix develop -c $SHELL";
     };
     localVariables = {
-      EDITOR = "nvim";
+      EDITOR = "hx";
     };
   };
 }

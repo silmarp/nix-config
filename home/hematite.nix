@@ -4,8 +4,6 @@
   imports = [
     ./global
 
-    ./features/neovim
-
     ./features/helix
 
     ./features/desktop/hyprland
