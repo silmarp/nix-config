@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:
 
 let
-  website = inputs.website.packages.${pkgs.system}.default;
+  website = inputs.website.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
 in
 

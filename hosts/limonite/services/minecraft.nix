@@ -1,14 +1,14 @@
 { pkgs, inputs, ... }:
 
 let
-  modpack = pkgs.fetchPackwizModpack {
+  modpack = minePkgs.fetchPackwizModpack {
     url = "https://github.com/silmarp/modpack/raw/2.3.1/pack.toml";
     packHash = "sha256-4IFjemXyFZj0d6f0n476NCHTJ7T4Kqb+w9JU1y/Mxmc=";
   };
+  minePkgs = inputs.nix-minecraft.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in
 {
   imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
-  nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
 
   services.minecraft-servers = {
     enable = true;
@@ -19,7 +19,7 @@ in
     servers = {
       AiCalica = {
         enable = true;
-        package = pkgs.fabricServers.fabric-1_21.override { loaderVersion = "0.17.2"; };
+        package = minePkgs.fabricServers.fabric-1_21.override { loaderVersion = "0.17.2"; };
         symlinks = {
           "mods" = "${modpack}/mods";
         };
@@ -49,7 +49,7 @@ in
 
         openFirewall = true;
 
-        package = pkgs.paperServers.paper-26_1_2;
+        package = minePkgs.paperServers.paper-26_1_2;
 
         symlinks = {
           "plugins/geysermc.jar" = pkgs.fetchurl {
