@@ -3,28 +3,30 @@
 {
   services.mako = {
     enable = true;
-    anchor = "top-right";
-    layer = "top";
-
-    #font = "monospace 10";
-    #progressColor = "#${palette.base08}dd";
-
     extraConfig = ''
     '';
 
-    format = "<b>%s</b>\\n%b";
+    settings = {
+      format = "<b>%s</b>\\n%b";
+      anchor = "top-right";
+      layer = "top";
 
-    borderRadius = 0;
-    borderSize = 1;
-    margin = "10";
+      #font = "monospace 10";
+      #progressColor = "#${palette.base08}dd";
 
-    defaultTimeout = 12000;
-    ignoreTimeout = false;
 
-    height = 150;
-    width = 400;
+      borderRadius = 0;
+      borderSize = 1;
+      margin = "10";
 
-    iconPath = null;
-    icons = true;
+      defaultTimeout = 12000;
+      ignoreTimeout = false;
+
+      height = 150;
+      width = 400;
+
+      iconPath = null;
+      icons = true;
+    };
   };
 }
