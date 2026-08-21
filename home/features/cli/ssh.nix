@@ -14,9 +14,5 @@
         addKeysToAgent = "30m";
       };
     };
-    # adds non-declarative extra configuration
-    extraConfig = ''
-      Include ~/.ssh/config-extra
-    '';
   };
 }
