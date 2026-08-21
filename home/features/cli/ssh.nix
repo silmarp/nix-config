@@ -11,9 +11,9 @@
         host = "*";
         forwardAgent = true;
         identityFile = "${config.home.homeDirectory}/.ssh/ssh";
+        addKeysToAgent = "30m";
       };
     };
-    addKeysToAgent = "30m";
     # adds non-declarative extra configuration
     extraConfig = ''
       Include ~/.ssh/config-extra
