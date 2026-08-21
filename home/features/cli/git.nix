@@ -3,9 +3,6 @@
 {
   programs.git = {
     enable = true;
-    diff-so-fancy.enable = true;
-    userName = "Silmar";
-    userEmail = "silmarjr2@gmail.com";
     ignores = [ 
       "result"
       ".direnv"
@@ -13,14 +10,20 @@
       ".envrc"
       ".nix"
     ];
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Silmar";
+        email = "silmarjr2@gmail.com";
+      };
+
       init.defaultBranch = "main";
       core.editor = "hx";
-    };
-    aliases = {
-      graph = "log --graph";
-      st = "status";
-      p = "pull";
+
+      aliases = {
+        graph = "log --graph";
+        st = "status";
+        p = "pull";
+      };
     };
   };
 
