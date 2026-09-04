@@ -31,6 +31,6 @@ wallpaper = builtins.fetchurl {
 
       thunderbird
 
-      eww
+      oci-cli
   ];
 }
