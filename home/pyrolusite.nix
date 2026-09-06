@@ -9,6 +9,7 @@
     ./features/helix
 
     ./features/desktop/hyprland
+    ./features/desktop/mango
 
     ./features/games
 
