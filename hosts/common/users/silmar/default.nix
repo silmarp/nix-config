@@ -14,7 +14,6 @@ in
       "input"
     ] ++ ifExist [
       "minecraft"
-      "docker"
       "libvirtd"
       "network"
       "wpa_supplicant"
