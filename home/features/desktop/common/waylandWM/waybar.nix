@@ -5,7 +5,10 @@
     enable = true;
     systemd = {
       enable = true;
-      targets = ["hyprland-session.target"];
+      targets = [
+        "hyprland-session.target"
+        "graphical-session.target"
+      ];
     };
     settings = {
       mainBar = {
@@ -19,7 +22,7 @@
         output = [
           "eDP-1"
         ];
-        modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
+        modules-left = [ "hyprland/workspaces" "hyprland/submap" "ext/workspaces" ];
         modules-center = [ "clock" ];
         modules-right = [ "tray" "backlight" "pulseaudio" "bluetooth" "network" "battery" ];
 
