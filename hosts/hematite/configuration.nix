@@ -15,6 +15,8 @@
 
       ../common/users/silmar
       ../common/optional/devices.nix
+
+      ../common/optional/netbird.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
