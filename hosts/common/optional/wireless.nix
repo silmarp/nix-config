@@ -30,11 +30,12 @@
         authProtocols = ["WPA-EAP"];
         auth = ''
           pairwise=CCMP
-          group=CCMP TKIP
+          group=CCMP
           eap=TTLS
-          domain_suffix_match="semfio.usp.br"
+          altsubject_match="DNS:eduroam01.semfio.usp.br;DNS:eduroam01.semfio.usp.br;DNS:eduroam01.semfio.usp.br"
           ca_cert="${./eduroam-cert.pem}"
           identity="12623950@usp.br"
+          anonymous_identity="12623950@usp.br"
           password=ext:eduroam_psk
           phase2="auth=MSCHAPV2"
         '';
