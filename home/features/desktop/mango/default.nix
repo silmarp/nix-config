@@ -1,6 +1,19 @@
 { inputs, pkgs, lib, config, ... }:
+let
+  xdg-desktop-portal-wlr = pkgs.xdg-desktop-portal-wlr.overrideAttrs {
+    postInstall = ''
+        wrapProgram $out/libexec/xdg-desktop-portal-wlr --prefix PATH ":" ${
+          lib.makeBinPath [
+            pkgs.bash
+            pkgs.grim
+            pkgs.slurp
+            pkgs.rofi
+          ]
+        }
+      '';
+  };
 
-{
+in{
   imports = [
     inputs.mangowm.hmModules.mango
   ];
@@ -8,15 +21,11 @@
   xdg.portal = {
     enable = true;
     config = {
-      mango = {
-        default = "gtk";
-        "org.freedesktop.impl.portal.Screenshot"="wlr";
-        "org.freedesktop.impl.portal.ScreenCast"="wlr";
-      };
+      common.default = "wlr";
     };
     # xdgOpenUsePortal = true;
     extraPortals = [
-      pkgs.xdg-desktop-portal-wlr
+      xdg-desktop-portal-wlr
     ];
   };
 
@@ -71,6 +80,9 @@
         "SUPER+SHIFT,8,tag,8"
         "SUPER+SHIFT,9,tag,9"
         "SUPER+SHIFT,0,tag,0"
+
+        "NONE,Print, spawn_shell, ${lib.getExe pkgs.grim} | wl-copy"
+        "Shift, Print, spawn_shell, ${lib.getExe pkgs.grim} -g '$(${lib.getExe pkgs.slurp})' - | wl-copy"
        ];
 
       xkb_rules_layout="br";
@@ -85,6 +97,29 @@
       gappov   = 5;
     };
 
-    systemd.enable = true;
+    autostart_sh = ''
+      ${lib.getExe pkgs.swaybg} -m fill -i  ${config.wallpaper} &
+    '';
+
+    systemd = {
+      enable = true;
+
+      xdgAutostart = true;
+
+      extraCommands = [
+        "systemctl --user reset-failed"
+        "systemctl --user start mango-session.target"
+      ];
+
+      variables = [
+        "DISPLAY"
+        "WAYLAND_DISPLAY"
+        "XDG_CURRENT_DESKTOP"
+        "XDG_SESSION_TYPE"
+        "NIXOS_OZONE_WL"
+        "XCURSOR_THEME"
+        "XCURSOR_SIZE"
+      ];
+    };
   };
 }
