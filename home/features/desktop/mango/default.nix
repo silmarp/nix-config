@@ -45,7 +45,7 @@ in{
 
         "SUPER,Return,spawn,${lib.getExe pkgs.kitty}"
         "SUPER,d,spawn,${lib.getExe pkgs.rofi} -show drun"
-        "SUPER,m,spawn,${lib.getExe pkgs.kitty} -e ${lib.getBin pkgs.yazi}"
+        "SUPER,m,spawn,${lib.getExe pkgs.kitty} -e ${lib.getExe pkgs.yazi}"
 
         # Movement
         "SUPER,left,focusdir,left"
@@ -81,9 +81,10 @@ in{
         "SUPER+SHIFT,9,tag,9"
         "SUPER+SHIFT,0,tag,0"
 
-        "NONE,Print, spawn_shell, ${lib.getExe pkgs.grim} | wl-copy"
-        "Shift, Print, spawn_shell, ${lib.getExe pkgs.grim} -g '$(${lib.getExe pkgs.slurp})' - | wl-copy"
-       ];
+        "NONE,Print,spawn_shell,${lib.getExe pkgs.grim} -g \"$(${lib.getExe pkgs.slurp})\" - | ${lib.getBin pkgs.wl-clipboard}/bin/wl-copy"
+        "Shift,Print,spawn_shell,${lib.getExe pkgs.grim} - | ${lib.getBin pkgs.wl-clipboard}/bin/wl-copy"
+
+      ];
 
       xkb_rules_layout="br";
       devicerule = [
