@@ -3,4 +3,5 @@
 { pkgs }: {
   # example = pkgs.callPackage ./example { };
   plymouth-hexagon-2 = pkgs.callPackage ./plymouth-hexagon-2 {};
+  salinha = pkgs.callPackage ./salinha {};
 }

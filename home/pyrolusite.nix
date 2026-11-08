@@ -33,5 +33,6 @@ wallpaper = builtins.fetchurl {
       thunderbird
 
       oci-cli
+      salinha
   ];
 }
