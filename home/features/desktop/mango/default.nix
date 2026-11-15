@@ -12,10 +12,13 @@ let
         }
       '';
   };
+  # TODO improve this script
+  screenshot = pkgs.writeScriptBin "screenshot" "${lib.getExe pkgs.grim} -o $(${lib.getBin inputs.mangowm.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/mmsg get all-monitors | ${lib.getExe pkgs.jq} -r '.monitors.[] | select( .active == true ).name') - | ${lib.getBin pkgs.wl-clipboard}/bin/wl-copy";
 
 in{
   imports = [
     inputs.mangowm.hmModules.mango
+    inputs.mangowm.legacyPackages.x86_64-linux
   ];
 
   xdg.portal = {
@@ -82,8 +85,7 @@ in{
         "SUPER+SHIFT,0,tag,0"
 
         "NONE,Print,spawn_shell,${lib.getExe pkgs.grim} -g \"$(${lib.getExe pkgs.slurp})\" - | ${lib.getBin pkgs.wl-clipboard}/bin/wl-copy"
-        "Shift,Print,spawn_shell,${lib.getExe pkgs.grim} - | ${lib.getBin pkgs.wl-clipboard}/bin/wl-copy"
-
+        "Shift,Print,spawn_shell,${lib.getExe screenshot}"
       ];
 
       xkb_rules_layout="br";
