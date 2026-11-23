@@ -84,8 +84,29 @@ in{
         "SUPER+SHIFT,9,tag,9"
         "SUPER+SHIFT,0,tag,0"
 
+        # Move window direction
+        "SUPER+SHIFT,left,exchange_client,left"
+        "SUPER+SHIFT,right,exchange_client,right"
+        "SUPER+SHIFT,up,exchange_client,up"
+        "SUPER+SHIFT,down,exchange_client,down"
+        "SUPER+SHIFT,h,exchange_client,left"
+        "SUPER+SHIFT,l,exchange_client,right"
+        "SUPER+SHIFT,k,exchange_client,up"
+        "SUPER+SHIFT,j,exchange_client,down"
+
+        # Move window to monitor
+        "SUPER+CTRL+SHIFT,h,tagmon,left"
+        "SUPER+CTRL+SHIFT,l,tagmon,right"
+
+        # Monitor focus
+        "SUPER+CTRL,h,focusmon,left"
+        "SUPER+CTRL,l,focusmon,right"
+
         "NONE,Print,spawn_shell,${lib.getExe pkgs.grim} -g \"$(${lib.getExe pkgs.slurp})\" - | ${lib.getBin pkgs.wl-clipboard}/bin/wl-copy"
         "Shift,Print,spawn_shell,${lib.getExe screenshot}"
+
+        # Fullscreen
+        "SUPER+SHIFT,f,togglefullscreen,down"
       ];
 
       xkb_rules_layout="br";
