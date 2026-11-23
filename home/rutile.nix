@@ -12,5 +12,7 @@
   ];
 
   home.packages = with pkgs; [
+    # Temporary for script execution
+    oci-cli
   ];
 }
